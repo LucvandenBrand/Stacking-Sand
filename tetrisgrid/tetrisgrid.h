@@ -10,8 +10,12 @@ private:
    * If posY > height, we return false. */
   bool belowEmpty(unsigned short posX, unsigned short posY);
 
+  // Swap the value of two cells.
+  void swapCells(unsigned short posX1, unsigned short posY1,
+                 unsigned short posX2, unsigned short posY2);
+
 protected:
-  // Implementing the gridmachine update method.
+  // Implementing the gridmachine update method to simulate tetris rules.
   void updateGrid();
 
 public:

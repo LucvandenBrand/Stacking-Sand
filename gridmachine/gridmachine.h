@@ -9,15 +9,15 @@ private:
   unsigned short d_width, d_height;
   vector<unsigned short> d_cells;
 
-  // Return a reference to a particular cell.
-  unsigned short* cellReference(unsigned short posX, unsigned short posY);
-
   // Project a 2D point to a 1D point.
   unsigned short project2D(unsigned short posX, unsigned short posY,
                            unsigned short width) const;
 protected:
   // Abstract logic used to update the grid to the next state.
   virtual void updateGrid() = 0;
+
+  // Return a reference to a particular cell.
+  unsigned short* cellReference(unsigned short posX, unsigned short posY);
 
 public:
   GridMachine(unsigned short width, unsigned short height);
