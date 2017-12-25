@@ -1,0 +1,17 @@
+#define CLS
+#define MAIN                "main.cc"
+#define SOURCES             "*.cc"
+#define OBJ_EXT             ".o"
+#define TMP_DIR             "tmp"
+//#define USE_ALL             "a"
+#define USE_ECHO            ON
+#define CXX                 "g++"
+#define CXXFLAGS            " --std=c++17 -Wall -O2" \
+                            " -fdiagnostics-color=never "
+#define IH                  ".ih"
+#define PRECOMP             "-x c++-header"
+#define LDFLAGS             ""
+#define ADD_LIBRARIES       ""
+#define ADD_LIBRARY_PATHS   ""
+
+#define DEFCOM              "program"
