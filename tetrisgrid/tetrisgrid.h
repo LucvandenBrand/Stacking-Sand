@@ -6,6 +6,9 @@
 class TetrisGrid : public GridMachine
 {
 private:
+  // Score of the game.
+  unsigned short d_score;
+
   /* Return whether there is a zero value at (posX, posY+1).
    * If posY > height, we return false. */
   bool belowEmpty(unsigned short posX, unsigned short posY);
@@ -20,6 +23,9 @@ protected:
 
 public:
   TetrisGrid(unsigned short width, unsigned short height);
+
+  // Return the current Score.
+  unsigned short score();
 };
 
 #endif // TETRISGRID_H

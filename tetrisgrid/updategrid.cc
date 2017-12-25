@@ -17,6 +17,11 @@ void TetrisGrid::updateGrid()
     // If the entire row is stationary cells, decrease their value.
     if (cellCount == width())
       for (unsigned short posX = 0; posX < width(); ++posX)
-        --*(cellReference(posX, posY));
+      {
+        unsigned short* cell = cellReference(posX, posY);
+        --*(cell);
+        if (*cell == 0) // Cell destroyed, increase score.
+          ++this->d_score;
+      }
   }
 }

@@ -17,7 +17,8 @@ int main(int argc, char **argv)
   // Loop grid for a few iterations.
   for (unsigned short i = 0; i < 10; ++i)
   {
-    cout << "Step #" << i << ':' << endl << tetrisGrid;
+    cout << "Step #" << i << " - " << "Score = " << tetrisGrid.score() << ':'
+         << endl << tetrisGrid;
     tetrisGrid.step();
   }
 
