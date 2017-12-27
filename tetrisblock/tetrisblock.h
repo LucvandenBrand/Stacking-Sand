@@ -23,7 +23,7 @@ public:
   //void move(Point2D shift);
   //Point2D position();
   //Grid currentBlock();
-  //void step();
+  void step();
 };
 
 #endif // TETRISBLOCK_H
