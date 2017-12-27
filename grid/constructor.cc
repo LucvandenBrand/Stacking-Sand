@@ -1,7 +1,7 @@
-#include "gridmachine.ih"
+#include "grid.ih"
 
-GridMachine::GridMachine(unsigned short width, unsigned short height) :
-                         d_width(width), d_height(height)
+Grid::Grid(unsigned short width, unsigned short height) :
+                  d_width(width), d_height(height)
 {
   // Initialise the vector with zeroes.
   unsigned short length = width * height;

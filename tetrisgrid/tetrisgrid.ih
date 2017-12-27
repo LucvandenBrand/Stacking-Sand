@@ -1,3 +1,0 @@
-#include "../gridmachine/gridmachine.ih"
-#include "../point2d/point2d.ih"
-#include "tetrisgrid.h"
