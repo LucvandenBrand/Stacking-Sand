@@ -10,21 +10,20 @@ private:
   vector<unsigned short> d_cells;
 
   // Project a 2D point to a 1D point.
-  unsigned short project2D(unsigned short posX, unsigned short posY,
-                           unsigned short width) const;
+  unsigned short project2D(Point2D point, unsigned short width) const;
 protected:
   // Abstract logic used to update the grid to the next state.
   virtual void updateGrid() = 0;
 
   // Return a reference to a particular cell.
-  unsigned short* cellReference(unsigned short posX, unsigned short posY);
+  unsigned short* cellReference(Point2D point);
 
 public:
   GridMachine(unsigned short width, unsigned short height);
 
   // Insert and retrieve cell values.
-  void cell(unsigned short posX, unsigned short posY, unsigned short value);
-  unsigned short cell(unsigned short posX, unsigned short posY);
+  void cell(Point2D point, unsigned short value);
+  unsigned short cell(Point2D point);
 
   // Return the width and height of the grid.
   unsigned short width();

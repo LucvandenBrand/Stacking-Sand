@@ -1,7 +1,6 @@
 #include "gridmachine.ih"
 
-unsigned short GridMachine::project2D(unsigned short posX, unsigned short posY,
-                                      unsigned short width) const
+unsigned short GridMachine::project2D(Point2D point, unsigned short width) const
 {
-  return posY*width + posX;
+  return point.y() * width + point.x();
 }

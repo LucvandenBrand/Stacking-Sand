@@ -1,5 +1,6 @@
 #include "tetrisgrid/tetrisgrid.ih"
 #include "gridmachine/gridmachine.ih"
+#include "point2d/point2d.ih"
 #include <iostream>
 
 using namespace std;

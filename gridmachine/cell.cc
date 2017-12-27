@@ -1,6 +1,6 @@
 #include "gridmachine.ih"
 
-unsigned short GridMachine::cell(unsigned short posX, unsigned short posY)
+unsigned short GridMachine::cell(Point2D point)
 {
-  return *(this->cellReference(posX, posY));
+  return *(this->cellReference(point));
 }

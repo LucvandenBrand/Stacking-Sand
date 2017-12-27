@@ -11,11 +11,10 @@ private:
 
   /* Return whether there is a zero value at (posX, posY+1).
    * If posY > height, we return false. */
-  bool belowEmpty(unsigned short posX, unsigned short posY);
+  bool belowEmpty(Point2D point);
 
   // Swap the value of two cells.
-  void swapCells(unsigned short posX1, unsigned short posY1,
-                 unsigned short posX2, unsigned short posY2);
+  void swapCells(Point2D point1, Point2D point2);
 
 protected:
   // Implementing the gridmachine update method to simulate tetris rules.

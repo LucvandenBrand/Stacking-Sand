@@ -1,11 +1,10 @@
 #include "gridmachine.ih"
 
-unsigned short* GridMachine::cellReference(unsigned short posX,
-                                           unsigned short posY)
+unsigned short* GridMachine::cellReference(Point2D point)
 {
-  // Wrap around position indexes.
-  posX %= this->d_width;
-  posY %= this->d_height;
+  // Wrap around position indexes;
+  point.x(point.x() % this->d_width);
+  point.y(point.y() % this->d_height);
 
-  return &(this->d_cells[project2D(posX, posY, this->d_width)]);
+  return &(this->d_cells[project2D(point, this->d_width)]);
 }

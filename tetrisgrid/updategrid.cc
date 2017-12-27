@@ -8,9 +8,10 @@ void TetrisGrid::updateGrid()
     unsigned short cellCount = 0;
     for (unsigned short posX = 0; posX < width(); ++posX)
     {
-      if (belowEmpty(posX, posY))
-        swapCells(posX, posY, posX, posY+1);
-      else if (cell(posX, posY) > 0)
+      Point2D currentPoint(posX, posY);
+      if (belowEmpty(currentPoint))
+        swapCells(currentPoint, Point2D(posX, posY+1));
+      else if (cell(currentPoint) > 0)
         ++cellCount;
     }
 
@@ -18,7 +19,7 @@ void TetrisGrid::updateGrid()
     if (cellCount == width())
       for (unsigned short posX = 0; posX < width(); ++posX)
       {
-        unsigned short* cell = cellReference(posX, posY);
+        unsigned short* cell = cellReference(Point2D(posX, posY));
         --*(cell);
         if (*cell == 0) // Cell destroyed, increase score.
           ++this->d_score;

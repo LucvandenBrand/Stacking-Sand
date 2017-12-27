@@ -1,7 +1,7 @@
 #include "tetrisgrid.ih"
 
-bool TetrisGrid::belowEmpty(unsigned short posX, unsigned short posY)
+bool TetrisGrid::belowEmpty(Point2D point)
 {
-  posY += 1;
-  return (posY < height()) && (cell(posX, posY) == 0);
+  point.y(point.y() + 1);
+  return (point.y() < height()) && (cell(point) == 0);
 }
