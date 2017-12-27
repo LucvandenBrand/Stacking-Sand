@@ -1,7 +1,4 @@
-#include "grid/grid.ih"
-#include "tetrismachine/tetrismachine.ih"
-#include "tetrisblock/tetrisblock.ih"
-#include "point2d/point2d.ih"
+#include "painter/painter.ih"
 #include "tetris/tetris.ih"
 #include <iostream>
 

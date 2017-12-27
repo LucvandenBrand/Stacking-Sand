@@ -1,0 +1,8 @@
+#include "painter.h"
+#include "../grid/grid.ih"
+#include "../tetrismachine/tetrismachine.ih"
+#include "../tetrisblock/tetrisblock.ih"
+#include "../tetris/tetris.ih"
+#include <iostream>
+
+using namespace std;

@@ -4,12 +4,12 @@ int main(int argc, char **argv)
 {
   // Initialise our game.
   Tetris tetris;
+  Painter painter(&tetris);
 
   // Loop grid for a few iterations.
   for (unsigned short i = 0; i < 10; ++i)
   {
-    cout << "Step #" << i << " - " << "Score = " << tetris.tetrisMachine().score() << ':'
-         << endl << tetris.grid();
+    painter.paint();
     tetris.step();
   }
 
