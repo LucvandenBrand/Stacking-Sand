@@ -21,7 +21,7 @@ public:
   TetrisBlock(Grid* tetrisGrid);
 
   //void move(Point2D shift);
-  //Point2D position();
+  Point2D position();
 
   // return the current block in use.
   Grid currentBlock();

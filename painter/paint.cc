@@ -4,6 +4,7 @@ void Painter::paint()
 {
   Grid currentgrid  = this->d_tetris->grid();
   Grid currentBlock = this->d_tetris->tetrisBlock().currentBlock();
+  Point2D currentBlockPos = this->d_tetris->tetrisBlock().position();
   int score         = this->d_tetris->tetrisMachine().score();
 
   // Clear the screen to a grey background.
@@ -20,6 +21,24 @@ void Painter::paint()
       unsigned short cell = *(currentgrid.cell(Point2D(posX, posY)));
       unsigned short screenX  = posX * cellSize;
       unsigned short screenY  = posY * cellSize;
+
+      // Draw a cell, the color depends on the cell value.
+      uint8_t color = 63 * cell;
+      SDL_Rect rectangle = {screenX, screenY, cellSize, cellSize};
+      SDL_FillRect(this->d_screenSurface, &rectangle,
+                   SDL_MapRGB(this->d_screenSurface->format,
+                              color, color, color));
+    }
+  }
+
+  // Draw the block.
+  for (unsigned short posY = 0; posY < currentBlock.height(); ++posY)
+  {
+    for (unsigned short posX = 0; posX < currentBlock.width(); ++posX)
+    {
+      unsigned short cell = *(currentBlock.cell(Point2D(posX, posY)));
+      unsigned short screenX  = (posX + currentBlockPos.x) * cellSize;
+      unsigned short screenY  = (posY + currentBlockPos.y) * cellSize;
 
       // Draw a cell, the color depends on the cell value.
       uint8_t color = 63 * cell;
