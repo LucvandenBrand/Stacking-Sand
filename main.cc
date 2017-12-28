@@ -13,13 +13,13 @@ int main(int argc, char **argv)
   }
 
   // Loop grid for a few iterations.
-  for (unsigned short i = 0; i < 10; ++i)
+  for (unsigned short i = 0; i < 30; ++i)
   {
     painter.paint();
     tetris.step();
 
-    // Wait half a second.
-    SDL_Delay(500);
+    // Wait 1/4th of a second.
+    SDL_Delay(250);
   }
 
   return 0;
