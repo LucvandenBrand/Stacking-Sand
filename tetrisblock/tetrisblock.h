@@ -22,7 +22,11 @@ public:
 
   //void move(Point2D shift);
   //Point2D position();
-  //Grid currentBlock();
+
+  // return the current block in use.
+  Grid currentBlock();
+
+  // Update the state.
   void step();
 };
 

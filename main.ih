@@ -1,5 +1,6 @@
 #include "painter/painter.ih"
 #include "tetris/tetris.ih"
 #include <iostream>
+#include <SDL2/SDL.h>
 
 using namespace std;
