@@ -5,6 +5,7 @@ int main(int argc, char **argv)
   // Initialise our game.
   Tetris tetris;
   Painter painter(&tetris);
+  Controller controller(&tetris);
 
   if (!painter.init())
   {
@@ -13,9 +14,11 @@ int main(int argc, char **argv)
   }
 
   // Loop grid for a few iterations.
-  for (unsigned short i = 0; i < 30; ++i)
+  bool keepRunning = true;
+  while(keepRunning)
   {
     painter.paint();
+    keepRunning = controller.processEvents();
     tetris.step();
 
     // Wait 1/4th of a second.

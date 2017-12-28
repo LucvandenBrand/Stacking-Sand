@@ -1,4 +1,5 @@
 #include "painter/painter.ih"
+#include "controller/controller.ih"
 #include "tetris/tetris.ih"
 #include <iostream>
 #include <SDL2/SDL.h>
