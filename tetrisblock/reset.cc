@@ -9,5 +9,5 @@ void TetrisBlock::reset()
   unsigned short halfBlock = this->currentBlock().width() / 2;
   unsigned short halfGrid  = this->d_tetrisGrid->width() / 2;
   this->d_position = Point2D(halfGrid - halfBlock, 0);
-  this->d_move = Point2D(0, 1);
+  this->d_move = Point2D(0, 0);
 }

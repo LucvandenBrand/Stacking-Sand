@@ -2,5 +2,24 @@
 
 void TetrisBlock::step()
 {
-  
+  // Check if the ground had been reached.
+  if (overlap(this->d_position + Point2D(0, 1)))
+  {
+    // Stamp this block on the grid, and reset.
+    this->stamp();
+    this->reset();
+    return;
+  }
+
+  // Apply the move, and reset the move direction.
+  Point2D newPosition = this->d_position;
+  newPosition += this->d_move;
+  this->d_move = Point2D(0, 0);
+
+  // Prevent potential overlap.
+  if (!overlap(newPosition))
+    this->d_position = newPosition;
+
+  // Apply default gravity.
+  this->d_position += Point2D(0, 1);
 }

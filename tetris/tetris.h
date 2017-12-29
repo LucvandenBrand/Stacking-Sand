@@ -20,7 +20,7 @@ public:
   TetrisMachine tetrisMachine();
 
   // Return a copy of the tetris block.
-  TetrisBlock tetrisBlock();
+  TetrisBlock* tetrisBlock();
 
   // Update tbe tetrismachine and block.
   void step();

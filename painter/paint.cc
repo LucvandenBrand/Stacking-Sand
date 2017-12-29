@@ -3,8 +3,8 @@
 void Painter::paint()
 {
   Grid currentgrid  = this->d_tetris->grid();
-  Grid currentBlock = this->d_tetris->tetrisBlock().currentBlock();
-  Point2D currentBlockPos = this->d_tetris->tetrisBlock().position();
+  Grid currentBlock = this->d_tetris->tetrisBlock()->currentBlock();
+  Point2D currentBlockPos = this->d_tetris->tetrisBlock()->position();
   int score         = this->d_tetris->tetrisMachine().score();
 
   // Clear the screen to a grey background.

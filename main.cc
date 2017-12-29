@@ -22,7 +22,7 @@ int main(int argc, char **argv)
     tetris.step();
 
     // Wait 1/4th of a second.
-    SDL_Delay(250);
+    SDL_Delay(100);
   }
 
   return 0;

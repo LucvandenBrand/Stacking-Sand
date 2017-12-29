@@ -1,6 +1,6 @@
 #include "tetris.ih"
 
-TetrisBlock Tetris::tetrisBlock()
+TetrisBlock* Tetris::tetrisBlock()
 {
-  return *(this->d_tetrisBlock);
+  return this->d_tetrisBlock;
 }

@@ -11,13 +11,17 @@ bool Controller::processEvents()
         return false;
     }
 
-    // Provess keys.
+    // Process keys.
+    TetrisBlock* tetrisBlock = this->d_tetris->tetrisBlock();
     switch (e.key.keysym.sym) {
       case SDLK_LEFT: // Left
+        tetrisBlock->move(Point2D(-1, 0));
         break;
       case SDLK_RIGHT: // Right
+        tetrisBlock->move(Point2D(1, 0));
         break;
       case SDLK_DOWN: // Down
+        //tetrisBlock->move(Point2D(0, 1));
         break;
       case SDLK_SPACE: // Rotate
         break;
