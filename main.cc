@@ -20,9 +20,6 @@ int main(int argc, char **argv)
     painter.paint();
     keepRunning = controller.processEvents();
     tetris.step();
-
-    // Wait 1/4th of a second.
-    SDL_Delay(100);
   }
 
   return 0;

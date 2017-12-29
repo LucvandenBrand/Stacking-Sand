@@ -9,6 +9,11 @@ private:
   Grid* d_grid;
   TetrisMachine* d_tetrisMachine;
   TetrisBlock* d_tetrisBlock;
+
+  // Scheduling vars.
+  int d_goalTicks;
+  int d_waitTicks;
+
 public:
   Tetris();
   ~Tetris();
