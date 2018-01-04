@@ -2,52 +2,25 @@
 
 void Painter::paint()
 {
-  Grid currentgrid  = this->d_tetris->grid();
-  Grid currentBlock = this->d_tetris->tetrisBlock()->currentBlock();
-  Point2D currentBlockPos = this->d_tetris->tetrisBlock()->position();
-  int score         = this->d_tetris->tetrisMachine().score();
-
   // Clear the screen to a grey background.
   SDL_FillRect(this->d_screenSurface, NULL,
                SDL_MapRGB(this->d_screenSurface->format,
                           0xAF, 0xAF, 0xAF));
 
-  // Draw the tetris grid.
-  unsigned short cellSize = this->c_SCREEN_HEIGHT / currentgrid.height();
-  for (unsigned short posY = 0; posY < currentgrid.height(); ++posY)
-  {
-    for (unsigned short posX = 0; posX < currentgrid.width(); ++posX)
-    {
-      unsigned short cell = *(currentgrid.cell(Point2D(posX, posY)));
-      unsigned short screenX  = posX * cellSize;
-      unsigned short screenY  = posY * cellSize;
+  // Retrieve the tetris grid and calculate the size of one block.
+  Grid currentGrid = this->d_tetris->grid();
+  unsigned short cellSize = this->c_SCREEN_HEIGHT / currentGrid.height();
 
-      // Draw a cell, the color depends on the cell value.
-      uint8_t color = 63 * cell;
-      SDL_Rect rectangle = {screenX, screenY, cellSize, cellSize};
-      SDL_FillRect(this->d_screenSurface, &rectangle,
-                   SDL_MapRGB(this->d_screenSurface->format,
-                              color, color, color));
-    }
-  }
+  // Paint the main grid and tetris block.
+  this->paintGrid(currentGrid, cellSize);
 
-  // Draw the block.
-  for (unsigned short posY = 0; posY < currentBlock.height(); ++posY)
-  {
-    for (unsigned short posX = 0; posX < currentBlock.width(); ++posX)
-    {
-      unsigned short cell = *(currentBlock.cell(Point2D(posX, posY)));
-      unsigned short screenX  = (posX + currentBlockPos.x) * cellSize;
-      unsigned short screenY  = (posY + currentBlockPos.y) * cellSize;
+  Grid currentBlock = this->d_tetris->tetrisBlock()->currentBlock();
+  Point2D currentBlockPos = this->d_tetris->tetrisBlock()->position();
+  this->paintGrid(currentBlock, cellSize, currentBlockPos);
 
-      // Draw a cell, the color depends on the cell value.
-      uint8_t color = 63 * cell;
-      SDL_Rect rectangle = {screenX, screenY, cellSize, cellSize};
-      SDL_FillRect(this->d_screenSurface, &rectangle,
-                   SDL_MapRGB(this->d_screenSurface->format,
-                              color, color, color));
-    }
-  }
+  // Draw the score.
+  string score = to_string(this->d_tetris->tetrisMachine().score());
+  this->paintText(score, Point2D(0, 0));
 
   // Update the surface (flip buffers).
   SDL_UpdateWindowSurface(this->d_window);

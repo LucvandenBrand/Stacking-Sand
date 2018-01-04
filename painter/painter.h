@@ -14,6 +14,13 @@ private:
   SDL_Window* d_window = NULL;
   SDL_Surface* d_screenSurface = NULL;
 
+  // Draw the tetris grid.
+  void paintGrid(Grid currentGrid, unsigned short cellSize, Point2D offset);
+  void paintGrid(Grid currentGrid, unsigned short cellSize);
+
+  // Draw some (left aligned) text on the screen.
+  void paintText(string text, Point2D offset);
+
 public:
   Painter(Tetris* tetris);
 
