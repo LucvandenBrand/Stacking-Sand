@@ -10,9 +10,11 @@ private:
   TetrisMachine* d_tetrisMachine;
   TetrisBlock* d_tetrisBlock;
 
-  // Scheduling vars.
+  // Scheduling var
   int d_goalTicks;
-  int d_waitTicks;
+
+  // Calculate how long it takes for the next step to happen.
+  int waitTicks();
 
 public:
   Tetris();

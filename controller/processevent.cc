@@ -21,7 +21,7 @@ bool Controller::processEvents()
         tetrisBlock->move(Point2D(1, 0));
         break;
       case SDLK_DOWN: // Down
-        //tetrisBlock->move(Point2D(0, 1));
+        tetrisBlock->move(Point2D(0, 1));
         break;
       case SDLK_SPACE: // Rotate
         break;
