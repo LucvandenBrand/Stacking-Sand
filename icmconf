@@ -10,7 +10,7 @@
                             " -fdiagnostics-color=never "
 #define IH                  ".ih"
 #define PRECOMP             "-x c++-header"
-#define LDFLAGS             "-lSDL2"
+#define LDFLAGS             "-lSDL2 -lSDL2_image"
 #define ADD_LIBRARIES       ""
 #define ADD_LIBRARY_PATHS   ""
 
