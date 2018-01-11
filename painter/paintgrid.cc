@@ -12,11 +12,15 @@ void Painter::paintGrid(Grid currentGrid, unsigned short cellSize,
       unsigned short screenY  = (posY + offset.y) * cellSize;
 
       // Draw a cell, the color depends on the cell value.
-      uint8_t color = 63 * cell;
+      Texture *cellTexture;
+      if (cell == 0)
+        cellTexture = this->d_dirtTexture;
+      else
+        cellTexture = this->d_sandTexture;
+
+      //uint8_t color = 63 * cell;
       SDL_Rect rectangle = {screenX, screenY, cellSize, cellSize};
-      SDL_FillRect(this->d_screenSurface, &rectangle,
-                   SDL_MapRGB(this->d_screenSurface->format,
-                              color, color, color));
+      cellTexture->render(this->d_renderer, rectangle);
     }
   }
 }

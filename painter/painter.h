@@ -7,12 +7,16 @@ class Painter
 {
 private:
   const char* c_TITLE = "TinyTetris";
-  const int c_SCREEN_WIDTH = 480;
-  const int c_SCREEN_HEIGHT = 640;
+  const int c_SCREEN_WIDTH = 1920;
+  const int c_SCREEN_HEIGHT = 1080;
 
+  // Game mode
   Tetris* d_tetris;
+
+  // Draw objects.
   SDL_Window* d_window = NULL;
-  SDL_Surface* d_screenSurface = NULL;
+  SDL_Renderer* d_renderer = NULL;
+  Texture *d_sandTexture, *d_dirtTexture;
 
   // Draw the tetris grid.
   void paintGrid(Grid currentGrid, unsigned short cellSize, Point2D offset);

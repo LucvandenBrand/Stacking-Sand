@@ -2,10 +2,9 @@
 
 void Painter::paint()
 {
-  // Clear the screen to a grey background.
-  SDL_FillRect(this->d_screenSurface, NULL,
-               SDL_MapRGB(this->d_screenSurface->format,
-                          0xAF, 0xAF, 0xAF));
+  // Clear the screen to a black background.
+  SDL_SetRenderDrawColor(this->d_renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
+  SDL_RenderClear(this->d_renderer);
 
   // Retrieve the tetris grid and calculate the size of one block.
   Grid currentGrid = this->d_tetris->grid();
@@ -23,5 +22,5 @@ void Painter::paint()
   this->paintText(score, Point2D(0, 0));
 
   // Update the surface (flip buffers).
-  SDL_UpdateWindowSurface(this->d_window);
+  SDL_RenderPresent(this->d_renderer);
 }

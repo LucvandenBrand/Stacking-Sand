@@ -7,8 +7,10 @@ class Texture
 {
 public:
   Texture(SDL_Renderer* renderer, string texturePath);
+  ~Texture();
 
   // Render to a surface.
+  void render(SDL_Renderer* renderer, SDL_Rect destRect);
   void render(SDL_Renderer* renderer, int x, int y);
 
   // Return texture size.
