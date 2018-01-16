@@ -33,6 +33,14 @@ bool Painter::init()
   {
     this->d_sandTexture = new Texture(this->d_renderer, "data/sand.png");
     this->d_dirtTexture = new Texture(this->d_renderer, "data/dirt.png");
+
+    // Make TetrisGrid texture.
+    Grid tetrisGrid = this->d_tetris->grid();
+    int gridHeightRatio = this->c_SCREEN_HEIGHT / tetrisGrid.height();
+    int gridWidth = gridHeightRatio * tetrisGrid.width();
+    this->d_gridTexture = new Texture(this->d_renderer, gridWidth,
+                                      this->c_SCREEN_HEIGHT,
+                                      SDL_TEXTUREACCESS_TARGET);
   }
   catch (invalid_argument invarg)
   {

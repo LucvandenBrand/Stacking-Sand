@@ -16,7 +16,10 @@ private:
   // Draw objects.
   SDL_Window* d_window = NULL;
   SDL_Renderer* d_renderer = NULL;
+
+  // Used Textures
   Texture *d_sandTexture, *d_dirtTexture;
+  Texture *d_gridTexture;
 
   // Draw the tetris grid.
   void paintGrid(Grid currentGrid, unsigned short cellSize, Point2D offset);

@@ -5,6 +5,7 @@ Painter::~Painter()
   // Free allocated classes.
   delete this->d_sandTexture;
   delete this->d_dirtTexture;
+  delete this->d_gridTexture;
 
   // Freeing the window also frees the surface.
   SDL_DestroyRenderer(this->d_renderer);
