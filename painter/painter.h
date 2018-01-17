@@ -30,7 +30,8 @@ private:
   void paintGrid(Grid currentGrid, unsigned short cellSize);
 
   // Draw some (left aligned) text on the screen.
-  void paintText(TTF_Font* font, string text, Point2D offset, SDL_Color color);
+  void paintText(TTF_Font* font, string text, Point2D offset,
+                 SDL_Color color, bool centered = false);
 
 public:
   Painter(Tetris* tetris);

@@ -27,7 +27,8 @@ void Painter::paint()
 
   // Draw the 'Next Block' window.
   SDL_Color textColor = {255, 255, 255, 255};
-  this->paintText(this->d_gameFont, "Next material:", Point2D(40, 20), textColor);
+  this->paintText(this->d_gameFont, "Next material:", Point2D(220, 20),
+                  textColor, true);
 
   Grid nextBlock = this->d_tetris->tetrisBlock()->nextBlock();
   Point2D nextBlockPos(220 - nextBlock.width()*cellSize/2, 100);
