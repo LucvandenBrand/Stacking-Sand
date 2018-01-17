@@ -31,6 +31,9 @@ public:
 
   // Update tbe tetrismachine and block.
   void step();
+
+  // Decrease the goalTicks by time.
+  void speedup(int speedupTime);
 };
 
 #endif

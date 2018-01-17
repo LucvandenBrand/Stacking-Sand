@@ -21,10 +21,12 @@ bool Controller::processEvents()
         tetrisBlock->move(Point2D(1, 0));
         break;
       case SDLK_DOWN: // Down
-        tetrisBlock->move(Point2D(0, 1));
+        this->d_tetris->speedup(1000000);
         break;
       case SDLK_SPACE: // Rotate
         break;
+      case SDLK_ESCAPE: // Quit the game.
+        return false;
     }
   }
   return true;
