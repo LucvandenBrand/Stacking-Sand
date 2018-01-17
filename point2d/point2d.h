@@ -13,6 +13,9 @@ public:
 
   // Adding two points.
   const Point2D operator+(const Point2D &other) const;
+
+  // Multiplying an integer to the point.
+  const Point2D operator*(const int &other) const;
 };
 
 #endif // POINT2D_H

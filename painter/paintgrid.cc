@@ -8,8 +8,8 @@ void Painter::paintGrid(Grid currentGrid, unsigned short cellSize,
     for (unsigned short posX = 0; posX < currentGrid.width(); ++posX)
     {
       unsigned short cell = *(currentGrid.cell(Point2D(posX, posY)));
-      unsigned short screenX  = (posX + offset.x) * cellSize;
-      unsigned short screenY  = (posY + offset.y) * cellSize;
+      unsigned short screenX  = posX * cellSize + offset.x;
+      unsigned short screenY  = posY * cellSize + offset.y;
 
       // Draw a cell, the color depends on the cell value.
       Texture *cellTexture;

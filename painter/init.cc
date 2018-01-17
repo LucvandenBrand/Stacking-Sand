@@ -32,8 +32,9 @@ bool Painter::init()
   if (TTF_Init() == -1)
     return false;
 
-  this->d_gameFont = TTF_OpenFont("data/gameFont.ttf", 28);
-  if (this->d_gameFont == NULL)
+  this->d_gameFont = TTF_OpenFont("data/gameFont.ttf", 48);
+  this->d_largeGameFont = TTF_OpenFont("data/gameFont.ttf", 86);
+  if (this->d_gameFont == NULL || this->d_largeGameFont == NULL)
     return false;
 
   // Try to load the textures.

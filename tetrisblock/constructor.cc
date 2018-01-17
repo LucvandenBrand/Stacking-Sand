@@ -36,6 +36,9 @@ TetrisBlock::TetrisBlock(Grid* tetrisGrid) : d_tetrisGrid(tetrisGrid)
   // Initialise random seed.
   srand (time(NULL));
 
+  // Initialize the first block (by setting the next block, see reset),
+  this->d_nextBlockIndex = rand() % this->d_blocks.size();
+
   // Set initial state.
   reset();
 }

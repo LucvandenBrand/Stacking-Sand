@@ -2,8 +2,9 @@
 
 void TetrisBlock::reset()
 {
-  // Pick random block.
-  this->d_currentBlockIndex = rand() % this->d_blocks.size();
+  // Set a new current block and pick a new random next block.
+  this->d_currentBlockIndex = this->d_nextBlockIndex;
+  this->d_nextBlockIndex = rand() % this->d_blocks.size();
 
   // Set position to middle of the top, with downwards movement.
   unsigned short halfBlock = this->currentBlock().width() / 2;

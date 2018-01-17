@@ -1,10 +1,10 @@
 #include "painter.ih"
 
-void Painter::paintText(string text, Point2D offset, SDL_Color color)
+void Painter::paintText(TTF_Font* font, string text, Point2D offset, SDL_Color color)
 {
   try
   {
-    Texture* score = new Texture(this->d_renderer, this->d_gameFont, text, color);
+    Texture* score = new Texture(this->d_renderer, font, text, color);
     score->render(this->d_renderer, offset.x, offset.y);
     delete score;
   }

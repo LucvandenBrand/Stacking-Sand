@@ -8,7 +8,7 @@ class TetrisBlock
 private:
   Grid* d_tetrisGrid;
   vector<Grid> d_blocks;
-  unsigned short d_currentBlockIndex;
+  unsigned short d_currentBlockIndex, d_nextBlockIndex;
   Point2D d_position, d_move;
 
   // Copy source onto destination at d_position.
@@ -29,8 +29,9 @@ public:
   // Return the current position.
   Point2D position();
 
-  // return the current block in use.
+  // return the current or next block in use.
   Grid currentBlock();
+  Grid nextBlock();
 
   // Update the state.
   void step();
