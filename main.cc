@@ -10,6 +10,7 @@ int main(int argc, char **argv)
   if (!painter.init())
   {
     cout << "ERROR initializing painter!" << endl;
+    cout << SDL_GetError();
     return -1;
   }
 

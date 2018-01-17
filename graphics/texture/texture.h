@@ -9,6 +9,8 @@ public:
   Texture(SDL_Renderer* renderer, string texturePath);
   Texture(SDL_Renderer* renderer, int width, int height,
           SDL_TextureAccess = SDL_TEXTUREACCESS_STREAMING);
+  Texture(SDL_Renderer* renderer, TTF_Font* font, string text,
+          SDL_Color textColor);
   ~Texture();
 
   // Render to a surface.

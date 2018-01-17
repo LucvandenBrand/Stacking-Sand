@@ -3,6 +3,9 @@
 void Painter::paint()
 {
   // Clear the screen to a black background.
+  SDL_SetRenderDrawColor(this->d_renderer, 0, 0, 0, 0xFF);
+  SDL_RenderClear(this->d_renderer);
+
   this->d_gridTexture->asRenderTarget(this->d_renderer);
   SDL_SetRenderDrawColor(this->d_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
   SDL_RenderClear(this->d_renderer);
@@ -23,8 +26,9 @@ void Painter::paint()
   this->d_gridTexture->render(this->d_renderer, mid, 0);
 
   // Draw the score.
-  string score = to_string(this->d_tetris->tetrisMachine().score());
-  this->paintText(score, Point2D(0, 0));
+  SDL_Color textColor = {255, 255, 255, 255};
+  string score = "$ " + to_string(this->d_tetris->tetrisMachine().score());
+  this->paintText(score, Point2D(0, 0), textColor);
 
   // Update the surface (flip buffers).
   SDL_RenderPresent(this->d_renderer);

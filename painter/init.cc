@@ -28,13 +28,22 @@ bool Painter::init()
 	if( !(IMG_Init(imgFlags) & imgFlags))
     return false;
 
+  // Load fonts.
+  if (TTF_Init() == -1)
+    return false;
+
+  this->d_gameFont = TTF_OpenFont("data/gameFont.ttf", 28);
+  if (this->d_gameFont == NULL)
+    return false;
+
   // Try to load the textures.
   try
   {
+    // Block textures
     this->d_sandTexture = new Texture(this->d_renderer, "data/sand.png");
     this->d_dirtTexture = new Texture(this->d_renderer, "data/dirt.png");
 
-    // Make TetrisGrid texture.
+    // Make TetrisGrid texture to draw on.
     Grid tetrisGrid = this->d_tetris->grid();
     int gridHeightRatio = this->c_SCREEN_HEIGHT / tetrisGrid.height();
     int gridWidth = gridHeightRatio * tetrisGrid.width();

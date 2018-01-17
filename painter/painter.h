@@ -17,6 +17,9 @@ private:
   SDL_Window* d_window = NULL;
   SDL_Renderer* d_renderer = NULL;
 
+  // Font to draw with.
+  TTF_Font* d_gameFont = NULL;
+
   // Used Textures
   Texture *d_sandTexture, *d_dirtTexture;
   Texture *d_gridTexture;
@@ -26,7 +29,7 @@ private:
   void paintGrid(Grid currentGrid, unsigned short cellSize);
 
   // Draw some (left aligned) text on the screen.
-  void paintText(string text, Point2D offset);
+  void paintText(string text, Point2D offset, SDL_Color color);
 
 public:
   Painter(Tetris* tetris);
