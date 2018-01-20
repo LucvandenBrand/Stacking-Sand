@@ -9,6 +9,7 @@ Painter::~Painter()
 
   // Close fonts.
   TTF_CloseFont(this->d_gameFont);
+  TTF_CloseFont(this->d_largeGameFont);
 
   // Freeing the window also frees the surface.
   SDL_DestroyRenderer(this->d_renderer);
