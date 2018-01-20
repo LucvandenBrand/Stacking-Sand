@@ -25,6 +25,10 @@ private:
   Texture *d_sandTexture, *d_dirtTexture;
   Texture *d_gridTexture;
 
+  // Load used game fonts and textures.
+  bool initFonts();
+  bool initTextures();
+
   // Draw the tetris grid.
   void paintGrid(Grid currentGrid, unsigned short cellSize, Point2D offset);
   void paintGrid(Grid currentGrid, unsigned short cellSize);
