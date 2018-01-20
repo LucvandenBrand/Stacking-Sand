@@ -22,7 +22,7 @@ private:
   TTF_Font* d_largeGameFont = NULL;
 
   // Used Textures
-  Texture *d_sandTexture, *d_dirtTexture;
+  vector<Texture> d_blockTextures;
   Texture *d_gridTexture;
 
   // Load used game fonts and textures.

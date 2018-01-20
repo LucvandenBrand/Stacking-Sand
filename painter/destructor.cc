@@ -2,10 +2,8 @@
 
 Painter::~Painter()
 {
-  // Free allocated classes.
-  delete this->d_sandTexture;
-  delete this->d_dirtTexture;
-  delete this->d_gridTexture;
+  // Free allocated textures.
+  this->d_blockTextures.clear();
 
   // Close fonts.
   TTF_CloseFont(this->d_gameFont);

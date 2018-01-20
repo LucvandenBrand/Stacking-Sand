@@ -6,8 +6,8 @@ bool Painter::initTextures()
   try
   {
     // Block textures
-    this->d_sandTexture = new Texture(this->d_renderer, "data/sand.png");
-    this->d_dirtTexture = new Texture(this->d_renderer, "data/dirt.png");
+    this->d_blockTextures.reserve(1);
+    this->d_blockTextures.push_back(*(new Texture(this->d_renderer, "data/sand.png")));
 
     // Make TetrisGrid texture to draw on.
     Grid tetrisGrid = this->d_tetris->grid();

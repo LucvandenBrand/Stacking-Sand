@@ -3,11 +3,11 @@
 void Painter::paint()
 {
   // Clear the screen to a black background.
-  SDL_SetRenderDrawColor(this->d_renderer, 0, 0, 0, 0xFF);
+  SDL_SetRenderDrawColor(this->d_renderer, 40, 25, 15, 0xFF);
   SDL_RenderClear(this->d_renderer);
 
   this->d_gridTexture->asRenderTarget(this->d_renderer);
-  SDL_SetRenderDrawColor(this->d_renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+  SDL_SetRenderDrawColor(this->d_renderer, 90, 60, 40, 255);
   SDL_RenderClear(this->d_renderer);
 
   // Retrieve the tetris grid and calculate the size of one block.
