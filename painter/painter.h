@@ -23,6 +23,7 @@ private:
 
   // Used Textures
   vector<Texture> d_blockTextures;
+  Texture *d_escapeKeyTexture;
   Texture *d_gridTexture;
 
   // Load used game fonts and textures.

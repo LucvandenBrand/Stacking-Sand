@@ -35,9 +35,14 @@ void Painter::paint()
   this->paintGrid(nextBlock, cellSize, nextBlockPos);
 
   // Draw the score.
-  int offset = this->c_SCREEN_WIDTH * (2.0 / 3.0) + 20;
+  int scoreX = this->c_SCREEN_WIDTH * (2.0 / 3.0) + 20;
   string score = "$ " + to_string(this->d_tetris->tetrisMachine().score());
-  this->paintText(this->d_largeGameFont, score, Point2D(offset, 20), textColor);
+  this->paintText(this->d_largeGameFont, score, Point2D(scoreX, 20), textColor);
+
+  // Draw the escape key.
+  int escapeKeyX = this->c_SCREEN_WIDTH - this->d_escapeKeyTexture->width();
+  int escapeKeyY = this->c_SCREEN_HEIGHT - this->d_escapeKeyTexture->height();
+  this->d_escapeKeyTexture->render(this->d_renderer, escapeKeyX, escapeKeyY);
 
   // Update the surface (flip buffers).
   SDL_RenderPresent(this->d_renderer);

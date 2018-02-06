@@ -10,6 +10,9 @@ bool Painter::initTextures()
     this->d_blockTextures.push_back(*(new Texture(this->d_renderer, "data/sand.png")));
     this->d_blockTextures.push_back(*(new Texture(this->d_renderer, "data/stone.png")));
 
+    // Escape key to quit texture.
+    this->d_escapeKeyTexture = new Texture(this->d_renderer, "data/quitkey.png");
+
     // Make TetrisGrid texture to draw on.
     Grid tetrisGrid = this->d_tetris->grid();
     int gridHeightRatio = this->c_SCREEN_HEIGHT / tetrisGrid.height();
