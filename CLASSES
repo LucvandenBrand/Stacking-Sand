@@ -5,4 +5,11 @@ tetrisblock
 tetris
 painter
 controller
-graphics/texture
+engine/game
+engine/graphics/gamerenderer
+engine/graphics/texture
+engine/input/buttonstate
+engine/input/input
+engine/input/inputparser
+engine/model
+engine/window

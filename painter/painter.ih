@@ -4,7 +4,7 @@
 #include "../tetrismachine/tetrismachine.ih"
 #include "../tetrisblock/tetrisblock.ih"
 #include "../tetris/tetris.ih"
-#include "../graphics/texture/texture.ih"
+#include "../engine/graphics/texture/texture.ih"
 #include <iostream>
 #include <cstdint>
 #include <SDL2/SDL.h>
