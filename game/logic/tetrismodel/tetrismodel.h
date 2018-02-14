@@ -28,19 +28,19 @@ private:
   const int TETRIS_WIDTH = 10;
   const int TETRIS_HEIGHT = 20;
 
-  const float DELAY_LEVEL0 = 1;
+  const float DELAY_LEVEL0 = 0.8;
   const unsigned int SCORE_LEVEL1 = 10;
-  const float        DELAY_LEVEL1 = 0.8;
+  const float        DELAY_LEVEL1 = 0.7;
   const unsigned int SCORE_LEVEL2 = 50;
-  const float        DELAY_LEVEL2 = 0.7;
+  const float        DELAY_LEVEL2 = 0.6;
   const unsigned int SCORE_LEVEL3 = 100;
-  const float        DELAY_LEVEL3 = 0.6;
+  const float        DELAY_LEVEL3 = 0.5;
   const unsigned int SCORE_LEVEL4 = 200;
-  const float        DELAY_LEVEL4 = 0.5;
+  const float        DELAY_LEVEL4 = 0.4;
   const unsigned int SCORE_LEVEL5 = 300;
-  const float        DELAY_LEVEL5 = 0.4;
+  const float        DELAY_LEVEL5 = 0.3;
   const unsigned int SCORE_LEVEL6 = 400;
-  const float        DELAY_LEVEL6 = 0.3;
+  const float        DELAY_LEVEL6 = 0.2;
 
   const short STONE = 2;
   const short PRESSURE_STONE = 3;

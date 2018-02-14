@@ -10,6 +10,9 @@ public:
   void parse(ButtonState buttonState);
 
 private:
+  /* Gameplay constants. */
+  const float SPEEDUP_TIME = 0.5f;
+
   TetrisModel *d_tetrisModel;
 };
 

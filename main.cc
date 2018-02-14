@@ -40,9 +40,10 @@ int main(int argc, char **argv)
 
       // Update all living games.
       SDL_RenderClear(sdlRenderer);
+      ButtonState buttonState = Input::getState();
       for (Game &game : games)
       {
-        game.update(*sdlRenderer, Input::getState(), deltaTime);
+        game.update(*sdlRenderer, buttonState, deltaTime);
       }
       SDL_RenderPresent(sdlRenderer);
 
