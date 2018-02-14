@@ -1,7 +1,0 @@
-#include "tetrismachine.h"
-#include "../point2d/point2d.ih"
-#include "../grid/grid.ih"
-#include <vector>
-#include <iostream>
-
-using namespace std;

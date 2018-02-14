@@ -1,0 +1,3 @@
+#include "tetrisrenderer.h"
+#include "../../logic/tetrismodel/tetrismodel.ih"
+#include "../gridrenderer/gridrenderer.ih"

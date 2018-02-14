@@ -1,6 +1,8 @@
 #ifndef INPUTPARSER_H
 #define INPUTPARSER_H
 
+#include "inputparser.ih"
+
 class InputParser
 {
 public:

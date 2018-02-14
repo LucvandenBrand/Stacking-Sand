@@ -8,7 +8,10 @@ class Game
 {
 public:
   Game(GameRenderer* renderer, InputParser* inputParser, Model* model);
-  void update(Window& window, ButtonState buttonState, float deltaTime);
+  void update(SDL_Renderer& sdlRenderer, ButtonState buttonState, float deltaTime);
+
+  /* Return if the model is alive, if not, the game should be destroyed. */
+  bool alive();
 
 private:
   GameRenderer* d_renderer;

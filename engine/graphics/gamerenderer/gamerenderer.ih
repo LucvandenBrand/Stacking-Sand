@@ -1,2 +1,2 @@
 #include "gamerenderer.h"
-#include "../../window/window.ih"
+#include <SDL2/SDL.h>

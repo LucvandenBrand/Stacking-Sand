@@ -1,15 +1,14 @@
 #ifndef BUTTONSTATE_H
 #define BUTTONSTATE_H
 
-typedef enum
-{
-  LEFT  = (1u << 0),
-  RIGHT = (1u << 1),
-  UP    = (1u << 2),
-  DOWN  = (1u << 3),
-  START = (1u << 4)
-} Buttons;
+typedef const unsigned short Button;
+typedef unsigned short ButtonState;
 
-typedef unsigned int ButtonState;
+Button LEFT   = (1u << 0);
+Button RIGHT  = (1u << 1);
+Button UP     = (1u << 2);
+Button DOWN   = (1u << 3);
+Button START  = (1u << 4);
+Button ESCAPE = (1u << 5);
 
 #endif /* BUTTONSTATE_H */

@@ -17,8 +17,11 @@ ButtonState Input::getState()
       case SDLK_DOWN: // Down
         buttonState |= DOWN;
         break;
-      case SDLK_SPACE: // Rotate
+      case SDLK_SPACE: // Start
         buttonState |= START;
+        break;
+      case SDLK_ESCAPE: // Escape
+        buttonState |= ESCAPE;
         break;
     }
   }

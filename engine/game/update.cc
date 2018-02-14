@@ -1,8 +1,8 @@
 #include "game.ih"
 
-void Game::update(Window& window, ButtonState buttonState, float deltaTime)
+void Game::update(SDL_Renderer& sdlRenderer, ButtonState buttonState, float deltaTime)
 {
   d_inputParser->parse(buttonState);
   d_model->step(deltaTime);
-  d_renderer->render(window);
+  d_renderer->render(sdlRenderer);
 }

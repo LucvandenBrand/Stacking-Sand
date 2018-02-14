@@ -1,0 +1,8 @@
+#include "tetrismodel.h"
+#include "../grid/grid.ih"
+#include "../../../engine/logic/model/model.ih"
+#include "../../../engine/logic/point2d/point2d.ih"
+#include <vector>
+#include <iostream>
+
+using namespace std;
