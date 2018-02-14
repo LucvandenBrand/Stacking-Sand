@@ -11,21 +11,21 @@ int main(int argc, char **argv)
     SDL_Renderer *sdlRenderer = window.getSDLRenderer();
 
     // Initialise our games.
-    vector<Game> games;
-    games.reserve(2);
-
     TetrisModel* tetrisModel = new TetrisModel();
     TetrisRenderer* tetrisRenderer = new TetrisRenderer(sdlRenderer, tetrisModel);
     TetrisInputParser* tetrisInputParser = new TetrisInputParser(tetrisModel);
     Game *tetrisGame = new Game(tetrisRenderer, tetrisInputParser, tetrisModel);
-    games.push_back(*tetrisGame);
 
     BlockModel* blockModel = new BlockModel(tetrisModel);
     BlockRenderer* blockRenderer = new BlockRenderer(sdlRenderer, blockModel);
     BlockInputParser* blockInputParser = new BlockInputParser(blockModel);
-
     Game *blockGame = new Game(blockRenderer, blockInputParser, blockModel);
+
+    // Push the games on the game stack, following their drawing order.
+    vector<Game> games;
+    games.reserve(2);
     games.push_back(*blockGame);
+    games.push_back(*tetrisGame);
 
     // Main game loop
     auto startTime = chrono::high_resolution_clock::now();
@@ -38,6 +38,11 @@ int main(int argc, char **argv)
       chrono::duration<float> elapsedSeconds = endTime - startTime;
       float deltaTime = elapsedSeconds.count();
 
+      // Destroy all dead games.
+      games.erase(remove_if(games.begin(), games.end(),
+                  [](Game game){return !(game.alive());}),
+                  games.end());
+
       // Update all living games.
       SDL_RenderClear(sdlRenderer);
       ButtonState buttonState = Input::getState();
@@ -46,11 +51,6 @@ int main(int argc, char **argv)
         game.update(*sdlRenderer, buttonState, deltaTime);
       }
       SDL_RenderPresent(sdlRenderer);
-
-      // Destroy all dead games.
-      games.erase(remove_if(games.begin(), games.end(),
-                  [](Game game){return !(game.alive());}),
-                  games.end());
 
       // Lock the game at MAX_DELTA_TIME to save power.
       float leftTime = MAX_DELTA_TIME - deltaTime;
