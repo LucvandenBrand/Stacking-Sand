@@ -1,6 +1,6 @@
 #include "texture.ih"
 
-void Texture::render(SDL_Renderer* renderer, SDL_Rect destRect)
+void Texture::render(SDL_Renderer &renderer, SDL_Rect destRect)
 {
   SDL_Rect sourceRect;
   sourceRect.x = 0;
@@ -8,5 +8,5 @@ void Texture::render(SDL_Renderer* renderer, SDL_Rect destRect)
   sourceRect.w = this->d_width;
   sourceRect.h = this->d_height;
 
-  SDL_RenderCopy(renderer, this->d_texture, &sourceRect, &destRect);
+  SDL_RenderCopy(&renderer, this->d_texture, &sourceRect, &destRect);
 }

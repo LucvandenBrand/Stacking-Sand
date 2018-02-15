@@ -1,6 +1,6 @@
 #include "gridrenderer.ih"
 
-GridRenderer::GridRenderer(SDL_Renderer *sdlRenderer)
+GridRenderer::GridRenderer(SDL_Renderer &sdlRenderer)
 {
   this->initTextures(sdlRenderer);
 }

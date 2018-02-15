@@ -7,18 +7,18 @@
 class GridRenderer: public GameRenderer
 {
 public:
-  GridRenderer(SDL_Renderer *sdlRenderer);
+  GridRenderer(SDL_Renderer &sdlRenderer);
   ~GridRenderer();
 
-  virtual void render(SDL_Renderer& sdlRenderer) = 0;
+  virtual void render(SDL_Renderer &sdlRenderer) = 0;
 
 protected:
-  void renderGrid(SDL_Renderer& sdlRenderer, Grid grid, Point2D size,
+  void renderGrid(SDL_Renderer &sdlRenderer, Grid grid, Point2D size,
                   Point2D offset);
 
 private:
   /* Initializes all grid textures used to render. */
-  bool initTextures(SDL_Renderer *sdlRenderer);
+  bool initTextures(SDL_Renderer &sdlRenderer);
 
   vector<Texture> d_cellTextures;
 };

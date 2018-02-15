@@ -6,7 +6,7 @@
 class BlockRenderer : public GridRenderer
 {
 public:
-  BlockRenderer(SDL_Renderer *sdlRenderer, BlockModel *blockModel);
+  BlockRenderer(SDL_Renderer &sdlRenderer, BlockModel *blockModel);
   ~BlockRenderer();
 
   void render(SDL_Renderer& sdlRenderer);

@@ -6,7 +6,7 @@
 class GameRenderer
 {
 public:
-  virtual void render(SDL_Renderer& sdlRenderer) = 0;
+  virtual void render(SDL_Renderer &sdlRenderer) = 0;
 };
 
 #endif /* GAMERENDERER_H */

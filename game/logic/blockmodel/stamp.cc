@@ -8,9 +8,9 @@ void BlockModel::stamp()
     for (unsigned short posX = 0; posX < currentBlock.width(); ++posX)
     {
       Point2D cellPosition = Point2D(posX, posY);
-      unsigned short cell = *(currentBlock.cell(cellPosition));
+      unsigned short cell = currentBlock.cell(cellPosition);
       Point2D stampPosition = this->d_position + cellPosition;
-      *(this->d_tetrisGrid->cell(stampPosition)) = cell;
+      this->d_tetrisGrid->cell(stampPosition, cell);
     }
   }
 }

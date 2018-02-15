@@ -6,7 +6,7 @@
 class BlockModel : public Model
 {
 public:
-  BlockModel(TetrisModel* tetrisModel);
+  BlockModel(TetrisModel *tetrisModel);
 
   // Set the moving direction.
   void move(Point2D shift);
@@ -14,18 +14,18 @@ public:
   // Return the current position.
   Point2D position();
 
-  // return the current or next block in use.
+  // Return the current or next block in use.
   Grid currentBlock();
   Grid nextBlock();
 
-  Grid* grid();
+  Grid *grid();
 
   // Update the state.
   void step(float deltaTime);
 
 private:
-  TetrisModel* d_tetrisModel;
-  Grid* d_tetrisGrid;
+  TetrisModel *d_tetrisModel;
+  Grid *d_tetrisGrid;
   vector<Grid> d_blocks;
   unsigned short d_currentBlockIndex, d_nextBlockIndex;
   Point2D d_position, d_move;

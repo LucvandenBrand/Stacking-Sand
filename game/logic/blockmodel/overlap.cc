@@ -18,17 +18,13 @@ bool BlockModel::overlap(Point2D newPosition)
 
   // Check if the block is not overlapping anything.
   for (unsigned short posY = 0; posY < block.height(); ++posY)
-  {
     for (unsigned short posX = 0; posX < block.width(); ++posX)
     {
       Point2D cellPosition     = Point2D(posX, posY);
-      unsigned short blockCell = *(block.cell(cellPosition));
       Point2D stampPosition    = newPosition + cellPosition;
-      unsigned short gridCell  = *(grid.cell(stampPosition));
-      if (blockCell && gridCell)
+      if (block.cell(cellPosition) && grid.cell(stampPosition))
         return true;
     }
-  }
 
   return false;
 }

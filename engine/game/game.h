@@ -7,16 +7,18 @@
 class Game
 {
 public:
-  Game(GameRenderer* renderer, InputParser* inputParser, Model* model);
-  void update(SDL_Renderer& sdlRenderer, ButtonState buttonState, float deltaTime);
+  Game(GameRenderer *renderer, InputParser *inputParser, Model *model);
+
+  /* Update the state of the game. */
+  void update(SDL_Renderer &sdlRenderer, ButtonState buttonState, float deltaTime);
 
   /* Return if the model is alive, if not, the game should be destroyed. */
   bool alive();
 
 private:
-  GameRenderer* d_renderer;
-  InputParser* d_inputParser;
-  Model* d_model;
+  GameRenderer *d_renderer;
+  InputParser *d_inputParser;
+  Model *d_model;
 };
 
 #endif /* GAME_H */

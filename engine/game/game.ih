@@ -4,3 +4,5 @@
 #include "../input/buttonstate/buttonstate.ih"
 #include "../input/inputparser/inputparser.ih"
 #include <SDL2/SDL.h>
+
+using namespace std;

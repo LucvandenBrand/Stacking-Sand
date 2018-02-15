@@ -1,6 +1,6 @@
 #include "gridrenderer.ih"
 
-bool GridRenderer::initTextures(SDL_Renderer *sdlRenderer)
+bool GridRenderer::initTextures(SDL_Renderer &sdlRenderer)
 {
   // Try to load the cell textures.
   try

@@ -1,6 +1,6 @@
 #include "tetrisrenderer.ih"
 
-void TetrisRenderer::render(SDL_Renderer& sdlRenderer)
+void TetrisRenderer::render(SDL_Renderer &sdlRenderer)
 {
   Grid grid = *(this->d_tetrisModel->grid());
 

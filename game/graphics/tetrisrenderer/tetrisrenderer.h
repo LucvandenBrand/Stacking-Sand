@@ -6,10 +6,10 @@
 class TetrisRenderer : public GridRenderer
 {
 public:
-  TetrisRenderer(SDL_Renderer *sdlRenderer, TetrisModel *tetrisModel);
+  TetrisRenderer(SDL_Renderer &sdlRenderer, TetrisModel *tetrisModel);
   ~TetrisRenderer();
 
-  void render(SDL_Renderer& sdlRenderer);
+  void render(SDL_Renderer &sdlRenderer);
 
 private:
   TetrisModel *d_tetrisModel;

@@ -21,7 +21,7 @@ public:
   // Decrease the time to wait by speedupTime.
   void speedup(float speedupTime);
 
-  Grid* grid();
+  Grid *grid();
 
 private:
   /* Gameplay constants. */
@@ -46,7 +46,7 @@ private:
   const short PRESSURE_STONE = 3;
 
   /* The grid the game is played on. */
-  Grid* d_grid;
+  Grid *d_grid;
 
   unsigned int d_score;
 

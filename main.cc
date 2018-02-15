@@ -11,14 +11,14 @@ int main(int argc, char **argv)
     SDL_Renderer *sdlRenderer = window.getSDLRenderer();
 
     // Initialise our games.
-    TetrisModel* tetrisModel = new TetrisModel();
-    TetrisRenderer* tetrisRenderer = new TetrisRenderer(sdlRenderer, tetrisModel);
-    TetrisInputParser* tetrisInputParser = new TetrisInputParser(tetrisModel);
+    TetrisModel *tetrisModel = new TetrisModel();
+    TetrisRenderer *tetrisRenderer = new TetrisRenderer(*sdlRenderer, tetrisModel);
+    TetrisInputParser *tetrisInputParser = new TetrisInputParser(tetrisModel);
     Game *tetrisGame = new Game(tetrisRenderer, tetrisInputParser, tetrisModel);
 
-    BlockModel* blockModel = new BlockModel(tetrisModel);
-    BlockRenderer* blockRenderer = new BlockRenderer(sdlRenderer, blockModel);
-    BlockInputParser* blockInputParser = new BlockInputParser(blockModel);
+    BlockModel *blockModel = new BlockModel(tetrisModel);
+    BlockRenderer *blockRenderer = new BlockRenderer(*sdlRenderer, blockModel);
+    BlockInputParser *blockInputParser = new BlockInputParser(blockModel);
     Game *blockGame = new Game(blockRenderer, blockInputParser, blockModel);
 
     // Push the games on the game stack, following their drawing order.

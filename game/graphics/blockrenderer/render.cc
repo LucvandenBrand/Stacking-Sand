@@ -1,6 +1,6 @@
 #include "blockrenderer.ih"
 
-void BlockRenderer::render(SDL_Renderer& sdlRenderer)
+void BlockRenderer::render(SDL_Renderer &sdlRenderer)
 {
   Grid grid = *(this->d_blockModel->grid());
 

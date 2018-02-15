@@ -1,6 +1,6 @@
 #include "texture.ih"
 
-void Texture::render(SDL_Renderer* renderer, int x, int y)
+void Texture::render(SDL_Renderer &renderer, int x, int y)
 {
   SDL_Rect destRect;
   destRect.x = x;
