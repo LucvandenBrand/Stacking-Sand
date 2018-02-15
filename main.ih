@@ -6,6 +6,7 @@
 #include "engine/window/window.ih"
 #include "engine/game/game.ih"
 #include "engine/input/input/input.ih"
+#include "engine/gameloop/gameloop.ih"
 
 #include "game/graphics/gridrenderer/gridrenderer.ih"
 
