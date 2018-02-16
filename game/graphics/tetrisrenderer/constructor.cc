@@ -1,5 +1,5 @@
 #include "tetrisrenderer.ih"
 
-TetrisRenderer::TetrisRenderer(SDL_Renderer &sdlRenderer, TetrisModel *tetrisModel)
-  : GridRenderer(sdlRenderer), d_tetrisModel(tetrisModel)
+TetrisRenderer::TetrisRenderer(TextureFactory &textureFactory, TetrisModel *tetrisModel)
+  : GridRenderer(textureFactory), d_tetrisModel(tetrisModel)
 { }

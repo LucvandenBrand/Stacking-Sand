@@ -7,7 +7,7 @@
 class GridRenderer: public GameRenderer
 {
 public:
-  GridRenderer(SDL_Renderer &sdlRenderer);
+  GridRenderer(TextureFactory &textureFactory);
   ~GridRenderer();
 
   virtual void render(SDL_Renderer &sdlRenderer) = 0;
@@ -18,7 +18,7 @@ protected:
 
 private:
   /* Initializes all grid textures used to render. */
-  bool initTextures(SDL_Renderer &sdlRenderer);
+  bool initTextures(TextureFactory &textureFactory);
 
   vector<Texture> d_cellTextures;
 };

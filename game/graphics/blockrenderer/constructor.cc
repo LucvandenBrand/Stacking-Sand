@@ -1,5 +1,5 @@
 #include "blockrenderer.ih"
 
-BlockRenderer::BlockRenderer(SDL_Renderer &sdlRenderer, BlockModel *blockModel)
-  : GridRenderer(sdlRenderer), d_blockModel(blockModel)
+BlockRenderer::BlockRenderer(TextureFactory &textureFactory, BlockModel *blockModel)
+  : GridRenderer(textureFactory), d_blockModel(blockModel)
 { }

@@ -2,6 +2,7 @@ engine/game
 engine/gameloop
 engine/graphics/gamerenderer
 engine/graphics/texture
+engine/graphics/texturefactory
 engine/input/buttonstate
 engine/input/input
 engine/input/inputparser

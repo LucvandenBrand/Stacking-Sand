@@ -1,6 +1,7 @@
 #include "gridrenderer.h"
 #include "../../../engine/graphics/gamerenderer/gamerenderer.ih"
 #include "../../../engine/graphics/texture/texture.ih"
+#include "../../../engine/graphics/texturefactory/texturefactory.ih"
 #include "../../logic/grid/grid.ih"
 #include <iostream>
 #include <SDL2/SDL.h>

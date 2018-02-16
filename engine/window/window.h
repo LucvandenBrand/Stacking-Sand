@@ -12,13 +12,13 @@ public:
   void operator=(Window const&) = delete;
 
   // Return the static instance.
-  static Window& getWindow();
+  static Window &getWindow();
 
   // Destructor, deletes SDL objects and closes SDL subsystems.
   ~Window();
 
   // Return the sdl renderer to draw with.
-  SDL_Renderer* getSDLRenderer();
+  SDL_Renderer &sdlRenderer();
 
 private:
   Window();
@@ -26,13 +26,13 @@ private:
   // Start SDL and create an SDL window, return success state.
   bool init();
 
-  const char* c_TITLE = "TinyTetris";
+  const char *c_TITLE = "TinyTetris";
   const int c_SCREEN_WIDTH = 1920;
   const int c_SCREEN_HEIGHT = 1080;
 
   // Draw objects.
-  SDL_Window* d_window = NULL;
-  SDL_Renderer* d_renderer = NULL;
+  SDL_Window *d_window = NULL;
+  SDL_Renderer *d_renderer = NULL;
 };
 
 #endif /* WINDOW_H */

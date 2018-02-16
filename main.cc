@@ -6,16 +6,17 @@ int main(int argc, char **argv)
   {
     // Initialize our window.
     Window &window = Window::getWindow();
-    SDL_Renderer &sdlRenderer = *(window.getSDLRenderer());
+    SDL_Renderer &sdlRenderer = window.sdlRenderer();
+    TextureFactory textureFactory(&sdlRenderer);
 
     // Initialise our games.
     TetrisModel *tetrisModel = new TetrisModel();
-    TetrisRenderer *tetrisRenderer = new TetrisRenderer(sdlRenderer, tetrisModel);
+    TetrisRenderer *tetrisRenderer = new TetrisRenderer(textureFactory, tetrisModel);
     TetrisInputParser *tetrisInputParser = new TetrisInputParser(tetrisModel);
     Game *tetrisGame = new Game(tetrisRenderer, tetrisInputParser, tetrisModel);
 
     BlockModel *blockModel = new BlockModel(tetrisModel);
-    BlockRenderer *blockRenderer = new BlockRenderer(sdlRenderer, blockModel);
+    BlockRenderer *blockRenderer = new BlockRenderer(textureFactory, blockModel);
     BlockInputParser *blockInputParser = new BlockInputParser(blockModel);
     Game *blockGame = new Game(blockRenderer, blockInputParser, blockModel);
 
