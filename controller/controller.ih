@@ -1,6 +1,0 @@
-#include "controller.h"
-#include "../point2d/point2d.ih"
-#include "../tetrisblock/tetrisblock.ih"
-#include "../tetris/tetris.ih"
-#include <iostream>
-#include <SDL2/SDL.h>
