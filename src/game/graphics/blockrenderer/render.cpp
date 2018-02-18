@@ -13,8 +13,8 @@ void BlockRenderer::render(SDL_Renderer &sdlRenderer)
 
   Grid blockGrid = this->d_blockModel->currentBlock();
   offset += this->d_blockModel->position() * cellSize;
-  Point2D size = Point2D(blockGrid.width() * cellSize,
-                         blockGrid.height() * cellSize);
-
-  this->renderGrid(sdlRenderer, blockGrid, size, offset);
+  SDL_Rect rectangle = {offset.x, offset.y,
+                        blockGrid.width() * cellSize,
+                        blockGrid.height() * cellSize};
+  this->renderGrid(sdlRenderer, blockGrid, rectangle);
 }

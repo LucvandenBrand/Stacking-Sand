@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.9)
 project(TetrisWithPressure)
 
 # Source location.
-file(GLOB_RECURSE SOURCES src/*.cc src/*.h)
+file(GLOB_RECURSE SOURCES src/*.cpp src/*.h src/*.ih)
 file(GLOB_RECURSE DATA data/*)
 
 # Compilation settings.

@@ -1,6 +1,6 @@
 #include "texturefactory.ih"
 
-Texture &TextureFactory::renderTexture(int width, int height, SDL_TextureAccess access)
+Texture *TextureFactory::renderTexture(int width, int height, SDL_TextureAccess access)
 {
   SDL_Texture *sdlTexture = NULL;
   sdlTexture = SDL_CreateTexture(this->d_renderer, SDL_PIXELFORMAT_RGBA8888,
@@ -9,5 +9,5 @@ Texture &TextureFactory::renderTexture(int width, int height, SDL_TextureAccess 
   if (sdlTexture == NULL)  // Creating the texture failed.
     throw runtime_error(SDL_GetError());
 
-  return *(new Texture(sdlTexture, width, height));
+  return new Texture(sdlTexture, width, height);
 }

@@ -23,8 +23,8 @@ int main(int argc, char **argv)
     // Push the games on the game stack, following their drawing order.
     vector<Game> games;
     games.reserve(2);
-    games.push_back(*blockGame);
     games.push_back(*tetrisGame);
+    games.push_back(*blockGame);
 
     // Main game loop
     GameLoop::loop(games, sdlRenderer);

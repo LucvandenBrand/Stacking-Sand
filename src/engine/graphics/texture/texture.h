@@ -14,7 +14,7 @@ public:
   void render(SDL_Renderer &renderer, int x, int y);
 
   // Set as render target.
-  void asRenderTarget(SDL_Renderer &renderer);
+  void asRenderTarget(SDL_Renderer *renderer);
 
   // Return texture size.
   int width();

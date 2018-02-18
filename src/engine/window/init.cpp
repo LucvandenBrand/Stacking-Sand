@@ -32,6 +32,8 @@ bool Window::init()
   if (TTF_Init() == -1)
     return false;
 
+  // Set general settings.
+  SDL_SetRenderDrawBlendMode(this->d_renderer, SDL_BLENDMODE_BLEND);
   SDL_SetWindowFullscreen(this->d_window, SDL_WINDOW_FULLSCREEN);
 
   // Everything went fine, return success.
