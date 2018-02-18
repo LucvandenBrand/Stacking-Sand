@@ -8,7 +8,7 @@ file(GLOB_RECURSE DATA data/*)
 # Compilation settings.
 set(CMAKE_CXX_STANDARD 17)
 add_executable(${PROJECT_NAME} ${SOURCES} ${DATA})
-file(COPY ${data} DESTINATION data)
+file(COPY data DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
 
 # Link SDL
 INCLUDE(FindPkgConfig)
