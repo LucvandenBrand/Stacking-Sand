@@ -30,6 +30,9 @@ private:
   unsigned short d_currentBlockIndex, d_nextBlockIndex;
   Point2D d_position, d_move;
 
+  // Should the block be reset.
+  bool d_shouldReset = false;
+
   // Copy source onto destination at d_position.
   void stamp();
 

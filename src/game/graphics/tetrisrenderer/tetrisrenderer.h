@@ -17,9 +17,6 @@ private:
   /* Draws the points for each cell. */
   void renderLegend(SDL_Renderer &sdlRenderer, int tileSize);
 
-  /* Draws a smooth vertical line of color. */
-  void renderBorder(SDL_Renderer &sdlRenderer, SDL_Color color, int start, int end, int height);
-
   TetrisModel *d_tetrisModel;
 
   /* Used to draw the background. */

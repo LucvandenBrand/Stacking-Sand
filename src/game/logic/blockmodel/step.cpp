@@ -5,6 +5,12 @@ void BlockModel::step(float deltaTime)
   if (this->d_tetrisModel->timeToWait() > 0) // We still have time left.
     return;
 
+  if (this->d_shouldReset)
+  {
+    this->reset();
+    this->d_shouldReset = false;
+  }
+
   // Apply the move, and reset the move direction.
   Point2D newPosition = this->d_position;
   newPosition += this->d_move;
@@ -19,7 +25,7 @@ void BlockModel::step(float deltaTime)
   {
     // Stamp this block on the grid, and reset.
     this->stamp();
-    this->reset();
+    this->d_shouldReset = true;
     return;
   }
   else   // Apply default gravity.

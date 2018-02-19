@@ -28,7 +28,7 @@ private:
   const int TETRIS_WIDTH = 10;
   const int TETRIS_HEIGHT = 20;
 
-  const float DELAY_LEVEL0 = 0.8;
+  const float DELAY_LEVEL0 = 0.9;
   const unsigned int SCORE_LEVEL1 = 10;
   const float        DELAY_LEVEL1 = 0.7;
   const unsigned int SCORE_LEVEL2 = 50;
@@ -43,7 +43,9 @@ private:
   const float        DELAY_LEVEL6 = 0.2;
 
   const short STONE = 2;
-  const short PRESSURE_STONE = 3;
+  const short PRESSURE_STONE = 2;
+  const short DIAMOND = 3;
+  const short PRESSURE_DIAMOND = 5;
 
   /* The grid the game is played on. */
   Grid *d_grid;
