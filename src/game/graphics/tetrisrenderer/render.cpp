@@ -20,6 +20,9 @@ void TetrisRenderer::render(SDL_Renderer &sdlRenderer)
   // Draw the tetris grid.
   this->renderGrid(sdlRenderer, grid, rectangle);
 
+  // Draw the current score.
+  this->renderScore(sdlRenderer);
+
   // Draw legend.
   this->renderLegend(sdlRenderer, cellSize);
 }

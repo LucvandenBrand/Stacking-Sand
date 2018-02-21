@@ -14,6 +14,9 @@ private:
   /* Fills the screen with the backgroundTile. Buffers the result for efficiency.*/
   void renderBackground(SDL_Renderer &sdlRenderer, int tileSize);
 
+  /* Draws the current score. */
+  void renderScore(SDL_Renderer &sdlRenderer);
+
   /* Draws the points for each cell. */
   void renderLegend(SDL_Renderer &sdlRenderer, int tileSize);
 
