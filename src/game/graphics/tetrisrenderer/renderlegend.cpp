@@ -7,7 +7,7 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer, int cellSize)
 
   // Draw the shadow box.
   auto legendX = (int) (renderWidth * 0.02);
-  auto legendY = (int) (renderHeight * 0.5);
+  auto legendY = (int) (renderHeight * 0.3);
   auto legendW = (int) (renderWidth * 0.32);
   auto legendH = (int) (renderHeight * 0.48);
   SDL_Rect rectangle = {legendX, legendY, legendW, legendH};

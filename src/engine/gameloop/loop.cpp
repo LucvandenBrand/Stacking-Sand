@@ -6,7 +6,7 @@ void GameLoop::loop(vector<Game> &games, SDL_Renderer &sdlRenderer)
   auto endTime = startTime;
   while(games.size())
   {
-    // Calulate elapsed time.
+    // Calculate elapsed time.
     startTime = endTime;
     endTime = chrono::high_resolution_clock::now();
     chrono::duration<float> elapsedSeconds = endTime - startTime;

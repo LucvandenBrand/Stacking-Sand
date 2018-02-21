@@ -17,4 +17,5 @@ void BlockRenderer::render(SDL_Renderer &sdlRenderer)
                         blockGrid.width() * cellSize,
                         blockGrid.height() * cellSize};
   this->renderGrid(sdlRenderer, blockGrid, rectangle);
+  this->renderNextBlock(sdlRenderer, cellSize);
 }
