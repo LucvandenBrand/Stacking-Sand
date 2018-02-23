@@ -1,0 +1,3 @@
+#include "pausemenuinputparser.h"
+#include "../../../engine/input/inputparser/inputparser.ih"
+#include "../../logic/pausemenumodel/pausemenumodel.ih"

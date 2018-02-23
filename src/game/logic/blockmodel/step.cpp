@@ -2,6 +2,9 @@
 
 void BlockModel::step(float deltaTime)
 {
+  if (this->paused()) // If the object is paused, do nothing.
+    return;
+
   if (this->d_tetrisModel->timeToWait() > 0) // We still have time left.
     return;
 

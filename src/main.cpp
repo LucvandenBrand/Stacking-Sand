@@ -10,28 +10,51 @@ int main(int argc, char **argv)
     TextureFactory textureFactory(&sdlRenderer);
 
     // Initialise our games.
-    TetrisModel *tetrisModel = new TetrisModel();
-    TetrisRenderer *tetrisRenderer = new TetrisRenderer(textureFactory, tetrisModel);
-    TetrisInputParser *tetrisInputParser = new TetrisInputParser(tetrisModel);
-    Game *tetrisGame = new Game(tetrisRenderer, tetrisInputParser, tetrisModel);
+    auto *tetrisModel          = new TetrisModel();
+    auto *tetrisRenderer       = new TetrisRenderer(textureFactory, tetrisModel);
+    auto *tetrisInputParser    = new TetrisInputParser(tetrisModel);
+    auto *tetrisGame           = new Game(tetrisRenderer, tetrisInputParser, tetrisModel);
 
-    BlockModel *blockModel = new BlockModel(tetrisModel);
-    BlockRenderer *blockRenderer = new BlockRenderer(textureFactory, blockModel);
-    BlockInputParser *blockInputParser = new BlockInputParser(blockModel);
-    Game *blockGame = new Game(blockRenderer, blockInputParser, blockModel);
+    auto *blockModel           = new BlockModel(tetrisModel);
+    auto *blockRenderer        = new BlockRenderer(textureFactory, blockModel);
+    auto *blockInputParser     = new BlockInputParser(blockModel);
+    auto *blockGame            = new Game(blockRenderer, blockInputParser, blockModel);
+
+    auto *pauseMenuModel       = new PauseMenuModel({tetrisModel, blockModel});
+    auto *pauseMenuRenderer    = new PauseMenuRenderer(pauseMenuModel);
+    auto *pauseMenuInputParser = new PauseMenuInputParser(pauseMenuModel);
+    auto *pauseMenuGame        = new Game(pauseMenuRenderer, pauseMenuInputParser, pauseMenuModel);
+
 
     // Push the games on the game stack, following their drawing order.
     vector<Game> games;
-    games.reserve(2);
+    games.reserve(3);
     games.push_back(*tetrisGame);
     games.push_back(*blockGame);
+    games.push_back(*pauseMenuGame);
 
     // Main game loop
     GameLoop::loop(games, sdlRenderer);
+
+    // Free our games.
+    delete tetrisModel;
+    delete tetrisRenderer;
+    delete tetrisInputParser;
+    delete tetrisGame;
+
+    delete blockModel;
+    delete blockRenderer;
+    delete blockInputParser;
+    delete blockGame;
+
+    delete pauseMenuModel;
+    delete pauseMenuRenderer;
+    delete pauseMenuInputParser;
+    delete pauseMenuGame;
   }
-  catch(runtime_error runerr)
+  catch(runtime_error &runtimeError)
   {
-    cout << "ERROR - Could not initialize an SDL window: " << runerr.what() << endl;
+    cout << "ERROR - Could not initialize an SDL window: " << runtimeError.what() << endl;
     return EXIT_FAILURE;
   }
 

@@ -1,5 +1,5 @@
-#ifndef BLOCKINPUTPARSER_H
-#define BLOCKINPUTPARSER_H
+#ifndef BLOCK_INPUT_PARSER_H
+#define BLOCK_INPUT_PARSER_H
 
 #include "blockinputparser.ih"
 
@@ -13,4 +13,4 @@ private:
   BlockModel *d_blockModel;
 };
 
-#endif /* BLOCKINPUTPARSER_H */
+#endif /* BLOCK_INPUT_PARSER_H */

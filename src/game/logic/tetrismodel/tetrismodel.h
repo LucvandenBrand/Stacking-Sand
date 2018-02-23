@@ -1,9 +1,9 @@
-#ifndef TETRISMACHINE_H
-#define TETRISMACHINE_H
+#ifndef TETRIS_MACHINE_H
+#define TETRIS_MACHINE_H
 
 #include "tetrismodel.ih"
 
-class TetrisModel : public Model
+class TetrisModel : public Model, public Pauseble
 {
 public:
   TetrisModel();
@@ -62,4 +62,4 @@ private:
   float waitTime();
 };
 
-#endif // TETRISMACHINE_H
+#endif // TETRIS_MACHINE_H

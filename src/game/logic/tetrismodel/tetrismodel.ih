@@ -2,6 +2,7 @@
 #include "../grid/grid.ih"
 #include "../../../engine/logic/model/model.ih"
 #include "../../../engine/logic/point2d/point2d.ih"
+#include "../pauseble/pauseble.h"
 #include <vector>
 #include <iostream>
 

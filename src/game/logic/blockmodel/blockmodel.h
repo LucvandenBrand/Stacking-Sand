@@ -1,9 +1,9 @@
-#ifndef BLOCKMODEL_H
-#define BLOCKMODEL_H
+#ifndef BLOCK_MODEL_H
+#define BLOCK_MODEL_H
 
 #include "blockmodel.ih"
 
-class BlockModel : public Model
+class BlockModel : public Model, public Pauseble
 {
 public:
   BlockModel(TetrisModel *tetrisModel);
@@ -43,4 +43,4 @@ private:
   void reset();
 };
 
-#endif // BLOCKMODEL_H
+#endif // BLOCK_MODEL_H

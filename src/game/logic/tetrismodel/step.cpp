@@ -2,6 +2,9 @@
 
 void TetrisModel::step(float deltaTime)
 {
+  if (this->paused()) // If the object is paused, do nothing.
+    return;
+
   if (this->d_timeToWait > 0) // We still have time left, so we do nothing.
   {
     this->d_timeToWait -= deltaTime;
