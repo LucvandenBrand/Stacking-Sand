@@ -1,12 +1,12 @@
-#ifndef INPUTPARSER_H
-#define INPUTPARSER_H
+#ifndef INPUT_PARSER_H
+#define INPUT_PARSER_H
 
 #include "inputparser.ih"
 
 class InputParser
 {
 public:
-  virtual void parse(ButtonState buttonState) = 0;
+  virtual void parse(InputState inputState) = 0;
 };
 
-#endif /* INPUTPARSER_H */
+#endif /* INPUT_PARSER_H */

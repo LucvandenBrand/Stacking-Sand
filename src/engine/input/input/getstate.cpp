@@ -1,13 +1,15 @@
 #include "input.ih"
 
-ButtonState Input::getState()
+InputState Input::getState()
 {
   SDL_Event e;
+  InputState inputState = {0, 0};
   ButtonState buttonState = 0;
   while(SDL_PollEvent(&e) != 0)
   {
     // Process keys.
-    switch (e.key.keysym.sym) {
+    switch (e.key.keysym.sym)
+    {
       case SDLK_LEFT: // Left
         buttonState |= LEFT;
         break;
@@ -24,6 +26,16 @@ ButtonState Input::getState()
         buttonState |= ESCAPE;
         break;
     }
+
+    switch (e.type)
+    {
+      case (SDL_KEYUP):
+        inputState.upButtons |= buttonState;
+        break;
+      case (SDL_KEYDOWN):
+        inputState.downButtons |= buttonState;
+        break;
+    }
   }
-  return buttonState;
+  return inputState;
 }

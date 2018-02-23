@@ -4,7 +4,7 @@ void GameLoop::loop(vector<Game> &games, SDL_Renderer &sdlRenderer)
 {
   auto startTime = chrono::high_resolution_clock::now();
   auto endTime = startTime;
-  while(games.size())
+  while(!games.empty())
   {
     // Calculate elapsed time.
     startTime = endTime;
@@ -19,10 +19,10 @@ void GameLoop::loop(vector<Game> &games, SDL_Renderer &sdlRenderer)
 
     // Update all living games.
     SDL_RenderClear(&sdlRenderer);
-    ButtonState buttonState = Input::getState();
+    InputState inputState = Input::getState();
     for (Game &game : games)
     {
-      game.update(sdlRenderer, buttonState, deltaTime);
+      game.update(sdlRenderer, inputState, deltaTime);
     }
     SDL_RenderPresent(&sdlRenderer);
 

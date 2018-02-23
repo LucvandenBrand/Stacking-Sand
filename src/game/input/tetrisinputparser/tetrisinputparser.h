@@ -1,13 +1,13 @@
-#ifndef TETRISINPUTPARSER_H
-#define TETRISINPUTPARSER_H
+#ifndef TETRIS_INPUT_PARSER_H
+#define TETRIS_INPUT_PARSER_H
 
 #include "tetrisinputparser.ih"
 
 class TetrisInputParser : public InputParser
 {
 public:
-  TetrisInputParser(TetrisModel *tetrisModel);
-  void parse(ButtonState buttonState);
+  explicit TetrisInputParser(TetrisModel *tetrisModel);
+  void parse(InputState inputState) override ;
 
 private:
   /* Gameplay constants. */
@@ -16,4 +16,4 @@ private:
   TetrisModel *d_tetrisModel;
 };
 
-#endif /* TETRISINPUTPARSER_H */
+#endif /* TETRIS_INPUT_PARSER_H */

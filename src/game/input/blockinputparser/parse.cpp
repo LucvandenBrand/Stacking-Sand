@@ -1,11 +1,11 @@
 #include "blockinputparser.ih"
 
-void BlockInputParser::parse(ButtonState buttonState)
+void BlockInputParser::parse(InputState inputState)
 {
-  if (buttonState & LEFT)
+  if (inputState.downButtons & LEFT)
     this->d_blockModel->move(Point2D(-1, 0));
-  if (buttonState & RIGHT)
+  if (inputState.downButtons & RIGHT)
     this->d_blockModel->move(Point2D(1, 0));
-  if (buttonState & ESCAPE)
+  if (inputState.downButtons & ESCAPE)
     this->d_blockModel->kill();
 }

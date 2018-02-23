@@ -1,9 +1,9 @@
 #include "tetrisinputparser.ih"
 
-void TetrisInputParser::parse(ButtonState buttonState)
+void TetrisInputParser::parse(InputState inputState)
 {
-  if (buttonState & DOWN)
+  if (inputState.downButtons & DOWN)
     this->d_tetrisModel->speedup(SPEEDUP_TIME);
-  if (buttonState & ESCAPE)
+  if (inputState.downButtons & ESCAPE)
     this->d_tetrisModel->kill();
 }

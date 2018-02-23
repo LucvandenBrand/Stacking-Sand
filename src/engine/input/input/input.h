@@ -6,7 +6,7 @@
 class Input
 {
 public:
-  static ButtonState getState();
+  static InputState getState();
 };
 
 #endif /* INPUT_H */

@@ -1,9 +1,9 @@
 #include "pausemenuinputparser.ih"
 
-void PauseMenuInputParser::parse(ButtonState buttonState)
+void PauseMenuInputParser::parse(InputState inputState)
 {
-  if (buttonState & START)
+  if (inputState.upButtons & START)
     this->d_pauseMenuModel->toggle();
-  if (buttonState & ESCAPE)
+  if (inputState.downButtons & ESCAPE)
     this->d_pauseMenuModel->kill();
 }

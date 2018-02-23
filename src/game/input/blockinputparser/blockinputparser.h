@@ -7,7 +7,7 @@ class BlockInputParser : public InputParser
 {
 public:
   BlockInputParser(BlockModel *blockModel);
-  void parse(ButtonState buttonState);
+  void parse(InputState inputState) override;
 
 private:
   BlockModel *d_blockModel;
