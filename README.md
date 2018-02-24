@@ -2,11 +2,11 @@
 A simple C++ Tetris game.
 
 ## To Do
-- [ ] Fix screen blank.
-- [ ] Add score board.
+- [x] Fix screen blank.
+- [x] Add score board.
 - [ ] Add level board.
-- [ ] Add next-block board.
-- [ ] Add score legend.
+- [x] Add next-block board.
+- [x] Add score legend.
 - [ ] Add story mechanic.
 - [ ] Implement sound.
 - [ ] Implement menu.
@@ -19,7 +19,7 @@ A simple C++ Tetris game.
 ## Build and Run
 Create a ``build`` directory, and from that call ``cmake ..``. After this you can call ``make``.
 
-The compiled binary can be run from the root directory (such that it can access the data folder) using ``./build/TetrisWithPressure``.
+The compiled binary can be run using ``./TetrisWithPressure``.
 
 ## Author
 Luc van den Brand

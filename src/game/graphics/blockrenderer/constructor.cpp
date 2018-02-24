@@ -4,4 +4,13 @@ BlockRenderer::BlockRenderer(TextureFactory &textureFactory, BlockModel *blockMo
   : GridRenderer(textureFactory),
     d_blockModel(blockModel),
     d_shadowBrush(ShadowBrush(SHADOW_COLOR, SHADOW_SPREAD))
-{ }
+{
+  try
+  {
+    this->d_controlImage = &(textureFactory.texture("data/controls.png"));
+  }
+  catch (invalid_argument &invalidArgument)
+  {
+    cout << "Could not control texture: " << invalidArgument.what() << endl;
+  }
+}
