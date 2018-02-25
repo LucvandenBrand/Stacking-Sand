@@ -12,7 +12,7 @@ public:
 
 private:
   /* Renders a box showing the next block to fall. */
-  void renderNextBlock(SDL_Renderer& sdlRenderer, int cellSize);
+  void renderNextBlock(SDL_Renderer& sdlRenderer);
   const int SHADOW_SPREAD = 50;
   const SDL_Color SHADOW_COLOR = {0, 0, 0, 50};
   ShadowBrush d_shadowBrush;

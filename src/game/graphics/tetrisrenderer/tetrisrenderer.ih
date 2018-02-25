@@ -2,3 +2,4 @@
 #include "../../logic/tetrismodel/tetrismodel.ih"
 #include "../gridrenderer/gridrenderer.ih"
 #include "../shadowbrush/shadowbrush.h"
+#include "../../../engine/graphics/screennormalizer/screennormalizer.h"

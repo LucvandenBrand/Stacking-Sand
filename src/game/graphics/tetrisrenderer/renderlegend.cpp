@@ -2,15 +2,14 @@
 
 void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer, int cellSize)
 {
-  int renderWidth = 0, renderHeight = 0;
-  SDL_GetRendererOutputSize(&sdlRenderer, &renderWidth, &renderHeight);
+  ScreenNormalizer normalizer(sdlRenderer);
 
   // Draw the shadow box.
-  auto legendX = (int) (renderWidth * 0.02);
-  auto legendY = (int) (renderHeight * 0.245);
-  auto legendW = (int) (renderWidth * 0.32);
-  auto legendH = (int) (renderHeight * 0.74);
-  SDL_Rect rectangle = {legendX, legendY, legendW, legendH};
+  float legendX = 0.02;
+  float legendY = 0.245;
+  float legendW = 0.32;
+  float legendH = 0.74;
+  SDL_Rect rectangle = normalizer.deNormalize(legendX, legendY, legendW, legendH);
   this->d_shadowBrush.drawRectangle(sdlRenderer, rectangle);
 
   // Try to load font.
@@ -26,43 +25,44 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer, int cellSize)
   SDL_Color fontColor = {255, 255, 255, 255};
   TextureFactory textureFactory(&sdlRenderer);
   Texture *title = textureFactory.fontTexture("Worth", *font, fontColor);
-  Texture *valueSand = textureFactory.fontTexture("Sand is 1$", *font, fontColor);
-  Texture *valueStone = textureFactory.fontTexture("Stone is 2$", *font, fontColor);
-  Texture *valueDiamond = textureFactory.fontTexture("Diamond is 3$", *font, fontColor);
 
   // Draw Title
-  auto titleWidth = (int) (legendW * 0.5);
-  int titleHeight = titleWidth / title->width() * title->height();
-  int titleX      = legendX + legendW / 2 - titleWidth / 2;
+  float titleWidth  = legendW * 0.5f;
+  float titleHeight = titleWidth / normalizer.normalizeWidth(title->width())
+                      * normalizer.normalizeHeight(title->height());
+  float titleX      = legendX + legendW / 2 - titleWidth / 2;
+  float titleY      = legendY + 0.01f;
 
-  SDL_Rect titleRectangle = {titleX, legendY, titleWidth, titleHeight};
+  SDL_Rect titleRectangle = normalizer.deNormalize(titleX, titleY, titleWidth, titleHeight);
   title->render(sdlRenderer, titleRectangle);
   delete title;
 
   // Determine cell value positions.
-  auto cellX = (int) (legendX + legendW * 0.1);
-  auto cellY = (int) (legendY + legendH * 0.3);
-  auto valueWidth = (int) (1.0 * cellSize / valueSand->height() * valueSand->width());
-  auto valueMaxWidth = legendW - (cellX - legendX + cellSize);
-  int valueX = (cellX + cellSize) + valueMaxWidth / 2 - valueWidth / 2;
+  float paddingHeight = 0.06f;
+  float paddingWidth = 0.01f;
+  unsigned long numCells = d_cellTextures.size();
+  float cellHeight = (legendH - titleHeight) / numCells - (numCells/2+0.5f) * paddingHeight;
+  float cellWidth  = cellHeight * normalizer.ratio();
+  float valueWidth = legendW - cellWidth - paddingWidth * 4;
 
-  // Draw the cells and their values.
-  SDL_Rect cellRectangle = {cellX, cellY, cellSize, cellSize};
-  this->d_cellTextures[0].render(sdlRenderer, cellRectangle);
-  SDL_Rect valueRectangle = {valueX, cellY, valueWidth, cellSize};
-  valueSand->render(sdlRenderer, valueRectangle);
-  delete valueSand;
+  fontColor = {100, 200, 100, 255};
+  for (int i=0; i < numCells; i++)
+  {
+    // Draw the cell.
+    float cellX = legendX + legendW / 2 - (cellWidth + valueWidth) / 2;
+    float cellY = paddingHeight + legendY + titleHeight + i * (cellHeight + paddingHeight);
+    SDL_Rect cellRectangle = normalizer.deNormalize(cellX, cellY, cellWidth, cellHeight);
+    this->d_cellTextures[i].render(sdlRenderer, cellRectangle);
 
-  cellRectangle.y += renderHeight * 0.1;
-  valueRectangle.y = cellRectangle.y;
-  this->d_cellTextures[1].render(sdlRenderer, cellRectangle);
-  valueStone->render(sdlRenderer, valueRectangle);
-  delete valueStone;
-
-  cellRectangle.y += renderHeight * 0.1;
-  valueRectangle.y = cellRectangle.y;
-  this->d_cellTextures[2].render(sdlRenderer, cellRectangle);
-  valueDiamond->render(sdlRenderer, valueRectangle);
-  delete valueDiamond;
-
+    // Draw the value.
+    string value = "------ $ " + to_string(i+1);
+    Texture *valueText = textureFactory.fontTexture(value, *font, fontColor);
+    float valueHeight = valueWidth / normalizer.normalizeWidth(valueText->width())
+                                  * normalizer.normalizeHeight(valueText->height());
+    float valueY = cellY + cellHeight / 2 - valueHeight / 2;
+    float valueX = paddingWidth + cellX + cellWidth;
+    SDL_Rect valueRectangle = normalizer.deNormalize(valueX, valueY, valueWidth, valueHeight);
+    valueText->render(sdlRenderer, valueRectangle);
+    delete valueText;
+  }
 }

@@ -2,22 +2,26 @@
 
 void BlockRenderer::render(SDL_Renderer &sdlRenderer)
 {
-  Grid grid = *(this->d_blockModel->grid());
+  ScreenNormalizer normalizer(sdlRenderer);
+  Grid grid = *(d_blockModel->grid());
 
-  // Determine the tetris grid size and offset.
-  int renderWidth = 0, renderHeight = 0;
-  SDL_GetRendererOutputSize(&sdlRenderer, &renderWidth, &renderHeight);
-  int cellSize = renderHeight / grid.height();
-  int renderGridWidth = cellSize * grid.width();
-  Point2D offset = Point2D(renderWidth/2 - renderGridWidth/2, 0);
+  // Determine the tetris grid size.
+  float cellHeight  = 1.0f / grid.height();
+  float cellWidth   = cellHeight * normalizer.ratio();
+  float gridWidth   = cellWidth * grid.width();
 
-  Grid blockGrid = this->d_blockModel->currentBlock();
-  offset += this->d_blockModel->position() * cellSize;
-  SDL_Rect rectangle = {offset.x, offset.y,
-                        blockGrid.width() * cellSize,
-                        blockGrid.height() * cellSize};
+  // Determine the block position and size.
+  Grid blockGrid    = d_blockModel->currentBlock();
+  Point2D position  = d_blockModel->position();
+  float blockX      = 0.5f - gridWidth / 2 + position.x * cellWidth;
+  float blockY      = position.y * cellHeight;
+  float blockWidth  = blockGrid.width() * cellWidth;
+  float blockHeight = blockGrid.height() * cellHeight;
+
+  // Render the current block.
+  SDL_Rect rectangle = normalizer.deNormalize(blockX, blockY, blockWidth, blockHeight);
   this->renderGrid(sdlRenderer, blockGrid, rectangle);
 
   // Render the next block.
-  this->renderNextBlock(sdlRenderer, cellSize);
+  this->renderNextBlock(sdlRenderer);
 }
