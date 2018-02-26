@@ -20,6 +20,11 @@ int main(int argc, char **argv)
     auto *blockInputParser     = new BlockInputParser(blockModel);
     auto *blockGame            = new Game(blockRenderer, blockInputParser, blockModel);
 
+    auto *levelModel           = new LevelModel(tetrisModel);
+    auto *levelRenderer        = new LevelRenderer(textureFactory, levelModel);
+    auto *killInputParser      = new KillInputParser(levelModel);
+    auto *levelGame            = new Game(levelRenderer, killInputParser, levelModel);
+
     auto *pauseMenuModel       = new PauseMenuModel({tetrisModel, blockModel});
     auto *pauseMenuRenderer    = new PauseMenuRenderer(pauseMenuModel);
     auto *pauseMenuInputParser = new PauseMenuInputParser(pauseMenuModel);
@@ -31,6 +36,7 @@ int main(int argc, char **argv)
     games.reserve(3);
     games.push_back(*tetrisGame);
     games.push_back(*blockGame);
+    games.push_back(*levelGame);
     games.push_back(*pauseMenuGame);
 
     // Main game loop
@@ -46,6 +52,11 @@ int main(int argc, char **argv)
     delete blockRenderer;
     delete blockInputParser;
     delete blockGame;
+
+    delete levelModel;
+    delete levelRenderer;
+    delete killInputParser;
+    delete levelGame;
 
     delete pauseMenuModel;
     delete pauseMenuRenderer;

@@ -12,11 +12,14 @@ public:
   // Return the current score.
   unsigned int score();
 
+  // Return the current level.
+  unsigned int level();
+
   // Return the time left to wait.
   float timeToWait();
 
   // Step to the next state of the grid.
-  void step(float deltaTime);
+  void step(float deltaTime) override;
 
   // Decrease the time to wait by speedupTime.
   void speedup(float speedupTime);

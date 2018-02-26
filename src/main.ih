@@ -19,8 +19,12 @@
 #include "game/graphics/tetrisrenderer/tetrisrenderer.ih"
 #include "game/input/tetrisinputparser/tetrisinputparser.ih"
 
-#include "game/logic/pausemenumodel/pausemenumodel.h"
-#include "game/graphics/pausemenurenderer/pausemenurenderer.h"
-#include "game/input/pausemenuinputparser/pausemenuinputparser.h"
+#include "game/logic/pausemenumodel/pausemenumodel.ih"
+#include "game/graphics/pausemenurenderer/pausemenurenderer.ih"
+#include "game/input/pausemenuinputparser/pausemenuinputparser.ih"
+
+#include "game/logic/levelmodel/levelmodel.ih"
+#include "game/graphics/levelrenderer/levelrenderer.ih"
+#include "game/input/killinputparser/killinputparser.ih"
 
 using namespace std;
