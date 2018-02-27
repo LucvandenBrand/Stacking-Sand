@@ -5,7 +5,7 @@
 
 class TextureFactory {
 public:
-  TextureFactory(SDL_Renderer *sdlRenderer);
+  explicit TextureFactory(SDL_Renderer *sdlRenderer);
   ~TextureFactory();
 
   /* Loads textures if not loaded yet and returns a handle for them. */
@@ -17,6 +17,7 @@ public:
 
   /* Render a font and return it as a texture. */
   Texture *fontTexture(string text, TTF_Font &font, SDL_Color textColor);
+
 private:
   SDL_Renderer *d_renderer;
 

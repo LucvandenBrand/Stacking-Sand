@@ -19,6 +19,10 @@ protected:
 private:
   /* Initializes all grid textures used to render. */
   bool initTextures(TextureFactory &textureFactory);
+
+  /* Shadow of each block. */
+  const int SHADOW_SPREAD = 5;
+  const SDL_Color SHADOW_COLOR = {0, 0, 0, 25};
 };
 
 #endif /* GRID_RENDERER_H */

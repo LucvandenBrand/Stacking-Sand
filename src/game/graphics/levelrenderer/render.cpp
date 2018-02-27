@@ -13,9 +13,9 @@ void LevelRenderer::render(SDL_Renderer &sdlRenderer)
 
   ScreenNormalizer normalizer(sdlRenderer);
 
-  float width  = 0.35;
+  float width  = 0.3;
   float height = 0.7;
-  float posX   = 0.65;
+  float posX   = 0.67;
   float posY   = 0.25;
   SDL_Rect rectangle = normalizer.deNormalize(posX, posY, width, height);
   d_newspapers[index].render(sdlRenderer, rectangle);
