@@ -2,7 +2,7 @@
 
 void GameOverModel::reset()
 {
-  cout << "RESET" << endl;
+  d_gameOverTransition = 0;
   d_tetrisModel->reset();
   d_blockModel->reset();
 }

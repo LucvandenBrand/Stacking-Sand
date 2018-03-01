@@ -6,12 +6,13 @@
 class GameOverRenderer: public GameRenderer
 {
 public:
-  GameOverRenderer(GameOverModel *gameOverModel);
+  GameOverRenderer(TextureFactory &textureFactory, GameOverModel *gameOverModel);
 
   void render(SDL_Renderer &sdlRenderer) override;
 
 private:
   GameOverModel *d_gameOverModel;
+  Texture *d_gameOverTexture, *d_gameOverControls;
 };
 
 #endif /* GAME_OVER_RENDERER_H */

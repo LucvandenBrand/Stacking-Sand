@@ -17,9 +17,15 @@ public:
   // Reset the game.
   void reset();
 
+  // How far to slide the game-over message.
+  float gameOverTransition();
+
 private:
   TetrisModel *d_tetrisModel;
   BlockModel *d_blockModel;
+
+  float d_gameOverTransition;
+  const float SCALE_TRANSITION = 0.5;
 };
 
 #endif /* GAME_OVER_MODEL_H */

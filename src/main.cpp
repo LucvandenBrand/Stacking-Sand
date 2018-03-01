@@ -26,7 +26,7 @@ int main(int argc, char **argv)
     auto *levelGame            = new Game(levelRenderer, killInputParser, levelModel);
 
     auto *gameOverModel        = new GameOverModel(tetrisModel, blockModel);
-    auto *gameOverRenderer     = new GameOverRenderer(gameOverModel);
+    auto *gameOverRenderer     = new GameOverRenderer(textureFactory, gameOverModel);
     auto *gameOverInputParser  = new GameOverInputParser(gameOverModel);
     auto *gameOverGame         = new Game(gameOverRenderer, gameOverInputParser, gameOverModel);
 
