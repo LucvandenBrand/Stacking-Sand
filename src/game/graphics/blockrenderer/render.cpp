@@ -3,7 +3,7 @@
 void BlockRenderer::render(SDL_Renderer &sdlRenderer)
 {
   ScreenNormalizer normalizer(sdlRenderer);
-  Grid grid = *(d_blockModel->grid());
+  Grid grid = d_blockModel->grid();
 
   // Determine the tetris grid size.
   float cellHeight  = 1.0f / grid.height();

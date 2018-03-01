@@ -24,7 +24,14 @@ public:
   // Decrease the time to wait by speedupTime.
   void speedup(float speedupTime);
 
-  Grid *grid();
+  // Return a copy of the grid used.
+  Grid grid();
+
+  // Initialize the grid and set the score to 0.
+  void reset();
+
+  // Copy source onto destination at d_position.
+  void stamp(Grid fromGrid, Point2D position);
 
 private:
   /* Gameplay constants. */
@@ -51,8 +58,9 @@ private:
   const short PRESSURE_DIAMOND = 5;
 
   /* The grid the game is played on. */
-  Grid *d_grid;
+  Grid d_grid;
 
+  /* The amount of points won. */
   unsigned int d_score;
 
   // Scheduling var

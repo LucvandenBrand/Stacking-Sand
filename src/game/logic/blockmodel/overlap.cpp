@@ -4,15 +4,14 @@ bool BlockModel::overlap(Point2D newPosition)
 {
   // Get the current block and grid in use.
   Grid block = this->d_blocks[this->d_currentBlockIndex];
-  Grid grid  = *(this->d_tetrisGrid);
 
   // Determine block bottom and right side.
   unsigned short bottomSide = newPosition.y + block.height();
   unsigned short rightSide  = newPosition.x + block.width();
 
   // First check if the block is between boundaries.
-  bool outBoundaries =  (newPosition.y < 0) || (bottomSide > grid.height())
-                     || (newPosition.x < 0) || (rightSide > grid.width());
+  bool outBoundaries =  (newPosition.y < 0) || (bottomSide > grid().height())
+                     || (newPosition.x < 0) || (rightSide > grid().width());
   if(outBoundaries)
     return true;
 
@@ -22,7 +21,7 @@ bool BlockModel::overlap(Point2D newPosition)
     {
       Point2D cellPosition     = Point2D(posX, posY);
       Point2D stampPosition    = newPosition + cellPosition;
-      if (block.cell(cellPosition) && grid.cell(stampPosition))
+      if (block.cell(cellPosition) && grid().cell(stampPosition))
         return true;
     }
 

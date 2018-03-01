@@ -1,6 +1,6 @@
 #include "tetrismodel.ih"
 
-Grid* TetrisModel::grid()
+Grid TetrisModel::grid()
 {
-  return this->d_grid;
+  return d_grid;
 }

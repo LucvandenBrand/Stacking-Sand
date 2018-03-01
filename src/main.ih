@@ -27,4 +27,8 @@
 #include "game/graphics/levelrenderer/levelrenderer.ih"
 #include "game/input/killinputparser/killinputparser.ih"
 
+#include "game/logic/gameovermodel/gameovermodel.ih"
+#include "game/graphics/gameoverrenderer/gameoverrenderer.ih"
+#include "game/input/gameoverinputparser/gameoverinputparser.ih"
+
 using namespace std;

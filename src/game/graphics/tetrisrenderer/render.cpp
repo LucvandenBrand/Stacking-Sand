@@ -3,7 +3,7 @@
 void TetrisRenderer::render(SDL_Renderer &sdlRenderer)
 {
   // Determine the tetris grid size and offset.
-  Grid grid = *(this->d_tetrisModel->grid());
+  Grid grid = d_tetrisModel->grid();
   int renderWidth = 0, renderHeight = 0;
   SDL_GetRendererOutputSize(&sdlRenderer, &renderWidth, &renderHeight);
   int cellSize = renderHeight / grid.height();

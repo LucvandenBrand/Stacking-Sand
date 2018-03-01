@@ -6,7 +6,7 @@
 class BlockModel : public Model, public Pauseble
 {
 public:
-  BlockModel(TetrisModel *tetrisModel);
+  explicit BlockModel(TetrisModel *tetrisModel);
 
   // Set the moving direction.
   void move(Point2D shift);
@@ -18,29 +18,36 @@ public:
   Grid currentBlock();
   Grid nextBlock();
 
-  Grid *grid();
+  // Is the game in a failed state.
+  bool gameOver();
 
   // Update the state.
-  void step(float deltaTime);
+  void step(float deltaTime) override;
+
+  // Choose stamp and position.
+  void reset();
+
+  // The grid used.
+  Grid grid();
 
 private:
   TetrisModel *d_tetrisModel;
-  Grid *d_tetrisGrid;
+
+  /* Which blocks to use. */
   vector<Grid> d_blocks;
-  unsigned short d_currentBlockIndex, d_nextBlockIndex;
+  int d_currentBlockIndex, d_nextBlockIndex;
+
+  /* Movement vars. */
   Point2D d_position, d_move;
+
+  /* If the game is in a failed state. */
+  bool d_gameOver = false;
 
   // Should the block be reset.
   bool d_shouldReset = false;
 
-  // Copy source onto destination at d_position.
-  void stamp();
-
   // Check if this block overlaps with the tetrisGrid at position.
   bool overlap(Point2D newPosition);
-
-  // Choose stamp and position.
-  void reset();
 };
 
 #endif // BLOCK_MODEL_H

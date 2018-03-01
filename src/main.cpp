@@ -25,7 +25,12 @@ int main(int argc, char **argv)
     auto *killInputParser      = new KillInputParser(levelModel);
     auto *levelGame            = new Game(levelRenderer, killInputParser, levelModel);
 
-    auto *pauseMenuModel       = new PauseMenuModel({tetrisModel, blockModel});
+    auto *gameOverModel        = new GameOverModel(tetrisModel, blockModel);
+    auto *gameOverRenderer     = new GameOverRenderer(gameOverModel);
+    auto *gameOverInputParser  = new GameOverInputParser(gameOverModel);
+    auto *gameOverGame         = new Game(gameOverRenderer, gameOverInputParser, gameOverModel);
+
+    auto *pauseMenuModel       = new PauseMenuModel({tetrisModel, blockModel}, *gameOverModel);
     auto *pauseMenuRenderer    = new PauseMenuRenderer(pauseMenuModel);
     auto *pauseMenuInputParser = new PauseMenuInputParser(pauseMenuModel);
     auto *pauseMenuGame        = new Game(pauseMenuRenderer, pauseMenuInputParser, pauseMenuModel);
@@ -33,11 +38,12 @@ int main(int argc, char **argv)
 
     // Push the games on the game stack, following their drawing order.
     vector<Game> games;
-    games.reserve(3);
+    games.reserve(4);
     games.push_back(*tetrisGame);
     games.push_back(*blockGame);
     games.push_back(*levelGame);
     games.push_back(*pauseMenuGame);
+    games.push_back(*gameOverGame);
 
     // Main game loop
     GameLoop::loop(games, sdlRenderer);

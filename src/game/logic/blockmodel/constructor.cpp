@@ -2,9 +2,6 @@
 
 BlockModel::BlockModel(TetrisModel* tetrisModel) : d_tetrisModel(tetrisModel)
 {
-  // Retrieve the used grid.
-  this->d_tetrisGrid = tetrisModel->grid();
-
   // Define a line block.
   Grid lineBlock(1, 3);
   lineBlock.cell(Point2D(0,0), 1);
@@ -40,7 +37,7 @@ BlockModel::BlockModel(TetrisModel* tetrisModel) : d_tetrisModel(tetrisModel)
   srand(time(NULL));
 
   // Initialize the first block (by setting the next block, see reset),
-  this->d_nextBlockIndex = rand() % this->d_blocks.size();
+  d_nextBlockIndex = rand() % this->d_blocks.size();
 
   // Set initial state.
   reset();

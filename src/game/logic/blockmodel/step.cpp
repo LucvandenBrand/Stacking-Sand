@@ -2,7 +2,7 @@
 
 void BlockModel::step(float deltaTime)
 {
-  if (this->paused()) // If the object is paused, do nothing.
+  if (paused()) // If the object is paused, do nothing.
     return;
 
   if (this->d_tetrisModel->timeToWait() > 0) // We still have time left.
@@ -14,9 +14,11 @@ void BlockModel::step(float deltaTime)
     this->d_shouldReset = false;
   }
 
+  if(d_gameOver) // Game over, do nothing.
+    return;
+
   // Apply the move, and reset the move direction.
-  Point2D newPosition = this->d_position;
-  newPosition += this->d_move;
+  Point2D newPosition = this->d_position + this->d_move;
   this->d_move = Point2D(0, 0);
 
   // Prevent potential overlap.
@@ -27,7 +29,7 @@ void BlockModel::step(float deltaTime)
   if (overlap(this->d_position + Point2D(0, 1)))
   {
     // Stamp this block on the grid, and reset.
-    this->stamp();
+    d_tetrisModel->stamp(d_blocks[d_currentBlockIndex], d_position);
     this->d_shouldReset = true;
     return;
   }

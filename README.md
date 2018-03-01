@@ -4,10 +4,10 @@ A simple C++ Tetris game.
 ## To Do
 - [x] Fix screen blank.
 - [x] Add score board.
-- [ ] Add level board.
+- [x] Add level board.
 - [x] Add next-block board.
 - [x] Add score legend.
-- [ ] Add story mechanic.
+- [x] Add story mechanic.
 - [ ] Implement sound.
 - [ ] Implement menu.
 - [ ] Polish.

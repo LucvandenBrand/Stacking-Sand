@@ -1,6 +1,6 @@
 #include "blockmodel.ih"
 
-Grid* BlockModel::grid()
+Grid BlockModel::grid()
 {
-  return this->d_tetrisGrid;
+  return d_tetrisModel->grid();
 }

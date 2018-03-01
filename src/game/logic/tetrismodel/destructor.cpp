@@ -2,5 +2,5 @@
 
 TetrisModel::~TetrisModel()
 {
-  delete this->d_grid;
+
 }

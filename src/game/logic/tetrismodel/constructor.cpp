@@ -1,8 +1,6 @@
 #include "tetrismodel.ih"
 
-TetrisModel::TetrisModel()
-{
-  this->d_grid = new Grid(TETRIS_WIDTH, TETRIS_HEIGHT);
-  this->d_score = 0;
-  this->d_timeToWait = DELAY_LEVEL0;
-}
+TetrisModel::TetrisModel() : d_grid(Grid(TETRIS_WIDTH, TETRIS_HEIGHT)),
+                             d_score(0),
+                             d_timeToWait(DELAY_LEVEL0)
+{}
