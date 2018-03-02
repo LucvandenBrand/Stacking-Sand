@@ -19,4 +19,11 @@ TetrisRenderer::TetrisRenderer(TextureFactory &textureFactory, TetrisModel *tetr
     cout << "Could not create background texture: " << runtimeError.what() << endl;
   }
 
+  // Try to load font.
+  d_gameFont = nullptr;
+  d_gameFont = TTF_OpenFont("data/gameFont.ttf", 80);
+  if (d_gameFont == nullptr)
+  {
+    cout << "Failed to load gameFont!" << '\n';
+  }
 }

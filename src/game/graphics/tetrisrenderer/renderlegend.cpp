@@ -1,6 +1,6 @@
 #include "tetrisrenderer.ih"
 
-void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer, int cellSize)
+void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer)
 {
   ScreenNormalizer normalizer(sdlRenderer);
 
@@ -12,19 +12,10 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer, int cellSize)
   SDL_Rect rectangle = normalizer.deNormalize(legendX, legendY, legendW, legendH);
   d_shadowBrush.drawRectangle(sdlRenderer, rectangle);
 
-  // Try to load font.
-  TTF_Font* font = nullptr;
-  font = TTF_OpenFont("data/gameFont.ttf", 80);
-  if (font == nullptr)
-  {
-    cout << "Failed to load gameFont!" << '\n';
-    return;
-  }
-
   // Prepare text.
   SDL_Color fontColor = {255, 255, 255, 255};
   TextureFactory textureFactory(&sdlRenderer);
-  Texture *title = textureFactory.fontTexture("Worth", *font, fontColor);
+  Texture *title = textureFactory.fontTexture("Worth", *d_gameFont, fontColor);
 
   // Draw Title
   float titleWidth  = legendW * 0.5f;
@@ -56,9 +47,9 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer, int cellSize)
     // Render value textures.
     string value = "$" + to_string(i+1);
     fontColor = {0, 0, 0, 150};
-    Texture *valueTextBG = textureFactory.fontTexture(value, *font, fontColor);
+    Texture *valueTextBG = textureFactory.fontTexture(value, *d_gameFont, fontColor);
     fontColor = {100, 200, 100, 255};
-    Texture *valueText = textureFactory.fontTexture(value, *font, fontColor);
+    Texture *valueText = textureFactory.fontTexture(value, *d_gameFont, fontColor);
 
     // Determine value position.
     float valueWidth  = cellWidth * 0.5f;

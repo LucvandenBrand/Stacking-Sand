@@ -24,5 +24,5 @@ void TetrisRenderer::render(SDL_Renderer &sdlRenderer)
   this->renderScore(sdlRenderer);
 
   // Draw legend.
-  this->renderLegend(sdlRenderer, cellSize);
+  this->renderLegend(sdlRenderer);
 }

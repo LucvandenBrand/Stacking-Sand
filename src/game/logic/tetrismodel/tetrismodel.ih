@@ -5,5 +5,8 @@
 #include "../pauseble/pauseble.h"
 #include <vector>
 #include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <SDL2/SDL.h>
 
 using namespace std;

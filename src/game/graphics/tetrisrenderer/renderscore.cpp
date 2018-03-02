@@ -2,39 +2,42 @@
 
 void TetrisRenderer::renderScore(SDL_Renderer &sdlRenderer)
 {
+  ScreenNormalizer normalizer(sdlRenderer);
   // Draw the containing shadow rectangle.
-  int renderWidth = 0, renderHeight = 0;
-  SDL_GetRendererOutputSize(&sdlRenderer, &renderWidth, &renderHeight);
-  auto boxX      = (int) (renderWidth  * 0.65);
-  auto boxY      = (int) (renderHeight * 0.01);
-  auto boxWidth  = (int) (renderWidth  * 0.34);
-  auto boxHeight = (int) (renderHeight * 0.2);
-  SDL_Rect boxRectangle = {boxX, boxY, boxWidth, boxHeight};
+  float boxX      = 0.65;
+  float boxY      = 0.01;
+  float boxWidth  = 0.34;
+  float boxHeight = 0.2;
+  SDL_Rect boxRectangle = normalizer.deNormalize(boxX, boxY, boxWidth, boxHeight);
   this->d_shadowBrush.drawRectangle(sdlRenderer, boxRectangle);
 
-  // Try to load font.
-  TTF_Font* font = nullptr;
-  font = TTF_OpenFont("data/gameFont.ttf", 80);
-  if (font == nullptr)
-  {
-    cout << "Failed to load gameFont!" << '\n';
-    return;
-  }
-
   // Prepare text.
-  SDL_Color fontColor = {100, 200, 100, 255};
   TextureFactory textureFactory(&sdlRenderer);
-  char scoreString[25];
-  sprintf(scoreString, "$ %06d", this->d_tetrisModel->score());
-  Texture *score = textureFactory.fontTexture(scoreString, *font, fontColor);
+  char scoreString[25], highScoreString[25];
+  sprintf(scoreString, "$ %06d", d_tetrisModel->score());
+  sprintf(highScoreString, "Richest: $ %06d", d_tetrisModel->highScore());
+  Texture *scoreTexture = textureFactory.fontTexture(scoreString, *d_gameFont, {100, 200, 100, 255});
+  Texture *highScoreTexture = textureFactory.fontTexture(highScoreString, *d_gameFont, {80, 210, 80, 255});
 
-  // Draw Title
-  auto scoreWidth = (int) (boxWidth * 0.9);
-  int scoreHeight = scoreWidth / score->width() * score->height();
-  int scoreX      = boxX + boxWidth / 2 - scoreWidth / 2;
-  int scoreY      = boxY + boxHeight / 2 - scoreHeight / 2;
+  // Draw Score
+  float scoreWidth  = boxWidth * 0.9f;
+  float scoreHeight = scoreWidth / normalizer.normalizeWidth(scoreTexture->width())
+                                 * normalizer.normalizeHeight(scoreTexture->height());
+  float scoreX      = boxX + boxWidth / 2 - scoreWidth / 2;
+  float scoreY      = boxY + boxHeight / 2 - scoreHeight / 2 - 0.02f;
 
-  SDL_Rect titleRectangle = {scoreX, scoreY, scoreWidth, scoreHeight};
-  score->render(sdlRenderer, titleRectangle);
-  delete score;
+  SDL_Rect scoreRectangle = normalizer.deNormalize(scoreX, scoreY, scoreWidth, scoreHeight);
+  scoreTexture->render(sdlRenderer, scoreRectangle);
+
+  // Draw high-score.
+  scoreWidth  = boxWidth * 0.9f;
+  scoreHeight = scoreWidth / normalizer.normalizeWidth(highScoreTexture->width())
+                * normalizer.normalizeHeight(highScoreTexture->height());
+  scoreX      = boxX + boxWidth / 2 - scoreWidth / 2;
+  scoreY      = boxY + boxHeight - scoreHeight;
+  scoreRectangle = normalizer.deNormalize(scoreX, scoreY, scoreWidth, scoreHeight);
+  highScoreTexture->render(sdlRenderer, scoreRectangle);
+
+  // Free allocated memory.
+  delete scoreTexture, highScoreTexture;
 }

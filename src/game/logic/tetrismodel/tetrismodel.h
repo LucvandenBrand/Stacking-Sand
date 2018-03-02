@@ -12,6 +12,12 @@ public:
   // Return the current score.
   unsigned int score();
 
+  // Return the highest score recorded.
+  unsigned int highScore();
+
+  // Load and save the hi-score.
+  void updateHighScore();
+
   // Return the current level.
   unsigned int level();
 
@@ -34,7 +40,12 @@ public:
   void stamp(Grid fromGrid, Point2D position);
 
 private:
-  /* Gameplay constants. */
+  /* Game and studio name for saving. */
+  const char* NAME_COMPANY = "VanDenBrand";
+  const char* NAME_PRODUCT = "StackingSandWithBillBigsby";
+  const char* NAME_SAVE    = "highScore.txt";
+
+  /* Game-play constants. */
   const int TETRIS_WIDTH = 10;
   const int TETRIS_HEIGHT = 20;
 
@@ -61,7 +72,7 @@ private:
   Grid d_grid;
 
   /* The amount of points won. */
-  unsigned int d_score;
+  unsigned int d_score, d_highScore;
 
   // Scheduling var
   float d_timeToWait;
