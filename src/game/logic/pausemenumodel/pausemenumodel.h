@@ -14,6 +14,9 @@ public:
   /* Is the game paused or not. */
   bool paused();
 
+  /* Is this the first time the game has been started or not. */
+  bool firstStart();
+
   /* Is the game in a failed state or not. */
   bool gameOver();
 
@@ -21,7 +24,8 @@ public:
   void toggle();
 
 private:
-  bool d_paused = false;
+  bool d_paused = true;
+  bool d_firstStart = true;
   vector<Pauseble*> d_pausebles;
   GameOverModel &d_gameOverModel;
 };

@@ -21,7 +21,7 @@ void GameOverRenderer::render(SDL_Renderer &sdlRenderer)
     d_gameOverTexture->render(sdlRenderer, newsRectangle);
 
     /* Render the game over controls. */
-    float controlWidth = newsWidth * 0.8f;
+    float controlWidth = newsWidth * 0.6f;
     float controlHeight = controlWidth / normalizer.normalizeWidth(d_gameOverControls->width())
                                        * normalizer.normalizeHeight(d_gameOverControls->height());
     float controlX = 0.5f - controlWidth / 2;

@@ -31,7 +31,7 @@ int main(int argc, char **argv)
     auto *gameOverGame         = new Game(gameOverRenderer, gameOverInputParser, gameOverModel);
 
     auto *pauseMenuModel       = new PauseMenuModel({tetrisModel, blockModel}, *gameOverModel);
-    auto *pauseMenuRenderer    = new PauseMenuRenderer(pauseMenuModel);
+    auto *pauseMenuRenderer    = new PauseMenuRenderer(textureFactory, pauseMenuModel);
     auto *pauseMenuInputParser = new PauseMenuInputParser(pauseMenuModel);
     auto *pauseMenuGame        = new Game(pauseMenuRenderer, pauseMenuInputParser, pauseMenuModel);
 
