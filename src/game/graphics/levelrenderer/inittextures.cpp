@@ -5,9 +5,9 @@ bool LevelRenderer::initTextures(TextureFactory &textureFactory)
   // Try to load the newspaper textures.
   try
   {
-    this->d_newspapers.reserve(2);
-    this->d_newspapers.push_back(textureFactory.texture("data/level0.png"));
-    this->d_newspapers.push_back(textureFactory.texture("data/level1.png"));
+    d_newspapers.reserve(2);
+    d_newspapers.push_back(textureFactory.texture("data/level0.png"));
+    d_newspapers.push_back(textureFactory.texture("data/level1.png"));
   }
   catch (invalid_argument &invalidArgument)
   {

@@ -1,7 +1,7 @@
 #include "levelmodel.ih"
 
-LevelModel::LevelModel(TetrisModel *tetrisModel)
-  : d_tetrisModel(tetrisModel)
+LevelModel::LevelModel(TetrisModel &tetrisModel)
+  : d_tetrisModel(&tetrisModel)
 {
 
 }

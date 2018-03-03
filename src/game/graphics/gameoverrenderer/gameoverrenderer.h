@@ -6,7 +6,7 @@
 class GameOverRenderer: public GameRenderer
 {
 public:
-  GameOverRenderer(TextureFactory &textureFactory, GameOverModel *gameOverModel);
+  GameOverRenderer(TextureFactory &textureFactory, GameOverModel &gameOverModel);
 
   void render(SDL_Renderer &sdlRenderer) override;
 

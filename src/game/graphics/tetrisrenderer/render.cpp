@@ -10,19 +10,19 @@ void TetrisRenderer::render(SDL_Renderer &sdlRenderer)
   int renderGridWidth = cellSize* grid.width();
 
   // Draw background and shadow rectangle.
-  this->renderBackground(sdlRenderer, cellSize*SCALE_BACKGROUND_TILE);
+  renderBackground(sdlRenderer, cellSize*SCALE_BACKGROUND_TILE);
 
   SDL_Color bgColor = {0, 0, 0, 50};
   SDL_SetRenderDrawColor(&sdlRenderer, bgColor.r, bgColor.g, bgColor.b, bgColor.a);
   SDL_Rect rectangle = {renderWidth/2 - renderGridWidth/2, 0, renderGridWidth, renderHeight};
-  this->d_shadowBrush.drawRectangle(sdlRenderer, rectangle);
+  d_shadowBrush.drawRectangle(sdlRenderer, rectangle);
 
   // Draw the tetris grid.
-  this->renderGrid(sdlRenderer, grid, rectangle);
+  renderGrid(sdlRenderer, grid, rectangle);
 
   // Draw the current score.
-  this->renderScore(sdlRenderer);
+  renderScore(sdlRenderer);
 
   // Draw legend.
-  this->renderLegend(sdlRenderer);
+  renderLegend(sdlRenderer);
 }

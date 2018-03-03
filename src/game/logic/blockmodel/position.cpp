@@ -2,5 +2,5 @@
 
 Point2D BlockModel::position()
 {
-  return this->d_position;
+  return d_position;
 }

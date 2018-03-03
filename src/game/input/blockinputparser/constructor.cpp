@@ -1,5 +1,5 @@
 #include "blockinputparser.ih"
 
-BlockInputParser::BlockInputParser(BlockModel *blockModel) :
-  d_blockModel(blockModel)
+BlockInputParser::BlockInputParser(BlockModel &blockModel) :
+  d_blockModel(&blockModel)
 {}

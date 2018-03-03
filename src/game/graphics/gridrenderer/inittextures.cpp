@@ -5,10 +5,10 @@ bool GridRenderer::initTextures(TextureFactory &textureFactory)
   // Try to load the cell textures.
   try
   {
-    this->d_cellTextures.reserve(3);
-    this->d_cellTextures.push_back(textureFactory.texture("data/sand.png"));
-    this->d_cellTextures.push_back(textureFactory.texture("data/stone.png"));
-    this->d_cellTextures.push_back(textureFactory.texture("data/diamond.png"));
+    d_cellTextures.reserve(3);
+    d_cellTextures.push_back(textureFactory.texture("data/sand.png"));
+    d_cellTextures.push_back(textureFactory.texture("data/stone.png"));
+    d_cellTextures.push_back(textureFactory.texture("data/diamond.png"));
   }
   catch (invalid_argument &invalidArgument)
   {

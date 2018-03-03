@@ -7,7 +7,7 @@
 class Game
 {
 public:
-  Game(GameRenderer *renderer, InputParser *inputParser, Model *model);
+  Game(GameRenderer &renderer, InputParser &inputParser, Model &model);
 
   /* Update the state of the game. */
   void update(SDL_Renderer &sdlRenderer, InputState inputState, float deltaTime);

@@ -6,6 +6,7 @@ void TetrisModel::updateHighScore()
   if (basePath != nullptr)
   { // We have access to the save location.
     string savePath = string(basePath) + string(NAME_SAVE);
+    free(basePath);
 
     // Load a previous save if it exists.
     ifstream saveInFile(savePath);

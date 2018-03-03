@@ -6,7 +6,7 @@
 class BlockInputParser : public InputParser
 {
 public:
-  explicit BlockInputParser(BlockModel *blockModel);
+  explicit BlockInputParser(BlockModel &blockModel);
   void parse(InputState inputState) override;
 
 private:

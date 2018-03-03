@@ -2,5 +2,5 @@
 
 bool PauseMenuModel::paused()
 {
-  return this->d_paused;
+  return d_paused;
 }

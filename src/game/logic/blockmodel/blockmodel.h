@@ -6,7 +6,7 @@
 class BlockModel : public Model, public Pauseble
 {
 public:
-  explicit BlockModel(TetrisModel *tetrisModel);
+  explicit BlockModel(TetrisModel &tetrisModel);
 
   // Set the moving direction.
   void move(Point2D shift);

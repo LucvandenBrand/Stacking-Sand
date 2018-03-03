@@ -5,34 +5,34 @@ void BlockModel::step(float deltaTime)
   if (paused()) // If the object is paused, do nothing.
     return;
 
-  if (this->d_tetrisModel->timeToWait() > 0) // We still have time left.
+  if (d_tetrisModel->timeToWait() > 0) // We still have time left.
     return;
 
-  if (this->d_shouldReset)
+  if (d_shouldReset)
   {
-    this->reset();
-    this->d_shouldReset = false;
+    reset();
+    d_shouldReset = false;
   }
 
   if(d_gameOver) // Game over, do nothing.
     return;
 
   // Apply the move, and reset the move direction.
-  Point2D newPosition = this->d_position + this->d_move;
-  this->d_move = Point2D(0, 0);
+  Point2D newPosition = d_position + d_move;
+  d_move = Point2D(0, 0);
 
   // Prevent potential overlap.
   if (!overlap(newPosition))
-    this->d_position = newPosition;
+    d_position = newPosition;
 
   // Check if the ground had been reached.
-  if (overlap(this->d_position + Point2D(0, 1)))
+  if (overlap(d_position + Point2D(0, 1)))
   {
     // Stamp this block on the grid, and reset.
     d_tetrisModel->stamp(d_blocks[d_currentBlockIndex], d_position);
-    this->d_shouldReset = true;
+    d_shouldReset = true;
     return;
   }
   else   // Apply default gravity.
-    this->d_position += Point2D(0, 1);
+    d_position += Point2D(0, 1);
 }

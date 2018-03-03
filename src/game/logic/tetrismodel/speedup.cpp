@@ -2,5 +2,5 @@
 
 void TetrisModel::speedup(float speedupTime)
 {
-  this->d_timeToWait -= speedupTime;
+  d_timeToWait -= speedupTime;
 }

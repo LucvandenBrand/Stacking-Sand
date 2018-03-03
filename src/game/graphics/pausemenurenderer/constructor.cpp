@@ -1,7 +1,7 @@
 #include "pausemenurenderer.ih"
 
-PauseMenuRenderer::PauseMenuRenderer(TextureFactory &textureFactory, PauseMenuModel *pauseMenuModel)
-  : d_pauseMenuModel(pauseMenuModel)
+PauseMenuRenderer::PauseMenuRenderer(TextureFactory &textureFactory, PauseMenuModel &pauseMenuModel)
+  : d_pauseMenuModel(&pauseMenuModel)
 {
   try
   {

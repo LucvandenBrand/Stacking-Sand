@@ -2,5 +2,5 @@
 
 bool Model::alive()
 {
-  return this->d_alive;
+  return d_alive;
 }

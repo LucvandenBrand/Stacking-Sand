@@ -6,11 +6,11 @@
 class TetrisInputParser : public InputParser
 {
 public:
-  explicit TetrisInputParser(TetrisModel *tetrisModel);
+  explicit TetrisInputParser(TetrisModel &tetrisModel);
   void parse(InputState inputState) override ;
 
 private:
-  /* Gameplay constants. */
+  /* Game-play constants. */
   const float SPEEDUP_TIME = 0.5f;
 
   TetrisModel *d_tetrisModel;

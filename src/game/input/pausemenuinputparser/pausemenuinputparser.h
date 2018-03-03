@@ -6,7 +6,7 @@
 class PauseMenuInputParser : public InputParser
 {
 public:
-  explicit PauseMenuInputParser(PauseMenuModel *pauseMenuModel);
+  explicit PauseMenuInputParser(PauseMenuModel &pauseMenuModel);
   void parse(InputState inputState) override ;
 
 private:

@@ -9,7 +9,7 @@ void TetrisRenderer::renderScore(SDL_Renderer &sdlRenderer)
   float boxWidth  = 0.34;
   float boxHeight = 0.2;
   SDL_Rect boxRectangle = normalizer.deNormalize(boxX, boxY, boxWidth, boxHeight);
-  this->d_shadowBrush.drawRectangle(sdlRenderer, boxRectangle);
+  d_shadowBrush.drawRectangle(sdlRenderer, boxRectangle);
 
   // Prepare text.
   TextureFactory textureFactory(&sdlRenderer);

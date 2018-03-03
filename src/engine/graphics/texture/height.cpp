@@ -2,5 +2,5 @@
 
 int Texture::height()
 {
-  return this->d_height;
+  return d_height;
 }

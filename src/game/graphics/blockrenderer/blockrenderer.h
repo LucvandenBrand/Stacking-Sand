@@ -6,7 +6,7 @@
 class BlockRenderer : public GridRenderer
 {
 public:
-  BlockRenderer(TextureFactory &textureFactory, BlockModel *blockModel);
+  BlockRenderer(TextureFactory &textureFactory, BlockModel &blockModel);
 
   void render(SDL_Renderer& sdlRenderer) override;
 

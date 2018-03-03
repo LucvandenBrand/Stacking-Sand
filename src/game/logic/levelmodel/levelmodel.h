@@ -6,9 +6,9 @@
 class LevelModel : public Model
 {
 public:
-  explicit LevelModel(TetrisModel *tetrisModel);
+  explicit LevelModel(TetrisModel &tetrisModel);
 
-  /* Every step, try to sync with tetrismodel. */
+  /* Every step, try to sync with tetrisModel. */
   void step(float deltaTime) override;
 
   /* Returns the current transition level. */

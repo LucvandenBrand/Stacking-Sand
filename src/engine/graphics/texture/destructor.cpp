@@ -2,5 +2,5 @@
 
 Texture::~Texture()
 {
-  SDL_DestroyTexture(this->d_texture);
+  SDL_DestroyTexture(d_texture);
 }

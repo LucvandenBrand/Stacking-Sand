@@ -6,7 +6,7 @@
 class TetrisRenderer : public GridRenderer
 {
 public:
-  TetrisRenderer(TextureFactory &textureFactory, TetrisModel *tetrisModel);
+  TetrisRenderer(TextureFactory &textureFactory, TetrisModel &tetrisModel);
   ~TetrisRenderer();
 
   void render(SDL_Renderer &sdlRenderer) override;

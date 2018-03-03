@@ -3,7 +3,7 @@
 bool BlockModel::overlap(Point2D newPosition)
 {
   // Get the current block and grid in use.
-  Grid block = this->d_blocks[this->d_currentBlockIndex];
+  Grid block = d_blocks[d_currentBlockIndex];
 
   // Determine block bottom and right side.
   unsigned short bottomSide = newPosition.y + block.height();

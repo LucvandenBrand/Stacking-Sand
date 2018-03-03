@@ -6,7 +6,7 @@
 class KillInputParser : public InputParser
 {
 public:
-  explicit KillInputParser(Model *gameModel);
+  explicit KillInputParser(Model &model);
   void parse(InputState inputState) override;
 
 private:

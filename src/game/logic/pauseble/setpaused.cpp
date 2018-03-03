@@ -2,5 +2,5 @@
 
 void Pauseble::paused(bool pause)
 {
-  this->d_paused = pause;
+  d_paused = pause;
 }

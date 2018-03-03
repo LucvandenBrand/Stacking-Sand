@@ -2,5 +2,5 @@
 
 GridRenderer::GridRenderer(TextureFactory &textureFactory)
 {
-  this->initTextures(textureFactory);
+  initTextures(textureFactory);
 }

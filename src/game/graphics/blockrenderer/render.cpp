@@ -20,8 +20,8 @@ void BlockRenderer::render(SDL_Renderer &sdlRenderer)
 
   // Render the current block.
   SDL_Rect rectangle = normalizer.deNormalize(blockX, blockY, blockWidth, blockHeight);
-  this->renderGrid(sdlRenderer, blockGrid, rectangle);
+  renderGrid(sdlRenderer, blockGrid, rectangle);
 
   // Render the next block.
-  this->renderNextBlock(sdlRenderer);
+  renderNextBlock(sdlRenderer);
 }

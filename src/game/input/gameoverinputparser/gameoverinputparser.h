@@ -6,7 +6,7 @@
 class GameOverInputParser : public InputParser
 {
 public:
-  explicit GameOverInputParser(GameOverModel *gameOverModel);
+  explicit GameOverInputParser(GameOverModel &gameOverModel);
   void parse(InputState inputState) override;
 
 private:

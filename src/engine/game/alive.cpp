@@ -2,5 +2,5 @@
 
 bool Game::alive()
 {
-  return this->d_model->alive();
+  return d_model->alive();
 }

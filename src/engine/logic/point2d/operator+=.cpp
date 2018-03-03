@@ -2,7 +2,7 @@
 
 Point2D& Point2D::operator+=(const Point2D &other)
 {
-   this->x += other.x;
-   this->y += other.y;
+   x += other.x;
+   y += other.y;
    return *this;
  }

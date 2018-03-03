@@ -2,5 +2,5 @@
 
 void Model::kill()
 {
-  this->d_alive = false;
+  d_alive = false;
 }

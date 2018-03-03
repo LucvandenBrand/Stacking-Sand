@@ -2,5 +2,5 @@
 
 TextureFactory::~TextureFactory()
 {
-  this->d_textureCache.clear();
+  d_textureCache.clear();
 }

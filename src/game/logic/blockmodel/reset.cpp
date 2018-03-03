@@ -9,9 +9,9 @@ void BlockModel::reset()
   // Set position to middle of the top, with downwards movement.
   auto halfBlock = (unsigned short) (currentBlock().width() / 2);
   auto halfGrid  = (unsigned short) (grid().width() / 2);
-  this->d_position = Point2D(halfGrid - halfBlock, 0);
-  this->d_move = Point2D(0, 0);
+  d_position = Point2D(halfGrid - halfBlock, 0);
+  d_move = Point2D(0, 0);
 
   // If overlapping at init, it is game-over.
-  this->d_gameOver = overlap(d_position);
+  d_gameOver = overlap(d_position);
 }

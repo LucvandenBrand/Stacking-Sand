@@ -2,5 +2,5 @@
 
 float TetrisModel::timeToWait()
 {
-  return this->d_timeToWait;
+  return d_timeToWait;
 }

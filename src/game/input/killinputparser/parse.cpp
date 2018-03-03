@@ -3,5 +3,5 @@
 void KillInputParser::parse(InputState inputState)
 {
   if (inputState.downButtons & ESCAPE)
-    this->d_model->kill();
+    d_model->kill();
 }

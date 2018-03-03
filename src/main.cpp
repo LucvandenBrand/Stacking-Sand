@@ -5,69 +5,48 @@ int main(int argc, char **argv)
   try
   {
     // Initialize our window.
-    Window &window = Window::getWindow();
+    Window &window            = Window::getWindow();
     SDL_Renderer &sdlRenderer = window.sdlRenderer();
     TextureFactory textureFactory(&sdlRenderer);
 
     // Initialise our games.
-    auto *tetrisModel          = new TetrisModel();
-    auto *tetrisRenderer       = new TetrisRenderer(textureFactory, tetrisModel);
-    auto *tetrisInputParser    = new TetrisInputParser(tetrisModel);
-    auto *tetrisGame           = new Game(tetrisRenderer, tetrisInputParser, tetrisModel);
+    TetrisModel          tetrisModel;
+    TetrisRenderer       tetrisRenderer(textureFactory, tetrisModel);
+    TetrisInputParser    tetrisInputParser(tetrisModel);
+    Game                 tetrisGame(tetrisRenderer, tetrisInputParser, tetrisModel);
 
-    auto *blockModel           = new BlockModel(tetrisModel);
-    auto *blockRenderer        = new BlockRenderer(textureFactory, blockModel);
-    auto *blockInputParser     = new BlockInputParser(blockModel);
-    auto *blockGame            = new Game(blockRenderer, blockInputParser, blockModel);
+    BlockModel           blockModel(tetrisModel);
+    BlockRenderer        blockRenderer(textureFactory, blockModel);
+    BlockInputParser     blockInputParser(blockModel);
+    Game                 blockGame(blockRenderer, blockInputParser, blockModel);
 
-    auto *levelModel           = new LevelModel(tetrisModel);
-    auto *levelRenderer        = new LevelRenderer(textureFactory, levelModel);
-    auto *killInputParser      = new KillInputParser(levelModel);
-    auto *levelGame            = new Game(levelRenderer, killInputParser, levelModel);
+    LevelModel           levelModel(tetrisModel);
+    LevelRenderer        levelRenderer(textureFactory, levelModel);
+    KillInputParser      killInputParser(levelModel);
+    Game                 levelGame(levelRenderer, killInputParser, levelModel);
 
-    auto *gameOverModel        = new GameOverModel(tetrisModel, blockModel);
-    auto *gameOverRenderer     = new GameOverRenderer(textureFactory, gameOverModel);
-    auto *gameOverInputParser  = new GameOverInputParser(gameOverModel);
-    auto *gameOverGame         = new Game(gameOverRenderer, gameOverInputParser, gameOverModel);
+    GameOverModel        gameOverModel(tetrisModel, blockModel);
+    GameOverRenderer     gameOverRenderer(textureFactory, gameOverModel);
+    GameOverInputParser  gameOverInputParser(gameOverModel);
+    Game                 gameOverGame(gameOverRenderer, gameOverInputParser, gameOverModel);
 
-    auto *pauseMenuModel       = new PauseMenuModel({tetrisModel, blockModel}, *gameOverModel);
-    auto *pauseMenuRenderer    = new PauseMenuRenderer(textureFactory, pauseMenuModel);
-    auto *pauseMenuInputParser = new PauseMenuInputParser(pauseMenuModel);
-    auto *pauseMenuGame        = new Game(pauseMenuRenderer, pauseMenuInputParser, pauseMenuModel);
+    PauseMenuModel       pauseMenuModel({&tetrisModel, &blockModel}, gameOverModel);
+    PauseMenuRenderer    pauseMenuRenderer(textureFactory, pauseMenuModel);
+    PauseMenuInputParser pauseMenuInputParser(pauseMenuModel);
+    Game                 pauseMenuGame(pauseMenuRenderer, pauseMenuInputParser, pauseMenuModel);
 
 
     // Push the games on the game stack, following their drawing order.
     vector<Game> games;
-    games.reserve(4);
-    games.push_back(*tetrisGame);
-    games.push_back(*blockGame);
-    games.push_back(*levelGame);
-    games.push_back(*pauseMenuGame);
-    games.push_back(*gameOverGame);
+    games.reserve(5);
+    games.push_back(tetrisGame);
+    games.push_back(blockGame);
+    games.push_back(levelGame);
+    games.push_back(pauseMenuGame);
+    games.push_back(gameOverGame);
 
     // Main game loop
     GameLoop::loop(games, sdlRenderer);
-
-    // Free our games.
-    delete tetrisModel;
-    delete tetrisRenderer;
-    delete tetrisInputParser;
-    delete tetrisGame;
-
-    delete blockModel;
-    delete blockRenderer;
-    delete blockInputParser;
-    delete blockGame;
-
-    delete levelModel;
-    delete levelRenderer;
-    delete killInputParser;
-    delete levelGame;
-
-    delete pauseMenuModel;
-    delete pauseMenuRenderer;
-    delete pauseMenuInputParser;
-    delete pauseMenuGame;
   }
   catch(runtime_error &runtimeError)
   {

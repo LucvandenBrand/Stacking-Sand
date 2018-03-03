@@ -1,7 +1,7 @@
 #include "gameoverrenderer.ih"
 
-GameOverRenderer::GameOverRenderer(TextureFactory &textureFactory, GameOverModel *gameOverModel)
-  : d_gameOverModel(gameOverModel)
+GameOverRenderer::GameOverRenderer(TextureFactory &textureFactory, GameOverModel &gameOverModel)
+  : d_gameOverModel(&gameOverModel)
 {
   try
   {

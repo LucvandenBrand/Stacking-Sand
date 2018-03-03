@@ -42,7 +42,7 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer)
     float cellY = paddingHeight + legendY + titleHeight + i * (cellHeight + paddingHeight);
     SDL_Rect cellRectangle = normalizer.deNormalize(cellX, cellY, cellWidth, cellHeight);
     d_shadowBrush.drawRectangle(sdlRenderer, cellRectangle);
-    this->d_cellTextures[i].render(sdlRenderer, cellRectangle);
+    d_cellTextures[i].render(sdlRenderer, cellRectangle);
 
     // Render value textures.
     string value = "$" + to_string(i+1);

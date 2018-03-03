@@ -2,9 +2,9 @@
 
 void PauseMenuModel::toggle()
 {
-  this->d_paused = !this->d_paused;
-  this->d_firstStart = false;
+  d_paused = !d_paused;
+  d_firstStart = false;
 
-  for (auto &pauseble : this->d_pausebles)
-    pauseble->paused(this->d_paused);
+  for (auto &pauseble : d_pausebles)
+    pauseble->paused(d_paused);
 }

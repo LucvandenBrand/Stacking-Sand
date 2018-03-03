@@ -2,5 +2,5 @@
 
 unsigned short Grid::width()
 {
-  return this->d_width;
+  return d_width;
 }

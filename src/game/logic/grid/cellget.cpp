@@ -3,8 +3,8 @@
 unsigned short Grid::cell(Point2D point)
 {
   // Wrap around position indexes;
-  point.x %= this->d_width;
-  point.y %= this->d_height;
+  point.x %= d_width;
+  point.y %= d_height;
 
-  return this->d_cells[project2D(point, this->d_width)];
+  return d_cells[project2D(point, d_width)];
 }

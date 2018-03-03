@@ -5,7 +5,7 @@ Grid::Grid(unsigned short width, unsigned short height) :
 {
   // Initialise the vector with zeroes.
   unsigned short length = width * height;
-  this->d_cells.reserve(length);
+  d_cells.reserve(length);
   for (unsigned short i = 0; i < length; ++i)
-    this->d_cells.push_back(0);
+    d_cells.push_back(0);
 }

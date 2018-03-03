@@ -2,5 +2,5 @@
 
 int Texture::width()
 {
-  return this->d_width;
+  return d_width;
 }

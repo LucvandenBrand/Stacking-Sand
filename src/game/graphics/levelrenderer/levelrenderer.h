@@ -6,7 +6,7 @@
 class LevelRenderer : public GameRenderer
 {
 public:
-  LevelRenderer(TextureFactory &textureFactory, LevelModel *levelModel);
+  LevelRenderer(TextureFactory &textureFactory, LevelModel &levelModel);
 
   /* Render a stack of newspapers. */
   void render(SDL_Renderer &sdlRenderer) override;

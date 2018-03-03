@@ -1,5 +1,5 @@
 #include "tetrisinputparser.ih"
 
-TetrisInputParser::TetrisInputParser(TetrisModel *tetrisModel) :
-  d_tetrisModel(tetrisModel)
+TetrisInputParser::TetrisInputParser(TetrisModel &tetrisModel) :
+  d_tetrisModel(&tetrisModel)
 {}

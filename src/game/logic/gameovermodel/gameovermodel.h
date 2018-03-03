@@ -6,7 +6,7 @@
 class GameOverModel: public Model
 {
 public:
-  GameOverModel(TetrisModel *tetrisModel, BlockModel *blockModel);
+  GameOverModel(TetrisModel &tetrisModel, BlockModel &blockModel);
 
   // Update the state.
   void step(float deltaTime) override;

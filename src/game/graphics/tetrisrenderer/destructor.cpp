@@ -2,6 +2,6 @@
 
 TetrisRenderer::~TetrisRenderer()
 {
-  free(d_gameFont);
+  TTF_CloseFont(d_gameFont);
   delete d_background;
 }

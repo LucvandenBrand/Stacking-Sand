@@ -2,17 +2,17 @@
 
 void TetrisModel::step(float deltaTime)
 {
-  if (this->paused()) // If the object is paused, do nothing.
+  if (paused()) // If the object is paused, do nothing.
     return;
 
-  if (this->d_timeToWait > 0) // We still have time left, so we do nothing.
+  if (d_timeToWait > 0) // We still have time left, so we do nothing.
   {
-    this->d_timeToWait -= deltaTime;
+    d_timeToWait -= deltaTime;
     return;
   }
 
   // Time to wait is over, we reset the timer based on the current score.
-  this->d_timeToWait = this->waitTime();
+  d_timeToWait = waitTime();
 
   for (int posY = d_grid.height()-1; posY > -1; --posY)
   {
@@ -46,7 +46,7 @@ void TetrisModel::step(float deltaTime)
       {
         Point2D currentPoint(posX, posY);
         unsigned short cell = d_grid.cell(currentPoint);
-        this->d_score += cell;
+        d_score += cell;
         updateHighScore();
         d_grid.cell(currentPoint, 0);
       }

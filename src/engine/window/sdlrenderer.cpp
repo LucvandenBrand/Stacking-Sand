@@ -2,5 +2,5 @@
 
 SDL_Renderer &Window::sdlRenderer()
 {
-  return *(this->d_renderer);
+  return *d_renderer;
 }
