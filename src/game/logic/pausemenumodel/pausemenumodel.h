@@ -9,7 +9,7 @@ public:
   /* Initialize with all pausebles that need to be paused when toggled. */
   explicit PauseMenuModel(initializer_list<Pauseble*> pausebles, GameOverModel &gameOverModel);
 
-  void step(float deltaTime) override ;
+  void step(double deltaTime) override;
 
   /* Is the game paused or not. */
   bool paused();

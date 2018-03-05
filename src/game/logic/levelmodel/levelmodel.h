@@ -9,16 +9,16 @@ public:
   explicit LevelModel(TetrisModel &tetrisModel);
 
   /* Every step, try to sync with tetrisModel. */
-  void step(float deltaTime) override;
+  void step(double deltaTime) override;
 
   /* Returns the current transition level. */
-  float level();
+  double level();
 
 private:
-  float d_level = 0;
+  double d_level = 0;
 
   /* The speed at which transitions are scaled. */
-  const float TRANSITION_SCALE = 0.5;
+  const double TRANSITION_SCALE = 0.5;
   TetrisModel *d_tetrisModel;
 };
 

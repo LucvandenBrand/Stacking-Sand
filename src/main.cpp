@@ -13,40 +13,52 @@ int main(int argc, char **argv)
     TetrisModel          tetrisModel;
     TetrisRenderer       tetrisRenderer(textureFactory, tetrisModel);
     TetrisInputParser    tetrisInputParser(tetrisModel);
-    Game                 tetrisGame(tetrisRenderer, tetrisInputParser, tetrisModel);
 
     BlockModel           blockModel(tetrisModel);
     BlockRenderer        blockRenderer(textureFactory, blockModel);
     BlockInputParser     blockInputParser(blockModel);
-    Game                 blockGame(blockRenderer, blockInputParser, blockModel);
 
     LevelModel           levelModel(tetrisModel);
     LevelRenderer        levelRenderer(textureFactory, levelModel);
     KillInputParser      killInputParser(levelModel);
-    Game                 levelGame(levelRenderer, killInputParser, levelModel);
 
     GameOverModel        gameOverModel(tetrisModel, blockModel);
     GameOverRenderer     gameOverRenderer(textureFactory, gameOverModel);
     GameOverInputParser  gameOverInputParser(gameOverModel);
-    Game                 gameOverGame(gameOverRenderer, gameOverInputParser, gameOverModel);
 
     PauseMenuModel       pauseMenuModel({&tetrisModel, &blockModel}, gameOverModel);
     PauseMenuRenderer    pauseMenuRenderer(textureFactory, pauseMenuModel);
     PauseMenuInputParser pauseMenuInputParser(pauseMenuModel);
-    Game                 pauseMenuGame(pauseMenuRenderer, pauseMenuInputParser, pauseMenuModel);
 
 
     // Push the games on the game stack, following their drawing order.
-    vector<Game> games;
-    games.reserve(5);
-    games.push_back(tetrisGame);
-    games.push_back(blockGame);
-    games.push_back(levelGame);
-    games.push_back(pauseMenuGame);
-    games.push_back(gameOverGame);
+    vector<Model*> models;
+    models.reserve(5);
+    models.push_back(&tetrisModel);
+    models.push_back(&blockModel);
+    models.push_back(&levelModel);
+    models.push_back(&pauseMenuModel);
+    models.push_back(&gameOverModel);
+
+    vector<InputParser*> inputParsers;
+    inputParsers.reserve(5);
+    inputParsers.push_back(&tetrisInputParser);
+    inputParsers.push_back(&blockInputParser);
+    inputParsers.push_back(&killInputParser);
+    inputParsers.push_back(&pauseMenuInputParser);
+    inputParsers.push_back(&gameOverInputParser);
+
+    vector<GameRenderer*> gameRenderers;
+    gameRenderers.reserve(5);
+    gameRenderers.push_back(&tetrisRenderer);
+    gameRenderers.push_back(&blockRenderer);
+    gameRenderers.push_back(&levelRenderer);
+    gameRenderers.push_back(&pauseMenuRenderer);
+    gameRenderers.push_back(&gameOverRenderer);
 
     // Main game loop
-    GameLoop::loop(games, sdlRenderer);
+    GameLoop gameLoop;
+    gameLoop.loop(models, inputParsers, gameRenderers);
   }
   catch(runtime_error &runtimeError)
   {

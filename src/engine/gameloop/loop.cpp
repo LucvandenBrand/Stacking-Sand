@@ -1,34 +1,23 @@
 #include "gameloop.ih"
 
-void GameLoop::loop(vector<Game> &games, SDL_Renderer &sdlRenderer)
+void GameLoop::loop(vector<Model*> models, vector<InputParser*> inputParsers,
+                    vector<GameRenderer*> gameRenderers)
 {
-  auto startTime = chrono::high_resolution_clock::now();
-  auto endTime = startTime;
-  while(!games.empty())
+  d_running = true;
+
+  // Spawn the model update thread.
+  thread modelThread(&GameLoop::loopModels, this, models);
+
+  // Whilst running, process input and draw.
+  Window &window            = Window::getWindow();
+  SDL_Renderer &sdlRenderer = window.sdlRenderer();
+  while(d_running)
   {
-    // Calculate elapsed time.
-    startTime = endTime;
-    endTime = chrono::high_resolution_clock::now();
-    chrono::duration<float> elapsedSeconds = endTime - startTime;
-    float deltaTime = elapsedSeconds.count();
-
-    // Destroy all dead games.
-    games.erase(remove_if(games.begin(), games.end(),
-                [](Game game){return !(game.alive());}),
-                games.end());
-
-    // Update all living games.
-    SDL_RenderClear(&sdlRenderer);
-    InputState inputState = Input::getState();
-    for (Game &game : games)
-    {
-      game.update(sdlRenderer, inputState, deltaTime);
-    }
-    SDL_RenderPresent(&sdlRenderer);
-
-    // Lock the game at MAX_DELTA_TIME to save power.
-    float leftTime = MAX_DELTA_TIME - deltaTime;
-    if (leftTime > 0)
-      SDL_Delay((unsigned int)(MILLI_IN_SECONDS * leftTime));
+    parseInput(inputParsers);
+    render(gameRenderers, sdlRenderer);
+    this_thread::sleep_for(chrono::milliseconds(UPDATE_SPEED_MAIN));
   }
+
+  // Running is done, join the model thread and exit.
+  modelThread.join();
 }

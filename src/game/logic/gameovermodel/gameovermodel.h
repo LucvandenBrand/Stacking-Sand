@@ -9,7 +9,7 @@ public:
   GameOverModel(TetrisModel &tetrisModel, BlockModel &blockModel);
 
   // Update the state.
-  void step(float deltaTime) override;
+  void step(double deltaTime) override;
 
   // Is the game in failed state?
   bool gameOver();
@@ -18,14 +18,14 @@ public:
   void reset();
 
   // How far to slide the game-over message.
-  float gameOverTransition();
+  double gameOverTransition();
 
 private:
   TetrisModel *d_tetrisModel;
   BlockModel *d_blockModel;
 
-  float d_gameOverTransition;
-  const float SCALE_TRANSITION = 0.5;
+  double d_gameOverTransition;
+  const double SCALE_TRANSITION = 0.5;
 };
 
 #endif /* GAME_OVER_MODEL_H */

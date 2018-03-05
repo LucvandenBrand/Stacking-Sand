@@ -1,8 +1,8 @@
 #include "tetrismodel.ih"
 
-float TetrisModel::waitTime()
+double TetrisModel::waitTime()
 {
-  int delay;
+  double delay;
   if (d_score >= SCORE_LEVEL6)
     delay = DELAY_LEVEL6;
   else if (d_score >= SCORE_LEVEL5)

@@ -1,6 +1,6 @@
 #include "tetrismodel.ih"
 
-float TetrisModel::timeToWait()
+double TetrisModel::timeToWait()
 {
   return d_timeToWait;
 }

@@ -1,6 +1,6 @@
 #include "tetrismodel.ih"
 
-void TetrisModel::step(float deltaTime)
+void TetrisModel::step(double deltaTime)
 {
   if (paused()) // If the object is paused, do nothing.
     return;

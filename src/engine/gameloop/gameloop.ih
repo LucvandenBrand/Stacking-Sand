@@ -4,9 +4,11 @@
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include "../window/window.ih"
-#include "../game/game.ih"
+#include "../graphics/gamerenderer/gamerenderer.ih"
+#include "../input/inputparser/inputparser.ih"
+#include "../logic/model/model.ih"
 #include "../input/input/input.ih"
 #include "gameloop.h"
-
+#include <thread>
 
 using namespace std;

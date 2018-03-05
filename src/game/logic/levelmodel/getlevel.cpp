@@ -1,6 +1,6 @@
 #include "levelmodel.ih"
 
-float LevelModel::level()
+double LevelModel::level()
 {
   return d_level;
 }

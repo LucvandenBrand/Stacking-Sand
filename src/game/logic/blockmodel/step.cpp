@@ -1,6 +1,6 @@
 #include "blockmodel.ih"
 
-void BlockModel::step(float deltaTime)
+void BlockModel::step(double deltaTime)
 {
   if (paused()) // If the object is paused, do nothing.
     return;

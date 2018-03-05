@@ -1,6 +1,6 @@
 #include "tetrismodel.ih"
 
-void TetrisModel::speedup(float speedupTime)
+void TetrisModel::speedup(double speedupTime)
 {
   d_timeToWait -= speedupTime;
 }

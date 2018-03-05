@@ -1,6 +1,6 @@
 #include "levelmodel.ih"
 
-void LevelModel::step(float deltaTime)
+void LevelModel::step(double deltaTime)
 {
   int level = d_tetrisModel->level();
   if (level != d_level)

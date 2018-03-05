@@ -1,8 +1,0 @@
-#include "game.h"
-#include "../graphics/gamerenderer/gamerenderer.ih"
-#include "../logic/model/model.ih"
-#include "../input/buttonstate/buttonstate.ih"
-#include "../input/inputparser/inputparser.ih"
-#include <SDL2/SDL.h>
-
-using namespace std;

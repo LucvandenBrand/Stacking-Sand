@@ -22,7 +22,7 @@ public:
   bool gameOver();
 
   // Update the state.
-  void step(float deltaTime) override;
+  void step(double deltaTime) override;
 
   // Choose stamp and position.
   void reset();

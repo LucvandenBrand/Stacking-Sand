@@ -1,6 +1,6 @@
 #include "gameovermodel.ih"
 
-float GameOverModel::gameOverTransition()
+double GameOverModel::gameOverTransition()
 {
   return d_gameOverTransition;
 }

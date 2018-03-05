@@ -4,7 +4,7 @@
 class Model
 {
 public:
-  virtual void step(float deltaTime) = 0;
+  virtual void step(double deltaTime) = 0;
 
   /* Used by game to determine if it should close, returns true by default. */
   bool alive();

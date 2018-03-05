@@ -22,13 +22,13 @@ public:
   unsigned int level();
 
   // Return the time left to wait.
-  float timeToWait();
+  double timeToWait();
 
   // Step to the next state of the grid.
-  void step(float deltaTime) override;
+  void step(double deltaTime) override;
 
   // Decrease the time to wait by speedupTime.
-  void speedup(float speedupTime);
+  void speedup(double speedupTime);
 
   // Return a copy of the grid used.
   Grid grid();
@@ -49,19 +49,19 @@ private:
   const int TETRIS_WIDTH = 10;
   const int TETRIS_HEIGHT = 20;
 
-  const float DELAY_LEVEL0 = 0.9;
+  const double       DELAY_LEVEL0 = 0.1;
   const unsigned int SCORE_LEVEL1 = 10;
-  const float        DELAY_LEVEL1 = 0.7;
+  const double       DELAY_LEVEL1 = 0.05;
   const unsigned int SCORE_LEVEL2 = 50;
-  const float        DELAY_LEVEL2 = 0.6;
+  const double       DELAY_LEVEL2 = 0.02;
   const unsigned int SCORE_LEVEL3 = 100;
-  const float        DELAY_LEVEL3 = 0.5;
+  const double       DELAY_LEVEL3 = 0.01;
   const unsigned int SCORE_LEVEL4 = 200;
-  const float        DELAY_LEVEL4 = 0.4;
+  const double       DELAY_LEVEL4 = 0.005;
   const unsigned int SCORE_LEVEL5 = 300;
-  const float        DELAY_LEVEL5 = 0.3;
+  const double       DELAY_LEVEL5 = 0.002;
   const unsigned int SCORE_LEVEL6 = 400;
-  const float        DELAY_LEVEL6 = 0.2;
+  const double       DELAY_LEVEL6 = 0.001;
 
   const short STONE = 2;
   const short PRESSURE_STONE = 2;
@@ -75,13 +75,13 @@ private:
   unsigned int d_score, d_highScore;
 
   // Scheduling var
-  float d_timeToWait;
+  double d_timeToWait;
 
   // Change cells into other cells depending on the pressure.
   void applyPressure(Point2D point);
 
   // Calculate how long it takes for the next step to happen.
-  float waitTime();
+  double waitTime();
 };
 
 #endif // TETRIS_MACHINE_H

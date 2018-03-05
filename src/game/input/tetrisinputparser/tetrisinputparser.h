@@ -11,7 +11,7 @@ public:
 
 private:
   /* Game-play constants. */
-  const float SPEEDUP_TIME = 0.5f;
+  const double SPEEDUP_TIME = 0.05;
 
   TetrisModel *d_tetrisModel;
 };

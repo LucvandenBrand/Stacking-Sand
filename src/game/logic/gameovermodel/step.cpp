@@ -1,6 +1,6 @@
 #include "gameovermodel.ih"
 
-void GameOverModel::step(float deltaTime)
+void GameOverModel::step(double deltaTime)
 {
   if (gameOver())
   {
