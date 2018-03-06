@@ -2,7 +2,7 @@
 
 InputState Input::getState()
 {
-  SDL_Event e;
+  SDL_Event e = {};
   InputState inputState = {0, 0};
   ButtonState buttonState = 0;
   while(SDL_PollEvent(&e) != 0)
@@ -25,6 +25,8 @@ InputState Input::getState()
       case SDLK_ESCAPE: // Escape
         buttonState |= ESCAPE;
         break;
+      default:
+        break;
     }
 
     switch (e.type)
@@ -34,6 +36,8 @@ InputState Input::getState()
         break;
       case (SDL_KEYDOWN):
         inputState.downButtons |= buttonState;
+        break;
+      default:
         break;
     }
   }

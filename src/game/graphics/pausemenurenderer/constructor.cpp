@@ -5,8 +5,8 @@ PauseMenuRenderer::PauseMenuRenderer(TextureFactory &textureFactory, PauseMenuMo
 {
   try
   {
-    d_gameTitle = &(textureFactory.texture("data/gameTitle.png"));
-    d_startControls = &(textureFactory.texture("data/startControls.png"));
+    d_gameTitle = textureFactory.texture("data/gameTitle.png");
+    d_startControls = textureFactory.texture("data/startControls.png");
   }
   catch (invalid_argument &invalidArgument)
   {

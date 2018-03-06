@@ -1,6 +1,6 @@
 #include "blockrenderer.ih"
 
-void BlockRenderer::render(SDL_Renderer &sdlRenderer)
+void BlockRenderer::render(SDL_Renderer &sdlRenderer, double deltaTime)
 {
   ScreenNormalizer normalizer(sdlRenderer);
   Grid grid = d_blockModel->grid();

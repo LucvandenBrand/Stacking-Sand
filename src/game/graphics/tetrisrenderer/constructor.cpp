@@ -8,7 +8,7 @@ TetrisRenderer::TetrisRenderer(TextureFactory &textureFactory, TetrisModel &tetr
   try
   {
     d_background = textureFactory.renderTexture(1, 1);
-    d_backgroundTile = &(textureFactory.texture("data/backgroundTile.png"));
+    d_backgroundTile = textureFactory.texture("data/backgroundTile.png");
   }
   catch (invalid_argument &invalidArgument)
   {

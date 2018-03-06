@@ -9,11 +9,11 @@ public:
   LevelRenderer(TextureFactory &textureFactory, LevelModel &levelModel);
 
   /* Render a stack of newspapers. */
-  void render(SDL_Renderer &sdlRenderer) override;
+  void render(SDL_Renderer &sdlRenderer, double deltaTime) override;
 
 private:
   bool initTextures(TextureFactory &textureFactory);
-  vector<Texture> d_newspapers;
+  vector<shared_ptr<Texture>> d_newspapers;
   LevelModel *d_levelModel;
 };
 

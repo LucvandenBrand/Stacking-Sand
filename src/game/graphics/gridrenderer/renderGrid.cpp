@@ -25,7 +25,7 @@ void GridRenderer::renderGrid(SDL_Renderer &sdlRenderer, Grid grid, SDL_Rect rec
       {
         SDL_Rect cellRectangle = {screenX, screenY, cellWidth, cellHeight};
         shadowBrush.drawRectangle(sdlRenderer, cellRectangle);
-        d_cellTextures[cell-1].render(sdlRenderer, cellRectangle);
+        d_cellTextures[cell-1]->render(sdlRenderer, cellRectangle);
       }
     }
   }

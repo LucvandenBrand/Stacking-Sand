@@ -1,10 +1,10 @@
 #include "levelrenderer.ih"
 
-void LevelRenderer::render(SDL_Renderer &sdlRenderer)
+void LevelRenderer::render(SDL_Renderer &sdlRenderer, double deltaTime)
 {
-  float level = d_levelModel->level();
+  double level = d_levelModel->level();
 
-  float difference, index;
+  double difference, index;
   difference = modf(level , &index);
 
   // Always draw bottom level.
@@ -18,7 +18,7 @@ void LevelRenderer::render(SDL_Renderer &sdlRenderer)
   float posX   = 0.67;
   float posY   = 0.25;
   SDL_Rect rectangle = normalizer.deNormalize(posX, posY, width, height);
-  d_newspapers[index].render(sdlRenderer, rectangle);
+  d_newspapers[index]->render(sdlRenderer, rectangle);
 
   // Draw top level, if it exists.
   index++;
@@ -26,6 +26,6 @@ void LevelRenderer::render(SDL_Renderer &sdlRenderer)
   {
     float shiftPosY = posY + 1-1*difference;
     rectangle = normalizer.deNormalize(posX, shiftPosY, width, height);
-    d_newspapers[index].render(sdlRenderer, rectangle);
+    d_newspapers[index]->render(sdlRenderer, rectangle);
   }
 }

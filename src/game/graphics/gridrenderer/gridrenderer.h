@@ -10,11 +10,11 @@ public:
   explicit GridRenderer(TextureFactory &textureFactory);
   ~GridRenderer();
 
-  virtual void render(SDL_Renderer &sdlRenderer) = 0;
+  virtual void render(SDL_Renderer &sdlRenderer, double deltaTime) = 0;
 
 protected:
   void renderGrid(SDL_Renderer &sdlRenderer, Grid grid, SDL_Rect rectangle);
-  vector<Texture> d_cellTextures;
+  vector<shared_ptr<Texture>> d_cellTextures;
 
 private:
   /* Initializes all grid textures used to render. */

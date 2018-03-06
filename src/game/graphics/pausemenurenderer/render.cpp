@@ -1,6 +1,6 @@
 #include "pausemenurenderer.ih"
 
-void PauseMenuRenderer::render(SDL_Renderer &sdlRenderer)
+void PauseMenuRenderer::render(SDL_Renderer &sdlRenderer, double deltaTime)
 {
   ScreenNormalizer normalizer(sdlRenderer);
   if (d_pauseMenuModel->firstStart())

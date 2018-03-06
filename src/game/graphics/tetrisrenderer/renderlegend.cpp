@@ -15,7 +15,7 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer)
   // Prepare text.
   SDL_Color fontColor = {255, 255, 255, 255};
   TextureFactory textureFactory(&sdlRenderer);
-  Texture *title = textureFactory.fontTexture("Worth", *d_gameFont, fontColor);
+  unique_ptr<Texture> title = textureFactory.fontTexture("Worth", *d_gameFont, fontColor);
 
   // Draw Title
   float titleWidth  = legendW * 0.5f;
@@ -26,7 +26,6 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer)
 
   SDL_Rect titleRectangle = normalizer.deNormalize(titleX, titleY, titleWidth, titleHeight);
   title->render(sdlRenderer, titleRectangle);
-  delete title;
 
   // Determine cell value positions.
   float paddingHeight = 0.06f;
@@ -42,14 +41,14 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer)
     float cellY = paddingHeight + legendY + titleHeight + i * (cellHeight + paddingHeight);
     SDL_Rect cellRectangle = normalizer.deNormalize(cellX, cellY, cellWidth, cellHeight);
     d_shadowBrush.drawRectangle(sdlRenderer, cellRectangle);
-    d_cellTextures[i].render(sdlRenderer, cellRectangle);
+    d_cellTextures[i]->render(sdlRenderer, cellRectangle);
 
     // Render value textures.
     string value = "$" + to_string(i+1);
     fontColor = {0, 0, 0, 150};
-    Texture *valueTextBG = textureFactory.fontTexture(value, *d_gameFont, fontColor);
+    unique_ptr<Texture> valueTextBG = textureFactory.fontTexture(value, *d_gameFont, fontColor);
     fontColor = {100, 200, 100, 255};
-    Texture *valueText = textureFactory.fontTexture(value, *d_gameFont, fontColor);
+    unique_ptr<Texture> valueText = textureFactory.fontTexture(value, *d_gameFont, fontColor);
 
     // Determine value position.
     float valueWidth  = cellWidth * 0.5f;
@@ -63,7 +62,5 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer)
     valueTextBG->render(sdlRenderer, valueBGRectangle);
     SDL_Rect valueRectangle = normalizer.deNormalize(valueX, valueY, valueWidth, valueHeight);
     valueText->render(sdlRenderer, valueRectangle);
-
-    delete valueText, valueTextBG;
   }
 }

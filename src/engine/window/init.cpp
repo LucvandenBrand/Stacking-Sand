@@ -13,13 +13,13 @@ bool Window::init()
                                     c_SCREEN_WIDTH,
                                     c_SCREEN_HEIGHT,
                                     SDL_WINDOW_SHOWN);
-  if (d_window == NULL)
+  if (!d_window)
     return false;
 
   // Create a renderer.
   d_renderer = SDL_CreateRenderer(d_window, -1,
                                         SDL_RENDERER_ACCELERATED);
-  if (d_renderer == NULL)
+  if (!d_renderer)
     return false;
 
   // Initialize renderer and IMG library.

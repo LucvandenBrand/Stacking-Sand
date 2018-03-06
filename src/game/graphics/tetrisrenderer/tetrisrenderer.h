@@ -9,7 +9,7 @@ public:
   TetrisRenderer(TextureFactory &textureFactory, TetrisModel &tetrisModel);
   ~TetrisRenderer();
 
-  void render(SDL_Renderer &sdlRenderer) override;
+  void render(SDL_Renderer &sdlRenderer, double deltaTime) override;
 
 private:
   /* Fills the screen with the backgroundTile. Buffers the result for efficiency.*/
@@ -29,7 +29,8 @@ private:
   /* Used to draw the background. */
   const int SCALE_BACKGROUND_TILE = 4, SHADOW_SPREAD = 50;
   const SDL_Color BG_COLOR = {0, 0, 0, 50};
-  Texture *d_background, *d_backgroundTile;
+  unique_ptr<Texture> d_background;
+  shared_ptr<Texture> d_backgroundTile;
   ShadowBrush d_shadowBrush;
 };
 

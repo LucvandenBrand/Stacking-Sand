@@ -6,7 +6,6 @@ void TetrisRenderer::renderBackground(SDL_Renderer &sdlRenderer, int tileSize)
   SDL_GetRendererOutputSize(&sdlRenderer, &renderWidth, &renderHeight);
   if (renderWidth != d_background->width() || renderHeight != d_background->height())
   { // Screen size has changed, redraw the background.
-    delete d_background;
     d_background = TextureFactory(&sdlRenderer).renderTexture(renderWidth, renderHeight);
     d_background->asRenderTarget(&sdlRenderer);
     for (int x = 0; x < renderWidth; x += tileSize)

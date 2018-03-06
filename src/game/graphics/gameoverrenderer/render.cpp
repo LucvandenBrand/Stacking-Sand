@@ -1,6 +1,6 @@
 #include "gameoverrenderer.ih"
 
-void GameOverRenderer::render(SDL_Renderer &sdlRenderer)
+void GameOverRenderer::render(SDL_Renderer &sdlRenderer, double deltaTime)
 {
   if (d_gameOverModel->gameOver())
   {

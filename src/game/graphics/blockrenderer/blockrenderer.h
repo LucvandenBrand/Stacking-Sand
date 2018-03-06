@@ -8,7 +8,7 @@ class BlockRenderer : public GridRenderer
 public:
   BlockRenderer(TextureFactory &textureFactory, BlockModel &blockModel);
 
-  void render(SDL_Renderer& sdlRenderer) override;
+  void render(SDL_Renderer& sdlRenderer, double deltaTime) override;
 
 private:
   /* Renders a box showing the next block to fall. */
@@ -18,7 +18,7 @@ private:
   ShadowBrush d_shadowBrush;
 
   /* Image describing the controls. */
-  Texture *d_controlImage;
+  shared_ptr<Texture> d_controlImage;
 
   BlockModel *d_blockModel;
 };

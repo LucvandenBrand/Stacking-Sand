@@ -7,7 +7,7 @@ BlockRenderer::BlockRenderer(TextureFactory &textureFactory, BlockModel &blockMo
 {
   try
   {
-    d_controlImage = &(textureFactory.texture("data/controls.png"));
+    d_controlImage = textureFactory.texture("data/controls.png");
   }
   catch (invalid_argument &invalidArgument)
   {

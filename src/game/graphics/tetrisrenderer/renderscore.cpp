@@ -16,8 +16,8 @@ void TetrisRenderer::renderScore(SDL_Renderer &sdlRenderer)
   char scoreString[25], highScoreString[25];
   sprintf(scoreString, "$ %06d", d_tetrisModel->score());
   sprintf(highScoreString, "Richest: $ %06d", d_tetrisModel->highScore());
-  Texture *scoreTexture = textureFactory.fontTexture(scoreString, *d_gameFont, {100, 200, 100, 255});
-  Texture *highScoreTexture = textureFactory.fontTexture(highScoreString, *d_gameFont, {80, 210, 80, 255});
+  unique_ptr<Texture> scoreTexture = textureFactory.fontTexture(scoreString, *d_gameFont, {100, 200, 100, 255});
+  unique_ptr<Texture> highScoreTexture = textureFactory.fontTexture(highScoreString, *d_gameFont, {80, 210, 80, 255});
 
   // Draw Score
   float scoreWidth  = boxWidth * 0.9f;
@@ -37,7 +37,4 @@ void TetrisRenderer::renderScore(SDL_Renderer &sdlRenderer)
   scoreY      = boxY + boxHeight - scoreHeight;
   scoreRectangle = normalizer.deNormalize(scoreX, scoreY, scoreWidth, scoreHeight);
   highScoreTexture->render(sdlRenderer, scoreRectangle);
-
-  // Free allocated memory.
-  delete scoreTexture, highScoreTexture;
 }

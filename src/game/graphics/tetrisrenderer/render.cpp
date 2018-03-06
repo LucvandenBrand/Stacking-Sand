@@ -1,6 +1,6 @@
 #include "tetrisrenderer.ih"
 
-void TetrisRenderer::render(SDL_Renderer &sdlRenderer)
+void TetrisRenderer::render(SDL_Renderer &sdlRenderer, double deltaTime)
 {
   // Determine the tetris grid size and offset.
   Grid grid = d_tetrisModel->grid();

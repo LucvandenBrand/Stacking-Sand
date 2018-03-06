@@ -1,6 +1,6 @@
 #include "texturefactory.ih"
 
-Texture *TextureFactory::fontTexture(string text, TTF_Font &font, SDL_Color textColor)
+unique_ptr<Texture> TextureFactory::fontTexture(string text, TTF_Font &font, SDL_Color textColor)
 {
   // Create surface and render text.
   SDL_Surface *textSurface = nullptr;
@@ -23,5 +23,5 @@ Texture *TextureFactory::fontTexture(string text, TTF_Font &font, SDL_Color text
   // Free surface.
   SDL_FreeSurface(textSurface);
 
-  return new Texture(sdlTexture, width, height);
+  return make_unique<Texture>(sdlTexture, width, height);
 }

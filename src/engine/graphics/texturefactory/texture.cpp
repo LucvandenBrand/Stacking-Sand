@@ -1,6 +1,6 @@
 #include "texturefactory.ih"
 
-Texture &TextureFactory::texture(string texturePath)
+shared_ptr<Texture> TextureFactory::texture(string texturePath)
 {
   if (d_textureCache.count(texturePath) == 0)
   { // Texture is new, try to load it.
@@ -22,7 +22,7 @@ Texture &TextureFactory::texture(string texturePath)
      * retrieve dimensions and store it. */
     int width, height;
     SDL_QueryTexture(sdlTexture, nullptr, nullptr, &width, &height);
-    d_textureCache.emplace(texturePath, *(new Texture(sdlTexture, width, height)));
+    d_textureCache.emplace(texturePath, make_shared<Texture>(sdlTexture, width, height));
   }
 
   return d_textureCache.at(texturePath);

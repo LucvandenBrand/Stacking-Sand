@@ -5,8 +5,8 @@ GameOverRenderer::GameOverRenderer(TextureFactory &textureFactory, GameOverModel
 {
   try
   {
-    d_gameOverTexture  = &(textureFactory.texture("data/gameOver.png"));
-    d_gameOverControls = &(textureFactory.texture("data/gameOverControls.png"));
+    d_gameOverTexture  = textureFactory.texture("data/gameOver.png");
+    d_gameOverControls = textureFactory.texture("data/gameOverControls.png");
   }
   catch (invalid_argument &invalidArgument)
   {
