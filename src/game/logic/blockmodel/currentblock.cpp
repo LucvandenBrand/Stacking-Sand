@@ -2,5 +2,5 @@
 
 Grid BlockModel::currentBlock()
 {
-  return d_blocks[d_currentBlockIndex];
+  return d_currentBlock;
 }

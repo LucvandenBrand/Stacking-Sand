@@ -2,5 +2,5 @@
 
 Grid BlockModel::nextBlock()
 {
-  return d_blocks[d_nextBlockIndex];
+  return d_nextBlock;
 }

@@ -10,6 +10,9 @@ InputState Input::getState()
     // Process keys.
     switch (e.key.keysym.sym)
     {
+      case SDLK_UP: // Up
+        buttonState |= UP;
+        break;
       case SDLK_LEFT: // Left
         buttonState |= LEFT;
         break;

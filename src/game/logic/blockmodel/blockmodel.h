@@ -11,6 +11,9 @@ public:
   // Set the moving direction.
   void move(Point2D shift);
 
+  // Rotate the grid.
+  void rotate();
+
   // Return the current position.
   Point2D position();
 
@@ -35,7 +38,8 @@ private:
 
   /* Which blocks to use. */
   vector<Grid> d_blocks;
-  int d_currentBlockIndex, d_nextBlockIndex;
+  Grid d_currentBlock, d_nextBlock;
+  default_random_engine d_randomGenerator;
 
   /* Movement vars. */
   Point2D d_position, d_move;

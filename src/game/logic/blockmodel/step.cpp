@@ -29,7 +29,7 @@ void BlockModel::step(double deltaTime)
   if (overlap(d_position + Point2D(0, 1)))
   {
     // Stamp this block on the grid, and reset.
-    d_tetrisModel->stamp(d_blocks[d_currentBlockIndex], d_position);
+    d_tetrisModel->stamp(currentBlock(), d_position);
     d_shouldReset = true;
     return;
   }

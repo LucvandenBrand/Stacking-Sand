@@ -1,6 +1,9 @@
 #include "blockmodel.ih"
 
-BlockModel::BlockModel(TetrisModel &tetrisModel) : d_tetrisModel(&tetrisModel)
+BlockModel::BlockModel(TetrisModel &tetrisModel)
+  : d_tetrisModel(&tetrisModel),
+    d_currentBlock(Grid(0,0)),
+    d_nextBlock(Grid(0,0))
 {
   // Define a line block.
   Grid lineBlock(1, 3);
@@ -34,10 +37,12 @@ BlockModel::BlockModel(TetrisModel &tetrisModel) : d_tetrisModel(&tetrisModel)
   d_blocks.push_back(sBlock);
 
   // Initialise random seed.
-  srand(time(NULL));
+  d_randomGenerator.seed((unsigned long) time(nullptr));
 
-  // Initialize the first block (by setting the next block, see reset),
-  d_nextBlockIndex = rand() % d_blocks.size();
+  // Choose the first block.
+  uniform_int_distribution<int> distribution(0,3);
+  int randomIndex = distribution(d_randomGenerator);
+  d_nextBlock = d_blocks[randomIndex];
 
   // Set initial state.
   reset();
