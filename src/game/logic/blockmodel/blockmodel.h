@@ -11,7 +11,7 @@ public:
   // Set the moving direction.
   void move(Point2D shift);
 
-  // Rotate the grid.
+  // Set the block to rotate its current grid.
   void rotate();
 
   // Return the current position.
@@ -43,6 +43,7 @@ private:
 
   /* Movement vars. */
   Point2D d_position, d_move;
+  bool d_rotate = false;
 
   /* If the game is in a failed state. */
   bool d_gameOver = false;
@@ -52,6 +53,10 @@ private:
 
   // Check if this block overlaps with the tetrisGrid at position.
   bool overlap(Point2D newPosition);
+  bool overlap(Point2D newPosition, Grid newGrid);
+
+  // Rotate the given grid.
+  Grid rotateGrid(Grid grid);
 };
 
 #endif // BLOCK_MODEL_H

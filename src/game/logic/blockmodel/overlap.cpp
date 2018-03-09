@@ -1,6 +1,6 @@
 #include "blockmodel.ih"
 
-bool BlockModel::overlap(Point2D newPosition)
+bool BlockModel::overlap(Point2D newPosition, Grid newGrid)
 {
   // Get the current block and grid in use.
   Grid block = currentBlock();

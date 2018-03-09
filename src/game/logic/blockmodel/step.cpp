@@ -14,8 +14,16 @@ void BlockModel::step(double deltaTime)
     d_shouldReset = false;
   }
 
-  if(d_gameOver) // Game over, do nothing.
+  if (d_gameOver) // Game over, do nothing.
     return;
+
+  if (d_rotate) // Rotate the current block, if possible.
+  {
+    Grid rotatedGrid = rotateGrid(currentBlock());
+    if (!overlap(d_position, rotatedGrid))
+      d_currentBlock = rotatedGrid;
+    d_rotate = false;
+  }
 
   // Apply the move, and reset the move direction.
   Point2D newPosition = d_position + d_move;

@@ -8,6 +8,8 @@ void TetrisModel::stamp(Grid fromGrid, Point2D position)
     {
       Point2D cellPosition = Point2D(posX, posY);
       unsigned short cell = fromGrid.cell(cellPosition);
+      if (cell == 0) // Empty cells are not copied to d_grid.
+        continue;
       Point2D stampPosition = position + cellPosition;
       d_grid.cell(stampPosition, cell);
     }
