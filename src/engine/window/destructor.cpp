@@ -7,6 +7,7 @@ Window::~Window()
   SDL_DestroyWindow(d_window);
 
   // Shut down subsystems.
+  Mix_Quit();
   TTF_Quit();
   IMG_Quit();
   SDL_Quit();

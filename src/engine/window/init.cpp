@@ -31,6 +31,10 @@ bool Window::init()
   if (TTF_Init() == -1)
     return false;
 
+  // Initialize Mixer library
+  if (Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 2048) < 0)
+    return false;
+
   // Set general settings.
   SDL_SetRenderDrawBlendMode(d_renderer, SDL_BLENDMODE_BLEND);
   SDL_SetWindowFullscreen(d_window, SDL_WINDOW_FULLSCREEN);
