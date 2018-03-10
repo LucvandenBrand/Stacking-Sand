@@ -14,6 +14,9 @@ public:
   // Set the block to rotate its current grid.
   void rotate();
 
+  // Set the block to move down faster.
+  void speedup();
+
   // Return the current position.
   Point2D position();
 
@@ -50,6 +53,9 @@ private:
 
   // Should the block be reset.
   bool d_shouldReset = false;
+
+  // Should the next step happen regardless of time.
+  bool d_speedup = false;
 
   // Check if this block overlaps with the tetrisGrid at position.
   bool overlap(Point2D newPosition);

@@ -27,9 +27,6 @@ public:
   // Step to the next state of the grid.
   void step(double deltaTime) override;
 
-  // Decrease the time to wait by speedupTime.
-  void speedup(double speedupTime);
-
   // Return a copy of the grid used.
   Grid grid();
 

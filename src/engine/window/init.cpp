@@ -17,8 +17,7 @@ bool Window::init()
     return false;
 
   // Create a renderer.
-  d_renderer = SDL_CreateRenderer(d_window, -1,
-                                        SDL_RENDERER_ACCELERATED);
+  d_renderer = SDL_CreateRenderer(d_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
   if (!d_renderer)
     return false;
 

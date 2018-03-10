@@ -5,8 +5,10 @@ void BlockModel::step(double deltaTime)
   if (paused()) // If the object is paused, do nothing.
     return;
 
-  if (d_tetrisModel->timeToWait() > 0) // We still have time left.
+  if (d_tetrisModel->timeToWait() > 0 && !d_speedup) // We still have time left.
     return;
+
+  d_speedup = false;
 
   if (d_shouldReset)
   {
