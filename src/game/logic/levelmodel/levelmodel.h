@@ -3,7 +3,7 @@
 
 #include "levelmodel.ih"
 
-class LevelModel : public Model
+class LevelModel : public Model, public Pauseble
 {
 public:
   explicit LevelModel(TetrisModel &tetrisModel);

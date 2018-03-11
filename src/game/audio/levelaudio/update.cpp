@@ -19,4 +19,10 @@ void LevelAudio::update(double deltaTime)
   // Play the main music appropriate for the level.
   if (!Music::playing())
     d_gameMusic.get()->play(-1);
+
+  // Pause the music if the game is paused.
+  if (d_levelModel->paused())
+    Music::pause();
+  else if (Music::paused())
+    Music::resume();
 }

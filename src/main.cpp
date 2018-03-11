@@ -28,7 +28,7 @@ int main(int argc, char **argv)
     GameOverRenderer     gameOverRenderer(textureFactory, gameOverModel);
     GameOverInputParser  gameOverInputParser(gameOverModel);
 
-    PauseMenuModel       pauseMenuModel({&tetrisModel, &blockModel}, gameOverModel);
+    PauseMenuModel       pauseMenuModel({&tetrisModel, &blockModel, &levelModel}, gameOverModel);
     PauseMenuRenderer    pauseMenuRenderer(textureFactory, pauseMenuModel);
     PauseMenuInputParser pauseMenuInputParser(pauseMenuModel);
 
