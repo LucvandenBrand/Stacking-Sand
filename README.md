@@ -23,3 +23,6 @@ The compiled binary can be run using ``./TetrisWithPressure``.
 
 ## Author
 Luc van den Brand
+
+## Credit
+- gameAudio.wav is the song "Once Upon A Time" by [Michael Klier](http://www.m-klier.de/)

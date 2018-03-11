@@ -12,6 +12,9 @@ public:
   /* Play the sound effect. */
   void play();
 
+  /* Set the volume (0..1) for the sound. */
+  void setVolume(float volume);
+
 private:
   Mix_Chunk *d_chunk;
 };

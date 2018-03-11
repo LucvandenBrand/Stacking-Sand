@@ -8,6 +8,7 @@ int main(int argc, char **argv)
     Window &window            = Window::getWindow();
     SDL_Renderer &sdlRenderer = window.sdlRenderer();
     TextureFactory textureFactory(&sdlRenderer);
+    AudioFactory audioFactory;
 
     // Initialise our games.
     TetrisModel          tetrisModel;
@@ -21,6 +22,7 @@ int main(int argc, char **argv)
     LevelModel           levelModel(tetrisModel);
     LevelRenderer        levelRenderer(textureFactory, levelModel);
     KillInputParser      killInputParser(levelModel);
+    LevelAudio           levelAudio(audioFactory, levelModel);
 
     GameOverModel        gameOverModel(tetrisModel, blockModel);
     GameOverRenderer     gameOverRenderer(textureFactory, gameOverModel);
@@ -59,6 +61,7 @@ int main(int argc, char **argv)
 
     vector<GameAudio*> gameAudios;
     gameAudios.reserve(NUM_MODELS);
+    gameAudios.push_back(&levelAudio);
 
     // Main game loop
     GameLoop gameLoop;

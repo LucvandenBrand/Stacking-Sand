@@ -18,7 +18,7 @@ private:
   double d_level = 0;
 
   /* The speed at which transitions are scaled. */
-  const double TRANSITION_SCALE = 0.5;
+  const double TRANSITION_SCALE = 0.7;
   TetrisModel *d_tetrisModel;
 };
 
