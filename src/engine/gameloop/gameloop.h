@@ -6,8 +6,10 @@
 class GameLoop
 {
 public:
-  void loop(vector<Model*> models, vector<InputParser*> inputParsers,
-            vector<GameRenderer*> gameRenderers);
+  void loop(vector<Model*> models,
+            vector<InputParser*> inputParsers,
+            vector<GameRenderer*> gameRenderers,
+            vector<GameAudio*> gameAudios);
 
 private:
   /* Iterate over all games and update them whilst they are alive. */
@@ -19,6 +21,9 @@ private:
   /* Render all game renderers to the screen. */
   void render(vector<GameRenderer*> gameRenderers, SDL_Renderer &sdlRenderer);
 
+  /* Update all gameAudio objects. */
+  void audio(vector<GameAudio*> gameAudios);
+
   /* Should the main loop close.*/
   bool d_running = false;
 
@@ -27,7 +32,6 @@ private:
 
   /* Render and input update speed in milliseconds. */
   static constexpr int UPDATE_SPEED_MAIN = 17;
-
   static constexpr int MILLI_IN_SECONDS = 1000;
 };
 

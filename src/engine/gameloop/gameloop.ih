@@ -9,6 +9,7 @@
 #include "../logic/model/model.ih"
 #include "../input/input/input.ih"
 #include "gameloop.h"
+#include "../audio/gameaudio/gameaudio.ih"
 #include <thread>
 
 using namespace std;

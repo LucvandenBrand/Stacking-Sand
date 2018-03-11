@@ -32,8 +32,9 @@ int main(int argc, char **argv)
 
 
     // Push the games on the game stack, following their drawing order.
+    const unsigned int NUM_MODELS = 5;
     vector<Model*> models;
-    models.reserve(5);
+    models.reserve(NUM_MODELS);
     models.push_back(&tetrisModel);
     models.push_back(&blockModel);
     models.push_back(&levelModel);
@@ -41,7 +42,7 @@ int main(int argc, char **argv)
     models.push_back(&gameOverModel);
 
     vector<InputParser*> inputParsers;
-    inputParsers.reserve(5);
+    inputParsers.reserve(NUM_MODELS);
     inputParsers.push_back(&tetrisInputParser);
     inputParsers.push_back(&blockInputParser);
     inputParsers.push_back(&killInputParser);
@@ -49,16 +50,19 @@ int main(int argc, char **argv)
     inputParsers.push_back(&gameOverInputParser);
 
     vector<GameRenderer*> gameRenderers;
-    gameRenderers.reserve(5);
+    gameRenderers.reserve(NUM_MODELS);
     gameRenderers.push_back(&tetrisRenderer);
     gameRenderers.push_back(&blockRenderer);
     gameRenderers.push_back(&levelRenderer);
     gameRenderers.push_back(&pauseMenuRenderer);
     gameRenderers.push_back(&gameOverRenderer);
 
+    vector<GameAudio*> gameAudios;
+    gameAudios.reserve(NUM_MODELS);
+
     // Main game loop
     GameLoop gameLoop;
-    gameLoop.loop(models, inputParsers, gameRenderers);
+    gameLoop.loop(models, inputParsers, gameRenderers, gameAudios);
   }
   catch(runtime_error &runtimeError)
   {
