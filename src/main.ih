@@ -14,11 +14,12 @@
 #include "game/logic/blockmodel/blockmodel.ih"
 #include "game/graphics/blockrenderer/blockrenderer.ih"
 #include "game/input/blockinputparser/blockinputparser.ih"
+#include "game/audio/blockaudio/blockaudio.ih"
 
 #include "game/logic/tetrismodel/tetrismodel.ih"
 #include "game/graphics/tetrisrenderer/tetrisrenderer.ih"
 #include "game/input/tetrisinputparser/tetrisinputparser.ih"
-#include "game/audio/levelaudio/levelaudio.ih"
+#include "game/audio/tetrisaudio/tetrisaudio.ih"
 
 #include "game/logic/pausemenumodel/pausemenumodel.ih"
 #include "game/graphics/pausemenurenderer/pausemenurenderer.ih"
@@ -27,6 +28,7 @@
 #include "game/logic/levelmodel/levelmodel.ih"
 #include "game/graphics/levelrenderer/levelrenderer.ih"
 #include "game/input/killinputparser/killinputparser.ih"
+#include "game/audio/levelaudio/levelaudio.ih"
 
 #include "game/logic/gameovermodel/gameovermodel.ih"
 #include "game/graphics/gameoverrenderer/gameoverrenderer.ih"

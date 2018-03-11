@@ -20,6 +20,9 @@ public:
   // Overloading the insertion operator for the grid.
   friend ostream& operator<<(ostream& out, const Grid& grid);
 
+  // Is the compared object identical.
+  bool same(Grid other);
+
 private:
   unsigned short d_width, d_height;
   vector<unsigned short> d_cells;

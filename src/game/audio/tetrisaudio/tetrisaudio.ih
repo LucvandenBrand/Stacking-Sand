@@ -1,0 +1,4 @@
+#include "tetrisaudio.h"
+#include "../../logic/tetrismodel/tetrismodel.h"
+#include "../../../engine/audio/audiofactory/audiofactory.h"
+#include "../../../engine/audio/gameaudio/gameaudio.h"

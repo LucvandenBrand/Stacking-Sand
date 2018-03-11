@@ -14,10 +14,12 @@ int main(int argc, char **argv)
     TetrisModel          tetrisModel;
     TetrisRenderer       tetrisRenderer(textureFactory, tetrisModel);
     TetrisInputParser    tetrisInputParser(tetrisModel);
+    TetrisAudio          tetrisAudio(audioFactory, tetrisModel);
 
     BlockModel           blockModel(tetrisModel);
     BlockRenderer        blockRenderer(textureFactory, blockModel);
     BlockInputParser     blockInputParser(blockModel);
+    BlockAudio           blockAudio(audioFactory, blockModel);
 
     LevelModel           levelModel(tetrisModel);
     LevelRenderer        levelRenderer(textureFactory, levelModel);
@@ -62,6 +64,8 @@ int main(int argc, char **argv)
     vector<GameAudio*> gameAudios;
     gameAudios.reserve(NUM_MODELS);
     gameAudios.push_back(&levelAudio);
+    gameAudios.push_back(&tetrisAudio);
+    gameAudios.push_back(&blockAudio);
 
     // Main game loop
     GameLoop gameLoop;

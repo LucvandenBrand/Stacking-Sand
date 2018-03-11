@@ -27,6 +27,9 @@ public:
   // Is the game in a failed state.
   bool gameOver();
 
+  // Return true if a block has been placed.
+  bool placed();
+
   // Update the state.
   void step(double deltaTime) override;
 
