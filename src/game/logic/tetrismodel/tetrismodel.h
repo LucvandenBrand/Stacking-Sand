@@ -60,10 +60,14 @@ private:
   const unsigned int SCORE_LEVEL6 = 400;
   const double       DELAY_LEVEL6 = 0.005;
 
+  const short SAND = 1;
   const short STONE = 2;
   const short PRESSURE_STONE = 2;
   const short DIAMOND = 3;
   const short PRESSURE_DIAMOND = 5;
+  const short PLANT = 4;
+  const short COAL = 5;
+  const short PRESSURE_COAL = 5;
 
   /* The grid the game is played on. */
   Grid d_grid;

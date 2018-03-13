@@ -32,6 +32,9 @@ private:
   unique_ptr<Texture> d_background;
   shared_ptr<Texture> d_backgroundTile;
   ShadowBrush d_shadowBrush;
+
+  /* Constants for the legend. */
+  const int LEGEND_COLS = 2;
 };
 
 #endif /* TETRIS_RENDERER_H */

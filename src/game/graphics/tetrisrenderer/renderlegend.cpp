@@ -27,40 +27,51 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer)
   SDL_Rect titleRectangle = normalizer.deNormalize(titleX, titleY, titleWidth, titleHeight);
   title->render(sdlRenderer, titleRectangle);
 
-  // Determine cell value positions.
-  float paddingHeight = 0.06f;
+  // Determine the dimensions of the table.
   unsigned long numCells = d_cellTextures.size();
-  float cellHeight = (legendH - titleHeight) / numCells - (numCells/2+0.5f) * paddingHeight;
-  float cellWidth  = cellHeight * normalizer.ratio();
+  unsigned long colCells = numCells / LEGEND_COLS;
 
+  float titlePadding = 0.05f;
+  float cellPadding  = 0.05f;
 
-  for (int i=0; i < numCells; i++)
+  float tableHeight = legendH - titleHeight - titlePadding;
+  float columnWidth = legendW / LEGEND_COLS;
+
+  float cellHeight  = tableHeight / colCells - cellPadding;
+  float cellWidth   = cellHeight * normalizer.ratio();
+
+  for (int col = 0; col < LEGEND_COLS; col++)
   {
-    // Draw the cell.
-    float cellX = legendX + legendW / 2 - cellWidth / 2;
-    float cellY = paddingHeight + legendY + titleHeight + i * (cellHeight + paddingHeight);
-    SDL_Rect cellRectangle = normalizer.deNormalize(cellX, cellY, cellWidth, cellHeight);
-    d_shadowBrush.drawRectangle(sdlRenderer, cellRectangle);
-    d_cellTextures[i]->render(sdlRenderer, cellRectangle);
+    int index = 0;
+    for (int row = 0; row < colCells && index < numCells; row++)
+    {
+      index = (int) (col*colCells + row);
+      // Draw the cell.
+      float cellX = legendX + col * columnWidth + columnWidth / 2.f - cellWidth / 2.f;
+      float cellY = titlePadding + legendY + titleHeight + row * cellHeight + row*cellPadding;
+      SDL_Rect cellRectangle = normalizer.deNormalize(cellX, cellY, cellWidth, cellHeight);
+      d_shadowBrush.drawRectangle(sdlRenderer, cellRectangle);
+      d_cellTextures[index]->render(sdlRenderer, cellRectangle);
 
-    // Render value textures.
-    string value = "$" + to_string(i+1);
-    fontColor = {0, 0, 0, 150};
-    unique_ptr<Texture> valueTextBG = textureFactory.fontTexture(value, *d_gameFont, fontColor);
-    fontColor = {100, 200, 100, 255};
-    unique_ptr<Texture> valueText = textureFactory.fontTexture(value, *d_gameFont, fontColor);
+      // Render value textures.
+      string value = "$" + to_string(index+1);
+      fontColor = {0, 0, 0, 150};
+      unique_ptr<Texture> valueTextBG = textureFactory.fontTexture(value, *d_gameFont, fontColor);
+      fontColor = {100, 200, 100, 255};
+      unique_ptr<Texture> valueText = textureFactory.fontTexture(value, *d_gameFont, fontColor);
 
-    // Determine value position.
-    float valueWidth  = cellWidth * 0.5f;
-    float valueHeight = valueWidth / normalizer.normalizeWidth(valueText->width())
-                                  * normalizer.normalizeHeight(valueText->height());
-    float valueY = cellY + cellHeight - valueHeight / 2;
-    float valueX = cellX + cellWidth  - valueWidth / 2;
+      // Determine value position.
+      float valueWidth  = cellWidth * 0.5f;
+      float valueHeight = valueWidth / normalizer.normalizeWidth(valueText->width())
+                          * normalizer.normalizeHeight(valueText->height());
+      float valueY = cellY + cellHeight - valueHeight / 2;
+      float valueX = cellX + cellWidth / 2  - valueWidth / 2;
 
-    // Render value (background shadow and front).
-    SDL_Rect valueBGRectangle = normalizer.deNormalize(valueX, valueY+0.005f, valueWidth, valueHeight);
-    valueTextBG->render(sdlRenderer, valueBGRectangle);
-    SDL_Rect valueRectangle = normalizer.deNormalize(valueX, valueY, valueWidth, valueHeight);
-    valueText->render(sdlRenderer, valueRectangle);
+      // Render value (background shadow and front).
+      SDL_Rect valueBGRectangle = normalizer.deNormalize(valueX, valueY+0.005f, valueWidth, valueHeight);
+      valueTextBG->render(sdlRenderer, valueBGRectangle);
+      SDL_Rect valueRectangle = normalizer.deNormalize(valueX, valueY, valueWidth, valueHeight);
+      valueText->render(sdlRenderer, valueRectangle);
+    }
   }
 }

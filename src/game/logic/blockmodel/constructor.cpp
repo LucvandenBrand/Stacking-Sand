@@ -7,7 +7,7 @@ BlockModel::BlockModel(TetrisModel &tetrisModel)
 {
   // Define a line block.
   Grid lineBlock(1, 3);
-  lineBlock.cell(Point2D(0,0), 1);
+  lineBlock.cell(Point2D(0,0), 4);
   lineBlock.cell(Point2D(0,1), 1);
   lineBlock.cell(Point2D(0,2), 1);
   d_blocks.push_back(lineBlock);
@@ -15,7 +15,7 @@ BlockModel::BlockModel(TetrisModel &tetrisModel)
   // Define an L block.
   Grid lBlock(2, 3);
   lBlock.cell(Point2D(0,0), 1);
-  lBlock.cell(Point2D(0,1), 1);
+  lBlock.cell(Point2D(0,1), 6);
   lBlock.cell(Point2D(0,2), 1);
   lBlock.cell(Point2D(1,2), 1);
   d_blocks.push_back(lBlock);
