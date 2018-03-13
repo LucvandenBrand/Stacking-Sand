@@ -46,7 +46,7 @@ void TetrisModel::step(double deltaTime)
       {
         Point2D currentPoint(posX, posY);
         unsigned short cell = d_grid.cell(currentPoint);
-        d_score += cell;
+        d_score += VALUE[cell-1];
         updateHighScore();
         d_grid.cell(currentPoint, 0);
       }

@@ -54,7 +54,7 @@ void TetrisRenderer::renderLegend(SDL_Renderer &sdlRenderer)
       d_cellTextures[index]->render(sdlRenderer, cellRectangle);
 
       // Render value textures.
-      string value = "$" + to_string(index+1);
+      string value = "$" + to_string(d_tetrisModel->value(index));
       fontColor = {0, 0, 0, 150};
       unique_ptr<Texture> valueTextBG = textureFactory.fontTexture(value, *d_gameFont, fontColor);
       fontColor = {100, 200, 100, 255};
