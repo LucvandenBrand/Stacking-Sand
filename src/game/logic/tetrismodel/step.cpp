@@ -36,6 +36,7 @@ void TetrisModel::step(double deltaTime)
       else // We are stationary, count the cells on top.
       {
         applyPressure(currentPoint);
+        applyHeat(currentPoint);
         ++rowCount;
       }
     }

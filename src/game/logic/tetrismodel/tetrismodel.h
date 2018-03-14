@@ -69,13 +69,19 @@ private:
   const short PLANT = 4;
   const short COAL = 5;
   const short LAVA = 6;
+  const short GLASS = 7;
+  const short COAL_FIRE = 8;
 
-  const short WEIGHT[6] = {1 , 1 , 1, 1, 1, 1};
-  const short VALUE[6]  = {1 , 5, 10, 15, 20, 3};
+  const short WEIGHT[8] = {1 , 1 , 1, 1, 1, 1, 1, 1};
+  const short HEAT[8]   = {0 , 0 , 0, 0, 0, 1, 0, 1};
+  const short VALUE[8]  = {1 , 5, 10, 15, 20, 3, 30, 3};
 
   const short PRESSURE_SAND_TO_STONE = 2;
   const short PRESSURE_STONE_TO_DIAMOND = 5;
   const short PRESSURE_PLANT_TO_COAL = 5;
+
+  const short HEAT_SAND_TO_GLASS = 1;
+  const short HEAT_COAL_TO_COAL_FIRE = 1;
 
   /* The grid the game is played on. */
   Grid d_grid;
@@ -88,6 +94,9 @@ private:
 
   // Change cells into other cells depending on the pressure.
   void applyPressure(Point2D point);
+
+  // Change cells into other cells depending on the heat.
+  void applyHeat(Point2D point);
 
   // Calculate how long it takes for the next step to happen.
   double waitTime();
