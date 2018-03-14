@@ -34,7 +34,7 @@ private:
   ShadowBrush d_shadowBrush;
 
   /* Constants for the legend. */
-  const int LEGEND_COLS = 2;
+  const int LEGEND_COLS = 3;
 };
 
 #endif /* TETRIS_RENDERER_H */

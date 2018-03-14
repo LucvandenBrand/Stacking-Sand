@@ -72,10 +72,11 @@ private:
   const short LAVA = 6;
   const short GLASS = 7;
   const short COAL_FIRE = 8;
+  const short ICE = 9;
 
-  const short WEIGHT[8] = {1 , 1 , 1, 1, 1, 1, 1, 1};
-  const short HEAT[8]   = {0 , 0 , 0, 0, 0, 1, 0, 1};
-  const short VALUE[8]  = {1 , 5, 100, 5, 50, 5, 30, 15};
+  const short WEIGHT[9] = {1 , 1 , 1, 1, 1, 1, 1, 1, 1};
+  const short HEAT[9]   = {0 , 0 , 0, 0, 0, 1, 0, 1, -1};
+  const short VALUE[9]  = {1 , 5, 100, 5, 50, 5, 30, 15, 5};
 
   const short PRESSURE_SAND_TO_STONE = 5;
   const short PRESSURE_COAL_TO_DIAMOND = 8;
