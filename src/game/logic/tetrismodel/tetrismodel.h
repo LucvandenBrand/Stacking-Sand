@@ -50,19 +50,20 @@ private:
   const int TETRIS_HEIGHT = 20;
 
   const double       DELAY_LEVEL0 = 0.4;
-  const unsigned int SCORE_LEVEL1 = 10;
-  const double       DELAY_LEVEL1 = 0.2;
-  const unsigned int SCORE_LEVEL2 = 50;
-  const double       DELAY_LEVEL2 = 0.1;
-  const unsigned int SCORE_LEVEL3 = 100;
-  const double       DELAY_LEVEL3 = 0.05;
-  const unsigned int SCORE_LEVEL4 = 200;
-  const double       DELAY_LEVEL4 = 0.02;
-  const unsigned int SCORE_LEVEL5 = 300;
-  const double       DELAY_LEVEL5 = 0.01;
-  const unsigned int SCORE_LEVEL6 = 400;
-  const double       DELAY_LEVEL6 = 0.005;
+  const unsigned int SCORE_LEVEL1 = 100;
+  const double       DELAY_LEVEL1 = 0.3;
+  const unsigned int SCORE_LEVEL2 = 500;
+  const double       DELAY_LEVEL2 = 0.2;
+  const unsigned int SCORE_LEVEL3 = 1000;
+  const double       DELAY_LEVEL3 = 0.1;
+  const unsigned int SCORE_LEVEL4 = 2000;
+  const double       DELAY_LEVEL4 = 0.05;
+  const unsigned int SCORE_LEVEL5 = 3000;
+  const double       DELAY_LEVEL5 = 0.03;
+  const unsigned int SCORE_LEVEL6 = 4000;
+  const double       DELAY_LEVEL6 = 0.01;
 
+  const short AIR = 0;
   const short SAND = 1;
   const short STONE = 2;
   const short DIAMOND = 3;
@@ -74,11 +75,12 @@ private:
 
   const short WEIGHT[8] = {1 , 1 , 1, 1, 1, 1, 1, 1};
   const short HEAT[8]   = {0 , 0 , 0, 0, 0, 1, 0, 1};
-  const short VALUE[8]  = {1 , 5, 10, 15, 20, 3, 30, 3};
+  const short VALUE[8]  = {1 , 5, 100, 5, 50, 5, 30, 15};
 
-  const short PRESSURE_SAND_TO_STONE = 2;
-  const short PRESSURE_STONE_TO_DIAMOND = 5;
-  const short PRESSURE_PLANT_TO_COAL = 5;
+  const short PRESSURE_SAND_TO_STONE = 5;
+  const short PRESSURE_COAL_TO_DIAMOND = 8;
+  const short PRESSURE_PLANT_TO_COAL = 3;
+  const short PRESSURE_GLASS_TO_AIR = 2;
 
   const short HEAT_SAND_TO_GLASS = 1;
   const short HEAT_COAL_TO_COAL_FIRE = 1;

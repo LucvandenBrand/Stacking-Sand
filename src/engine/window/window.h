@@ -27,8 +27,8 @@ private:
   bool init();
 
   const char *c_TITLE = "TinyTetris";
-  const int c_SCREEN_WIDTH = 1280;
-  const int c_SCREEN_HEIGHT = 720;
+  const int c_SCREEN_WIDTH  = 1920;
+  const int c_SCREEN_HEIGHT = 1080;
 
   // Draw objects.
   SDL_Window *d_window = NULL;

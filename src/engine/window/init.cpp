@@ -37,7 +37,7 @@ bool Window::init()
 
   // Set general settings.
   SDL_SetRenderDrawBlendMode(d_renderer, SDL_BLENDMODE_BLEND);
-  //SDL_SetWindowFullscreen(d_window, SDL_WINDOW_FULLSCREEN);
+  SDL_SetWindowFullscreen(d_window, SDL_WINDOW_FULLSCREEN);
 
   // Everything went fine, return success.
   return true;
