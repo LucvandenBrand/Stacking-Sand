@@ -5,44 +5,25 @@ BlockModel::BlockModel(TetrisModel &tetrisModel)
     d_currentBlock(Grid(0,0)),
     d_nextBlock(Grid(0,0))
 {
-  // Define a line block.
-  Grid lineBlock(1, 3);
-  lineBlock.cell(Point2D(0,0), 4);
-  lineBlock.cell(Point2D(0,1), 1);
-  lineBlock.cell(Point2D(0,2), 1);
-  d_blocks.push_back(lineBlock);
-
-  // Define an L block.
-  Grid lBlock(2, 3);
-  lBlock.cell(Point2D(0,0), 1);
-  lBlock.cell(Point2D(0,1), 6);
-  lBlock.cell(Point2D(0,2), 1);
-  lBlock.cell(Point2D(1,2), 1);
-  d_blocks.push_back(lBlock);
-
-  // Define a triangle
-  Grid tBlock(3, 2);
-  tBlock.cell(Point2D(0,1), 1);
-  tBlock.cell(Point2D(1,1), 1);
-  tBlock.cell(Point2D(1,0), 1);
-  tBlock.cell(Point2D(2,1), 1);
-  d_blocks.push_back(tBlock);
-
-  // Define a square
-  Grid sBlock(2, 2);
-  sBlock.cell(Point2D(0,0), 1);
-  sBlock.cell(Point2D(1,0), 1);
-  sBlock.cell(Point2D(0,1), 1);
-  sBlock.cell(Point2D(1,1), 1);
-  d_blocks.push_back(sBlock);
-
   // Initialise random seed.
   d_randomGenerator.seed((unsigned long) time(nullptr));
 
+  // Initialize weights.
+  vector<int> cellAvailability(tetrisModel.NUM_CELLS + 1, 0);
+  cellAvailability[tetrisModel.AIR]       = 0;
+  cellAvailability[tetrisModel.SAND]      = 40;
+  cellAvailability[tetrisModel.STONE]     = 20;
+  cellAvailability[tetrisModel.DIAMOND]   = 0;
+  cellAvailability[tetrisModel.PLANT]     = 30;
+  cellAvailability[tetrisModel.COAL]      = 0;
+  cellAvailability[tetrisModel.LAVA]      = 5;
+  cellAvailability[tetrisModel.GLASS]     = 0;
+  cellAvailability[tetrisModel.COAL_FIRE] = 0;
+  cellAvailability[tetrisModel.ICE]       = 5;
+  d_cellAvailability = cellAvailability;
+
   // Choose the first block.
-  uniform_int_distribution<int> distribution(0,3);
-  int randomIndex = distribution(d_randomGenerator);
-  d_nextBlock = d_blocks[randomIndex];
+  d_nextBlock = generateBlock();
 
   // Set initial state.
   reset();

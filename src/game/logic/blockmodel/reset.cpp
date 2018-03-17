@@ -4,9 +4,7 @@ void BlockModel::reset()
 {
   // Set a new current block and pick a new random next block.
   d_currentBlock = d_nextBlock;
-  uniform_int_distribution<int> distribution(0,3);
-  int randomIndex = distribution(d_randomGenerator);
-  d_nextBlock = d_blocks[randomIndex];
+  d_nextBlock = generateBlock();
 
   // Set position to middle of the top, with downwards movement.
   auto halfBlock = (unsigned short) (currentBlock().width() / 2);

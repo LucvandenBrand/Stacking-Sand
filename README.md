@@ -8,7 +8,7 @@ A simple C++ Tetris game.
 - [x] Add next-block board.
 - [x] Add score legend.
 - [x] Add story mechanic.
-- [ ] Implement sound.
+- [x] Implement sound.
 - [x] Implement menu.
 - [ ] Polish.
 - [ ] Implement resource inclusion.

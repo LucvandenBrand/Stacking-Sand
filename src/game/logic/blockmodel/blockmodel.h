@@ -42,9 +42,11 @@ public:
 private:
   TetrisModel *d_tetrisModel;
 
-  /* Which blocks to use. */
-  vector<Grid> d_blocks;
+  // The currently chosen blocks.
   Grid d_currentBlock, d_nextBlock;
+
+  /* Random objects to determine which blocks/cells to use. */
+  vector<int> d_cellAvailability;
   default_random_engine d_randomGenerator;
 
   /* Movement vars. */
@@ -63,6 +65,9 @@ private:
   // Check if this block overlaps with the tetrisGrid at position.
   bool overlap(Point2D newPosition);
   bool overlap(Point2D newPosition, Grid newGrid);
+
+  // Generate a new grid.
+  Grid generateBlock();
 
   // Rotate the given grid.
   Grid rotateGrid(Grid grid);

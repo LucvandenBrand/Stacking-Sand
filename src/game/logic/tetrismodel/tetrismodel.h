@@ -39,6 +39,19 @@ public:
   // Copy source onto destination at d_position.
   void stamp(Grid fromGrid, Point2D position);
 
+  // Semantic names for each cell index and their count.
+  static const short NUM_CELLS = 9;
+  const short AIR = 0;
+  const short SAND = 1;
+  const short STONE = 2;
+  const short DIAMOND = 3;
+  const short PLANT = 4;
+  const short COAL = 5;
+  const short LAVA = 6;
+  const short GLASS = 7;
+  const short COAL_FIRE = 8;
+  const short ICE = 9;
+
 private:
   /* Game and studio name for saving. */
   const char* NAME_COMPANY = "VanDenBrand";
@@ -63,20 +76,9 @@ private:
   const unsigned int SCORE_LEVEL6 = 4000;
   const double       DELAY_LEVEL6 = 0.01;
 
-  const short AIR = 0;
-  const short SAND = 1;
-  const short STONE = 2;
-  const short DIAMOND = 3;
-  const short PLANT = 4;
-  const short COAL = 5;
-  const short LAVA = 6;
-  const short GLASS = 7;
-  const short COAL_FIRE = 8;
-  const short ICE = 9;
-
-  const short WEIGHT[9] = {1 , 1 , 1, 1, 1, 1, 1, 1, 1};
-  const short HEAT[9]   = {0 , 0 , 0, 0, 0, 1, 0, 1, -1};
-  const short VALUE[9]  = {1 , 5, 100, 5, 50, 5, 30, 15, 5};
+  const short WEIGHT[NUM_CELLS] = {1 , 1 , 1, 1, 1, 1, 1, 1, 1};
+  const short HEAT[NUM_CELLS]   = {0 , 0 , 0, 0, 0, 1, 0, 1, -1};
+  const short VALUE[NUM_CELLS]  = {1 , 5, 100, 5, 50, 5, 30, 15, 5};
 
   const short PRESSURE_SAND_TO_STONE = 5;
   const short PRESSURE_COAL_TO_DIAMOND = 8;
