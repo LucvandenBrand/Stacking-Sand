@@ -77,7 +77,7 @@ private:
   const double       DELAY_LEVEL6 = 0.01;
 
   const short WEIGHT[NUM_CELLS] = {1 , 1 , 1, 1, 1, 1, 1, 1, 1};
-  const short HEAT[NUM_CELLS]   = {0 , 0 , 0, 0, 0, 1, 0, 1, -1};
+  const short HEAT[NUM_CELLS]   = {0 , 0 , 0, 0, 0, 1, 0, 1, -2};
   const short VALUE[NUM_CELLS]  = {1 , 5, 100, 5, 50, 5, 30, 15, 5};
 
   const short PRESSURE_SAND_TO_STONE = 5;
@@ -87,6 +87,8 @@ private:
 
   const short HEAT_SAND_TO_GLASS = 1;
   const short HEAT_COAL_TO_COAL_FIRE = 1;
+  const short HEAT_ICE_TO_PLANT = 1;
+  const short HEAT_LAVA_TO_STONE = -1;
 
   /* The grid the game is played on. */
   Grid d_grid;

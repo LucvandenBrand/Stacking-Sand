@@ -2,11 +2,13 @@
 
 void TetrisModel::applyPressure(Point2D point) {
   /* Count the mass on top. */
+  Grid currentGrid = d_grid;
   short topMass = 0;
-  for (int y = 0; y < point.y; ++y) {
-    int cell = d_grid.cell(Point2D(point.x, y));
-    if (cell != 0)
-      topMass += WEIGHT[d_grid.cell(Point2D(point.x, y))-1];
+  for (int y = max(0, point.y - 1); y >= 0; --y) {
+    int cell = currentGrid.cell(Point2D(point.x, y));
+    if (cell == 0)
+      break;
+    topMass += WEIGHT[currentGrid.cell(Point2D(point.x, y))-1];
   }
 
   unsigned short cell = d_grid.cell(point);
