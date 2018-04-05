@@ -11,8 +11,8 @@ A simple C++ Tetris game.
 - [x] Implement sound.
 - [x] Implement menu.
 - [ ] Polish.
-- [ ] Implement resource inclusion.
 - [ ] Refactoring and documentation.
+- [ ] Create installer.
 - [ ] Make promo stuff (3d rotatable cover).
 - [ ] Release to Github.
 

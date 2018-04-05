@@ -5,14 +5,10 @@ bool LevelRenderer::initTextures(TextureFactory &textureFactory)
   // Try to load the newspaper textures.
   try
   {
-    d_newspapers.reserve(7);
-    d_newspapers.push_back(textureFactory.texture("data/level0.png"));
-    d_newspapers.push_back(textureFactory.texture("data/level1.png"));
-    d_newspapers.push_back(textureFactory.texture("data/level2.png"));
-    d_newspapers.push_back(textureFactory.texture("data/level3.png"));
-    d_newspapers.push_back(textureFactory.texture("data/level4.png"));
-    d_newspapers.push_back(textureFactory.texture("data/level5.png"));
-    d_newspapers.push_back(textureFactory.texture("data/level6.png"));
+    const int NUM_PAPERS = 14;
+    d_newspapers.reserve(NUM_PAPERS);
+    for (int paper = 0; paper < NUM_PAPERS; paper++)
+      d_newspapers.push_back(textureFactory.texture("data/level" + to_string(paper) + ".png"));
   }
   catch (invalid_argument &invalidArgument)
   {
