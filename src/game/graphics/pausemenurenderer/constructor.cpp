@@ -1,8 +1,13 @@
 #include "pausemenurenderer.ih"
 
 PauseMenuRenderer::PauseMenuRenderer(TextureFactory &textureFactory, PauseMenuModel &pauseMenuModel)
-  : d_pauseMenuModel(&pauseMenuModel)
+  : d_pauseMenuModel(&pauseMenuModel),
+    d_titleAnimation(LerpSeries(-1))
 {
+  // Define the title animation.
+  d_titleAnimation.add(1.0,  0);
+
+  // Load graphics.
   try
   {
     d_gameTitle = textureFactory.texture("data/gameTitle.png");

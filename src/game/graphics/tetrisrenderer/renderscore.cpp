@@ -4,9 +4,9 @@ void TetrisRenderer::renderScore(SDL_Renderer &sdlRenderer)
 {
   ScreenNormalizer normalizer(sdlRenderer);
   // Draw the containing shadow rectangle.
-  float boxX      = 0.65;
-  float boxY      = 0.01;
-  float boxWidth  = 0.34;
+  float boxX      = 0.66;
+  float boxY      = 0.015;
+  float boxWidth  = 0.32;
   float boxHeight = 0.2;
   SDL_Rect boxRectangle = normalizer.deNormalize(boxX, boxY, boxWidth, boxHeight);
   d_shadowBrush.drawRectangle(sdlRenderer, boxRectangle);

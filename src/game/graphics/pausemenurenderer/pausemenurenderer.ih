@@ -3,3 +3,4 @@
 #include "../../../engine/graphics/gamerenderer/gamerenderer.ih"
 #include "../../../engine/graphics/screennormalizer/screennormalizer.ih"
 #include "../../../engine/graphics/texturefactory/texturefactory.ih"
+#include "../../../engine/logic/lerpseries/lerpseries.ih"
