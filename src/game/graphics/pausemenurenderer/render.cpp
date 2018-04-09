@@ -6,5 +6,9 @@ void PauseMenuRenderer::render(SDL_Renderer &sdlRenderer, double deltaTime)
     renderStart(sdlRenderer, deltaTime);
   else if (d_pauseMenuModel->paused())
     renderPause(sdlRenderer, deltaTime);
+  else // Reset all pause animations.
+  {
+    d_pauseButtonAnimation.reset();
+  }
 }
 

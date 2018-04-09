@@ -2,6 +2,9 @@
 
 void PauseMenuRenderer::renderPause(SDL_Renderer &sdlRenderer, double deltaTime)
 {
+  // Update animations.
+  d_pauseButtonAnimation.update(deltaTime);
+
   ScreenNormalizer normalizer(sdlRenderer);
 
   /* Create a dark rectangle over the screen. */
@@ -11,7 +14,7 @@ void PauseMenuRenderer::renderPause(SDL_Renderer &sdlRenderer, double deltaTime)
 
   /* Draw a pause symbol: two rectangles at the centre of the screen.*/
   float pauseBlockWidth  = 0.03;
-  float pauseBlockHeight = pauseBlockWidth * 4;
+  float pauseBlockHeight = pauseBlockWidth * 4 - (float) d_pauseButtonAnimation.get();
   float pauseBlocksX     = 0.5f - pauseBlockWidth * 2.5f / 2;
   float pauseBlocksY     = 0.5f - pauseBlockHeight / 2;
   rectangle = normalizer.deNormalize(pauseBlocksX, pauseBlocksY, pauseBlockWidth, pauseBlockHeight);

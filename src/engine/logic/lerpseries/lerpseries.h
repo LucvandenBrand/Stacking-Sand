@@ -21,7 +21,11 @@ public:
   /* Get a linearly interpolated value. */
   double get();
 
+  /* Set whether or not the series should reset at the end. */
+  void setLooping(bool loop);
+
 private:
+  bool d_loop = false;
   double d_time;
   map<double, double, less<>> d_timeSeries;
 };

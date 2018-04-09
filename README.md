@@ -11,9 +11,9 @@ A simple C++ Tetris game.
 - [x] Implement sound.
 - [x] Implement menu.
 - [ ] Polish.
-  - [ ] Animate titlescreen.
+  - [x] Animate titlescreen.
   - [ ] Music and voice for titlescreen.
-  - [ ] Author in titlescreen.
+  - [x] Author in titlescreen.
   - [ ] Block influence effects
     - [ ] Heat / coldness
     - [ ] Pressure (shaking)

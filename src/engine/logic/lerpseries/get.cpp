@@ -14,7 +14,11 @@ double LerpSeries::get()
 
   // We passed the last point, so no lerp.
   if (start == end)
+  {
+    if (d_loop)
+      reset();
     return d_timeSeries[end];
+  }
 
   // Get difference in time between time-values.
   double duration = end - start;
