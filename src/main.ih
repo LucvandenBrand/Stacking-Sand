@@ -24,6 +24,7 @@
 #include "game/logic/pausemenumodel/pausemenumodel.ih"
 #include "game/graphics/pausemenurenderer/pausemenurenderer.ih"
 #include "game/input/pausemenuinputparser/pausemenuinputparser.ih"
+#include "game/audio/pausemenuaudio/pausemenuaudio.h"
 
 #include "game/logic/levelmodel/levelmodel.ih"
 #include "game/graphics/levelrenderer/levelrenderer.ih"

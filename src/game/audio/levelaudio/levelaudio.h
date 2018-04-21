@@ -6,11 +6,10 @@
 class LevelAudio : public GameAudio
 {
 public:
-  explicit LevelAudio(AudioFactory &audioFactory, LevelModel &levelModel);
+  LevelAudio(AudioFactory &audioFactory, LevelModel &levelModel);
   void update(double deltaTime) override;
 
 private:
-  shared_ptr<Music> d_gameMusic;
   shared_ptr<Sound> d_paperSound;
 
   LevelModel *d_levelModel;

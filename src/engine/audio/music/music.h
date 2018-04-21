@@ -21,7 +21,7 @@ public:
   /* Return true if music is paused. */
   static bool paused();
 
-  /* Stop the curpausedrent music. */
+  /* Stop the current music. */
   static void halt();
 
   /* Resume the current music. */

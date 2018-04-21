@@ -1,0 +1,4 @@
+#include "pausemenuaudio.h"
+#include "../../../engine/audio/gameaudio/gameaudio.h"
+#include "../../../engine/audio/audiofactory/audiofactory.h"
+#include "../../logic/pausemenumodel/pausemenumodel.h"

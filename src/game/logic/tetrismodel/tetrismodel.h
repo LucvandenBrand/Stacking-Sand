@@ -66,7 +66,7 @@ private:
   const int TETRIS_HEIGHT = 20;
 
   const double   DELAY_LEVEL[NUM_LEVELS] = {0.5, 0.4, 0.35, 0.32, 0.30, 0.28, 0.25, 0.22, 0.20, 0.18, 0.15,  0.12, 0.100, 0.050};
-  const unsigned SCORE_LEVEL[NUM_LEVELS] = {  0, 500, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000};
+  const unsigned SCORE_LEVEL[NUM_LEVELS] = {  0, 100, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000};
 
   const short WEIGHT[NUM_CELLS] = {1 , 1,   1, 1,  1, 1,  1,  1,  1};
   const short HEAT[NUM_CELLS]   = {0 , 0,   0, 0,  0, 1,  0,  1, -2};

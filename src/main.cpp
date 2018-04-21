@@ -33,7 +33,7 @@ int main(int argc, char **argv)
     PauseMenuModel       pauseMenuModel({&tetrisModel, &blockModel, &levelModel}, gameOverModel);
     PauseMenuRenderer    pauseMenuRenderer(textureFactory, pauseMenuModel);
     PauseMenuInputParser pauseMenuInputParser(pauseMenuModel);
-
+    PauseMenuAudio       pauseMenuAudio(audioFactory, pauseMenuModel);
 
     // Push the games on the game stack, following their drawing order.
     const unsigned int NUM_MODELS = 5;
@@ -66,6 +66,7 @@ int main(int argc, char **argv)
     gameAudios.push_back(&levelAudio);
     gameAudios.push_back(&tetrisAudio);
     gameAudios.push_back(&blockAudio);
+    gameAudios.push_back(&pauseMenuAudio);
 
     // Main game loop
     GameLoop gameLoop;

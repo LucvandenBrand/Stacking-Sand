@@ -33,7 +33,7 @@ void PauseMenuRenderer::renderStart(SDL_Renderer &sdlRenderer, double deltaTime)
 
   // Draw credits.
   TextureFactory textureFactory(&sdlRenderer);
-  unique_ptr<Texture> credit = textureFactory.fontTexture("L.A.H van den Brand - 2018", *d_creditFont, {55, 69, 71, 255});
+  unique_ptr<Texture> credit = textureFactory.fontTexture("L.A.H. van den Brand - 2018", *d_creditFont, {55, 69, 71, 255});
   float creditWidth  = 0.15f;
   float creditHeight = creditWidth / normalizer.normalizeWidth(credit->width())
                 * normalizer.normalizeHeight(credit->height());
