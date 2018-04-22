@@ -12,7 +12,7 @@ void PauseMenuAudio::update(double deltaTime)
     if (d_wasFirstStart) // The title screen was open the previous frame.
     {
       Music::halt();
-      d_pauseSound->play();
+      d_startSound->play();
       d_currentMusic = d_gameMusic.get();
     }
 

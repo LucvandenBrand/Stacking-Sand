@@ -11,7 +11,7 @@ public:
 private:
   shared_ptr<Music> d_titleMusic, d_gameMusic;
   Music* d_currentMusic;
-  shared_ptr<Sound> d_pauseSound;
+  shared_ptr<Sound> d_pauseSound, d_startSound;
 
   PauseMenuModel* d_pauseMenuModel;
 

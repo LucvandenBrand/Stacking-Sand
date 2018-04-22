@@ -9,6 +9,7 @@ PauseMenuAudio::PauseMenuAudio(AudioFactory &audioFactory, PauseMenuModel &pause
     d_currentMusic = d_titleMusic.get();
     d_gameMusic = audioFactory.music("data/gameMusic.wav");
     d_pauseSound = audioFactory.sound("data/pause.wav");
+    d_startSound = audioFactory.sound("data/start.wav");
   }
   catch (invalid_argument &invalidArgument)
   {

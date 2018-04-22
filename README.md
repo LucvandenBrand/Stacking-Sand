@@ -10,16 +10,11 @@ A simple C++ Tetris game.
 - [x] Add story mechanic.
 - [x] Implement sound.
 - [x] Implement menu.
-- [ ] Polish.
+- [x] Polish.
   - [x] Animate titlescreen.
-  - [ ] Music and voice for titlescreen.
+  - [x] Music and voice for titlescreen.
   - [x] Author in titlescreen.
-  - [ ] Block influence effects
-    - [ ] Heat / coldness
-    - [ ] Pressure (shaking)
-    - [ ] Transform: poof
-  - [ ] Voiceover for news titles.
-  - [ ] Pause sound-effect.
+  - [x] Pause sound-effect.
 - [ ] Final refactoring and documentation.
 - [ ] Create installer.
 - [ ] Make promo stuff (3d rotatable cover, booklet).
