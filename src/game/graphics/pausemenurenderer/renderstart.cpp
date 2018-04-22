@@ -32,13 +32,18 @@ void PauseMenuRenderer::renderStart(SDL_Renderer &sdlRenderer, double deltaTime)
   d_startControls->render(sdlRenderer, controlRectangle);
 
   // Draw credits.
+  const string CREDIT = "Brand - 2018";
   TextureFactory textureFactory(&sdlRenderer);
-  unique_ptr<Texture> credit = textureFactory.fontTexture("Brand - 2018", *d_creditFont, {55, 69, 71, 255});
-  float creditWidth  = 0.15f;
+  unique_ptr<Texture> credit = textureFactory.fontTexture(CREDIT, *d_creditFont, {55, 69, 71, 255});
+  float creditWidth  = 0.1f;
   float creditHeight = creditWidth / normalizer.normalizeWidth(credit->width())
                 * normalizer.normalizeHeight(credit->height());
   float creditX      = 1 - creditWidth;
   float creditY      = 1 - creditHeight;
   SDL_Rect creditRectangle = normalizer.deNormalize(creditX, creditY, creditWidth, creditHeight);
+  credit->render(sdlRenderer, creditRectangle);
+  credit = textureFactory.fontTexture(CREDIT, *d_creditFont, {255, 255, 255, 255});
+  creditY     -= 0.005;
+  creditRectangle = normalizer.deNormalize(creditX, creditY, creditWidth, creditHeight);
   credit->render(sdlRenderer, creditRectangle);
 }
