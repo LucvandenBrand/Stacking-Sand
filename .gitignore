@@ -274,3 +274,6 @@ TSWLatexianTemp*
 
 # expex forward references with \gathertags
 *-tags.tex
+
+# Documentation files.
+docs
