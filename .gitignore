@@ -276,4 +276,7 @@ TSWLatexianTemp*
 *-tags.tex
 
 # Documentation files.
-docs
+/docs
+
+# Build dir
+/build
