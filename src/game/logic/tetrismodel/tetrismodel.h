@@ -3,40 +3,70 @@
 
 #include "tetrismodel.ih"
 
+/**
+ * Describes the state and behavior of the game in general.
+ */
 class TetrisModel : public Model, public Pauseble
 {
 public:
+  /**
+   * Construct the model.
+   */
   TetrisModel();
+
+  /**
+   * Free allocated memory of the model.
+   */
   ~TetrisModel();
 
-  // Return the current score.
+  /**
+   * Return the current score.
+   */
   unsigned int score();
 
-  // Return the highest score recorded.
+  /**
+   * Return the highest score recorded.
+   */
   unsigned int highScore();
 
-  // Return the value of cell.
+  /**
+   * Return the value of cell.
+   */
   int value(int cell);
 
-  // Load and save the hi-score.
+  /**
+   * Load and save the highest score.
+   */
   void updateHighScore();
 
-  // Return the current level.
+  /**
+   * Return the current level.
+   */
   unsigned int level();
 
-  // Return the time left to wait.
-  double timeToWait();
+  /**
+   * Return the time left to wait.
+   */
+   double timeToWait();
 
-  // Step to the next state of the grid.
+  /**
+   * Step to the next state of the grid.
+   */
   void step(double deltaTime) override;
 
-  // Return a copy of the grid used.
+  /**
+   * Return a copy of the grid used.
+   */
   Grid grid();
 
-  // Initialize the grid and set the score to 0.
+  /**
+   * Initialize the grid and set the score to 0.
+   */
   void reset();
 
-  // Copy source onto destination at d_position.
+  /**
+   * Copy source onto destination at d_position.
+   */
   void stamp(Grid fromGrid, Point2D position);
 
   // Semantic names for each cell index and their count.
@@ -56,17 +86,19 @@ public:
   static const short NUM_LEVELS = 14;
 
 private:
-  /* Game and studio name for saving. */
-  const char* NAME_COMPANY = "VanDenBrand";
+  // Game and studio name for saving.
+  const char* NAME_COMPANY = "LucvandenBrand";
   const char* NAME_PRODUCT = "StackingSandWithBillBigsby";
-  const char* NAME_SAVE    = "highScore.txt";
+  const char* NAME_SAVE    = "high-score.txt";
 
-  /* Game-play constants. */
+  // Game-play constants.
   const int TETRIS_WIDTH = 10;
   const int TETRIS_HEIGHT = 20;
 
-  const double   DELAY_LEVEL[NUM_LEVELS] = {0.5, 0.4, 0.35, 0.32, 0.30, 0.28, 0.25, 0.22, 0.20, 0.18, 0.15,  0.12, 0.100, 0.050};
-  const unsigned SCORE_LEVEL[NUM_LEVELS] = {  0, 100, 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000, 12000};
+  const double   DELAY_LEVEL[NUM_LEVELS] = {0.50, 0.40, 0.35, 0.32, 0.30, 0.280, 0.250,
+                                            0.22, 0.20, 0.18, 0.15, 0.12, 0.100, 0.050};
+  const unsigned SCORE_LEVEL[NUM_LEVELS] = {   0,  100, 1000, 2000,  3000,  4000,  5000,
+                                            6000, 7000, 8000, 9000, 10000, 11000, 12000};
 
   const short WEIGHT[NUM_CELLS] = {1 , 1,   1, 1,  1, 1,  1,  1,  1};
   const short HEAT[NUM_CELLS]   = {0 , 0,   0, 0,  0, 1,  0,  1, -2};
@@ -82,10 +114,10 @@ private:
   const short HEAT_ICE_TO_PLANT      =  1;
   const short HEAT_LAVA_TO_STONE     = -1;
 
-  /* The grid the game is played on. */
+  // The grid the game is played on.
   Grid d_grid;
 
-  /* The amount of points won. */
+  // The amount of points won.
   unsigned int d_score, d_highScore;
 
   // Scheduling var

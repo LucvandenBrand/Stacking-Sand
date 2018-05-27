@@ -3,11 +3,20 @@
 
 #include "gameoverrenderer.ih"
 
+/**
+ * Render the game over state.
+ */
 class GameOverRenderer: public GameRenderer
 {
 public:
+  /**
+   * Construct the renderer.
+   */
   GameOverRenderer(TextureFactory &textureFactory, GameOverModel &gameOverModel);
 
+  /**
+   * Render the game over state.
+   */
   void render(SDL_Renderer &sdlRenderer, double deltaTime) override;
 
 private:
@@ -15,4 +24,4 @@ private:
   shared_ptr<Texture> d_gameOverTexture, d_gameOverControls;
 };
 
-#endif /* GAME_OVER_RENDERER_H */
+#endif // GAME_OVER_RENDERER_H

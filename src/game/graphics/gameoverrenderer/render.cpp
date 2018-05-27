@@ -4,14 +4,14 @@ void GameOverRenderer::render(SDL_Renderer &sdlRenderer, double deltaTime)
 {
   if (d_gameOverModel->gameOver())
   {
-    /* Create a dark rectangle over the screen. */
+    // Create a dark rectangle over the screen.
     ScreenNormalizer normalizer(sdlRenderer);
     auto opacity = (Uint8) (230 * d_gameOverModel->gameOverTransition());
     SDL_SetRenderDrawColor(&sdlRenderer, 0, 0, 0, opacity);
     SDL_Rect fillRectangle = normalizer.deNormalize(0, 0, 1, 1);
     SDL_RenderFillRect(&sdlRenderer, &fillRectangle);
 
-    /* Render the the news of you going game over. */
+    // Render the the news of you going game over.
     float newsHeight = 0.8f;
     float newsWidth = newsHeight / normalizer.normalizeHeight(d_gameOverTexture->height())
                                  * normalizer.normalizeWidth(d_gameOverTexture->width());
@@ -20,7 +20,7 @@ void GameOverRenderer::render(SDL_Renderer &sdlRenderer, double deltaTime)
     SDL_Rect newsRectangle = normalizer.deNormalize(newsX, newsY, newsWidth, newsHeight);
     d_gameOverTexture->render(sdlRenderer, newsRectangle);
 
-    /* Render the game over controls. */
+    // Render the game over controls.
     float controlWidth = newsWidth * 0.6f;
     float controlHeight = controlWidth / normalizer.normalizeWidth(d_gameOverControls->width())
                                        * normalizer.normalizeHeight(d_gameOverControls->height());

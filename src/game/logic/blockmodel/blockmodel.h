@@ -3,40 +3,70 @@
 
 #include "blockmodel.ih"
 
+/**
+ * A block (containing multiple cells) to be moved and placed in the grid.
+ */
 class BlockModel : public Model, public Pauseble
 {
 public:
+  /**
+   * Construct a new block.
+   */
   explicit BlockModel(TetrisModel &tetrisModel);
 
-  // Set the moving direction.
+  /**
+   * Set the moving direction.
+   */
   void move(Point2D shift);
 
-  // Set the block to rotate its current grid.
+  /**
+   * Set the block to rotate its current grid.
+   */
   void rotate();
 
-  // Set the block to move down faster.
+  /**
+   * Set the block to move down faster.
+   */
   void speedup();
 
-  // Return the current position.
+  /**
+   * Return the current position.
+   */
   Point2D position();
 
-  // Return the current or next block in use.
+  /**
+   * Return the current block in use.
+   */
   Grid currentBlock();
+
+  /**
+   * Return the next block to use.
+   */
   Grid nextBlock();
 
-  // Is the game in a failed state.
+  /**
+   * Is the game in a failed state.
+   */
   bool gameOver();
 
-  // Return true if a block has been placed.
+  /**
+   * Return true if a block has been placed.
+   */
   bool placed();
 
-  // Update the state.
+  /**
+   * Update the state.
+   */
   void step(double deltaTime) override;
 
-  // Choose stamp and position.
+  /**
+   * Choose stamp and position.
+   */
   void reset();
 
-  // The grid used.
+  /**
+   * The grid used.
+   */
   Grid grid();
 
 private:
@@ -45,15 +75,15 @@ private:
   // The currently chosen blocks.
   Grid d_currentBlock, d_nextBlock;
 
-  /* Random objects to determine which blocks/cells to use. */
+  // Random objects to determine which blocks/cells to use.
   vector<int> d_cellAvailability;
   default_random_engine d_randomGenerator;
 
-  /* Movement vars. */
+  // Movement vars.
   Point2D d_position, d_move;
   bool d_rotate = false;
 
-  /* If the game is in a failed state. */
+  // If the game is in a failed state.
   bool d_gameOver = false;
 
   // Should the block be reset.

@@ -4,13 +4,13 @@ int main(int argc, char **argv)
 {
   try
   {
-    // Initialize our window.
+    // Initialize our window objects.
     Window &window            = Window::getWindow();
     SDL_Renderer &sdlRenderer = window.sdlRenderer();
     TextureFactory textureFactory(&sdlRenderer);
     AudioFactory audioFactory;
 
-    // Initialise our games.
+    // Initialise our game objects.
     TetrisModel          tetrisModel;
     TetrisRenderer       tetrisRenderer(textureFactory, tetrisModel);
     TetrisInputParser    tetrisInputParser(tetrisModel);
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
     PauseMenuInputParser pauseMenuInputParser(pauseMenuModel);
     PauseMenuAudio       pauseMenuAudio(audioFactory, pauseMenuModel);
 
-    // Push the games on the game stack, following their drawing order.
+    // Push the individual objects on their respective stack, following their drawing order.
     const unsigned int NUM_MODELS = 5;
     vector<Model*> models;
     models.reserve(NUM_MODELS);

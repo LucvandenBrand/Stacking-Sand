@@ -16,4 +16,4 @@ Button DOWN   = (1u << 3);
 Button START  = (1u << 4);
 Button ESCAPE = (1u << 5);
 
-#endif /* BUTTON_STATE_H */
+#endif // BUTTON_STATE_H

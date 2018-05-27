@@ -2,7 +2,7 @@
 
 void TetrisModel::applyHeat(Point2D point)
 {
-  /* Check the environment. */
+  // Check the environment.
   Point2D up    = point + Point2D( 0,  1);
   Point2D down  = point + Point2D( 0, -1);
   Point2D right = point + Point2D( 1,  0);

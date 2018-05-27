@@ -3,25 +3,44 @@
 
 #include "lerpseries.ih"
 
+/**
+ * Contains a series of values in time that can be linearly interpolated.
+ */
 class LerpSeries {
 public:
-  /* On constructing there must be a starting point. */
+  /**
+   * On constructing there must be a starting point.
+   */
   explicit LerpSeries(double value);
+
+  /**
+   * Construct series with a beginning value of 0.
+   */
   LerpSeries();
 
-  /* Update the internal clock. */
+  /**
+   * Update the internal clock.
+   */
   void update(double deltaTime);
 
-  /* Reset the time to 0. */
+  /**
+   * Reset the time to 0.
+   */
   void reset();
 
-  /* Add a new point to the time series. */
+  /**
+   * Add a new point to the time series.
+   */
   void add(double time, double value);
 
-  /* Get a linearly interpolated value. */
+  /**
+   * Get a linearly interpolated value.
+   */
   double get();
 
-  /* Set whether or not the series should reset at the end. */
+  /**
+   * Set whether or not the series should reset at the end.
+   */
   void setLooping(bool loop);
 
 private:
@@ -30,4 +49,4 @@ private:
   map<double, double, less<>> d_timeSeries;
 };
 
-#endif /* LERP_SERIES_H */
+#endif // LERP_SERIES_H

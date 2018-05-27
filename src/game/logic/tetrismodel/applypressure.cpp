@@ -1,7 +1,7 @@
 #include "tetrismodel.ih"
 
 void TetrisModel::applyPressure(Point2D point) {
-  /* Count the mass on top. */
+  // Count the mass on top.
   Grid currentGrid = d_grid;
   short topMass = 0;
   for (int y = max(0, point.y - 1); y >= 0; --y) {

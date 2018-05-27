@@ -3,7 +3,9 @@
 
 #include "window.ih"
 
-/* Singleton class that represents the game window. */
+/**
+ * Singleton class that represents the game window.
+ */
 class Window
 {
 public:
@@ -11,13 +13,19 @@ public:
   Window(Window const&)         = delete;
   void operator=(Window const&) = delete;
 
-  // Return the static instance.
+  /**
+   * Return the static instance.
+   */
   static Window &getWindow();
 
-  // Destructor, deletes SDL objects and closes SDL subsystems.
+  /**
+   * Destructor, deletes SDL objects and closes SDL subsystems.
+   */
   ~Window();
 
-  // Return the sdl renderer to draw with.
+  /**
+   * Return the sdl renderer to draw with.
+   */
   SDL_Renderer &sdlRenderer();
 
 private:
@@ -31,8 +39,8 @@ private:
   const int c_SCREEN_HEIGHT = 1080;
 
   // Draw objects.
-  SDL_Window *d_window = NULL;
-  SDL_Renderer *d_renderer = NULL;
+  SDL_Window *d_window = nullptr;
+  SDL_Renderer *d_renderer = nullptr;
 };
 
-#endif /* WINDOW_H */
+#endif // WINDOW_H

@@ -3,10 +3,16 @@
 
 #include "inputparser.ih"
 
+/**
+ * Parser for an input state.
+ */
 class InputParser
 {
 public:
+  /**
+   * Abstract method for parsing the state.
+   */
   virtual void parse(InputState inputState) = 0;
 };
 
-#endif /* INPUT_PARSER_H */
+#endif // INPUT_PARSER_H

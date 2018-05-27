@@ -3,10 +3,20 @@
 
 #include "blockaudio.ih"
 
+/**
+ * Plays the audio for the block model.
+ */
 class BlockAudio : public GameAudio
 {
 public:
+  /**
+   * Construct audio player for the block model.
+   */
   explicit BlockAudio(AudioFactory &audioFactory, BlockModel &blockModel);
+
+  /**
+   * Update audio player state.
+   */
   void update(double deltaTime) override;
 
 private:
@@ -17,4 +27,4 @@ private:
   bool d_playedPlace = false;
 };
 
-#endif /* BLOCK_AUDIO_H */
+#endif // BLOCK_AUDIO_H
