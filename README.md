@@ -1,5 +1,6 @@
 # Stacking Sand with Bill Bigsby
-A simple C++ Tetris game where different blocks react to eachother and transform.
+A simple C++ Tetris game where different blocks react to each other and transform.
+The project makes use of the [SDL library](https://www.libsdl.org/).
 
 You can download the compiled sources [here](https://github.com/LucvandenBrand/Stacking-Sand/releases).
 
