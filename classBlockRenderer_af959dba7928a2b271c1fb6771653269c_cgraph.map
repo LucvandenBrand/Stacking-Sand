@@ -1,0 +1,13 @@
+<map id="BlockRenderer::render" name="BlockRenderer::render">
+<area shape="rect" id="node2" href="$classBlockModel.html#aa74c33064430c5f566d009c6bab1c848" title="BlockModel::grid" alt="" coords="249,5,368,32"/>
+<area shape="rect" id="node4" href="$classGrid.html#a35b4576216863c321adb15e38ed2804b" title="Grid::height" alt="" coords="515,56,604,83"/>
+<area shape="rect" id="node5" href="$classScreenNormalizer.html#a0631886083c361cad341c70ea4b6af68" title="ScreenNormalizer::ratio" alt="" coords="229,208,388,235"/>
+<area shape="rect" id="node6" href="$classGrid.html#a48a0cbb4dee8eb8e1c56f4d85d1f971b" title="Grid::width" alt="" coords="517,107,602,133"/>
+<area shape="rect" id="node7" href="$classBlockModel.html#af908d87b67d152ceb5a65696a02cea54" title="BlockModel::currentBlock" alt="" coords="223,259,394,285"/>
+<area shape="rect" id="node8" href="$classBlockModel.html#a5ebb7f6466041430a42c07b936866a9f" title="BlockModel::position" alt="" coords="237,309,380,336"/>
+<area shape="rect" id="node9" href="$classScreenNormalizer.html#a0a54874b29eb58cf1be8251ca2525c60" title="ScreenNormalizer::deNormalize" alt="" coords="205,360,412,387"/>
+<area shape="rect" id="node10" href="$classGridRenderer.html#a0febcbbb5a20019d0afdca8c98f1a485" title="GridRenderer::renderGrid" alt="" coords="225,157,392,184"/>
+<area shape="rect" id="node3" href="$classTetrisModel.html#af5e86770c46ef2669e26babca6b08e8c" title="TetrisModel::grid" alt="" coords="500,5,619,32"/>
+<area shape="rect" id="node11" href="$classGrid.html#a947680e656b1eeb07e1c140437cfd3fb" title="Grid::cell" alt="" coords="522,208,597,235"/>
+<area shape="rect" id="node12" href="$classShadowBrush.html#ac72107dffb3b70f5f997d0708025b799" title="ShadowBrush::drawRectangle" alt="" coords="460,157,659,184"/>
+</map>

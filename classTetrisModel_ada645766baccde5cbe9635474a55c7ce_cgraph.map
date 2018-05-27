@@ -1,0 +1,5 @@
+<map id="TetrisModel::stamp" name="TetrisModel::stamp">
+<area shape="rect" id="node2" href="$classGrid.html#a35b4576216863c321adb15e38ed2804b" title="Grid::height" alt="" coords="188,5,277,32"/>
+<area shape="rect" id="node3" href="$classGrid.html#a48a0cbb4dee8eb8e1c56f4d85d1f971b" title="Grid::width" alt="" coords="190,56,275,83"/>
+<area shape="rect" id="node4" href="$classGrid.html#a947680e656b1eeb07e1c140437cfd3fb" title="Grid::cell" alt="" coords="195,107,270,133"/>
+</map>

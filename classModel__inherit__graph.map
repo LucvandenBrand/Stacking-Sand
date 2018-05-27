@@ -1,0 +1,7 @@
+<map id="Model" name="Model">
+<area shape="rect" id="node2" href="$classBlockModel.html" title="{BlockModel\n||+ BlockModel()\l+ move()\l+ rotate()\l+ speedup()\l+ position()\l+ currentBlock()\l+ nextBlock()\l+ gameOver()\l+ placed()\l+ step()\l+ reset()\l+ grid()\l}" alt="" coords="5,241,120,479"/>
+<area shape="rect" id="node3" href="$classGameOverModel.html" title="{GameOverModel\n||+ GameOverModel()\l+ step()\l+ gameOver()\l+ reset()\l+ gameOverTransition()\l}" alt="" coords="145,292,303,428"/>
+<area shape="rect" id="node4" href="$classLevelModel.html" title="{LevelModel\n||+ LevelModel()\l+ step()\l+ level()\l}" alt="" coords="327,307,435,413"/>
+<area shape="rect" id="node5" href="$classPauseMenuModel.html" title="{PauseMenuModel\n||+ PauseMenuModel()\l+ step()\l+ paused()\l+ firstStart()\l+ gameOver()\l+ toggle()\l}" alt="" coords="460,285,607,435"/>
+<area shape="rect" id="node6" href="$classTetrisModel.html" title="{TetrisModel\n|+ AIR\l+ SAND\l+ STONE\l+ DIAMOND\l+ PLANT\l+ COAL\l+ LAVA\l+ GLASS\l+ COAL_FIRE\l+ ICE\l+ NUM_CELLS\l+ NUM_LEVELS\l|+ TetrisModel()\l+ ~TetrisModel()\l+ score()\l+ highScore()\l+ value()\l+ updateHighScore()\l+ level()\l+ timeToWait()\l+ step()\l+ grid()\l+ reset()\l+ stamp()\l}" alt="" coords="631,160,774,560"/>
+</map>

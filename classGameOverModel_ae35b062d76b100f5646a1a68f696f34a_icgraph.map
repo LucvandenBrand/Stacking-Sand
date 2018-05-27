@@ -1,0 +1,7 @@
+<map id="GameOverModel::gameOver" name="GameOverModel::gameOver">
+<area shape="rect" id="node2" href="$classGameOverRenderer.html#a4da5ed1252530ed382d3a5e2cda26c38" title="GameOverRenderer::render" alt="" coords="247,5,430,32"/>
+<area shape="rect" id="node3" href="$classGameOverInputParser.html#afaef411b5b3382381e4698c9bbac4e7b" title="GameOverInputParser\l::parse" alt="" coords="263,57,415,98"/>
+<area shape="rect" id="node4" href="$classPauseMenuModel.html#a6b533ca64f6b618111d88dd3484f6298" title="PauseMenuModel::gameOver" alt="" coords="241,123,436,149"/>
+<area shape="rect" id="node6" href="$classGameOverModel.html#a4c603c7fff5db4853ef9beee3cc8cc2a" title="GameOverModel::step" alt="" coords="262,173,415,200"/>
+<area shape="rect" id="node5" href="$classPauseMenuInputParser.html#a2a68ecf1eee0e2c24ce0968299639e4e" title="PauseMenuInputParser\l::parse" alt="" coords="484,115,643,157"/>
+</map>

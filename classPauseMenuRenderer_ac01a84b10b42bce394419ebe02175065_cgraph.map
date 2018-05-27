@@ -1,0 +1,5 @@
+<map id="PauseMenuRenderer::render" name="PauseMenuRenderer::render">
+<area shape="rect" id="node2" href="$classPauseMenuModel.html#a782b2f4f78ab15cb521c634340068308" title="PauseMenuModel::firstStart" alt="" coords="205,5,389,32"/>
+<area shape="rect" id="node3" href="$classPauseMenuModel.html#a95d680e91f951dac1ceb51d3ecb6a691" title="PauseMenuModel::paused" alt="" coords="209,56,385,83"/>
+<area shape="rect" id="node4" href="$classLerpSeries.html#abda894bcb71c16d3a658955b24fbe4c2" title="LerpSeries::reset" alt="" coords="237,107,358,133"/>
+</map>

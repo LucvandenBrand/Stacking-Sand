@@ -1,3 +1,0 @@
-#include "tetrisinputparser.h"
-#include "../../../engine/input/inputparser/inputparser.ih"
-#include "../../logic/tetrismodel/tetrismodel.ih"

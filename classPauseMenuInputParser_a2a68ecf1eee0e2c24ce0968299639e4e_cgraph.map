@@ -1,0 +1,7 @@
+<map id="PauseMenuInputParser::parse" name="PauseMenuInputParser::parse">
+<area shape="rect" id="node2" href="$classPauseMenuModel.html#a6b533ca64f6b618111d88dd3484f6298" title="PauseMenuModel::gameOver" alt="" coords="212,5,407,32"/>
+<area shape="rect" id="node5" href="$classPauseMenuModel.html#a8930d68e7a825e1fe1e186a066eea10e" title="PauseMenuModel::toggle" alt="" coords="225,56,394,83"/>
+<area shape="rect" id="node6" href="$classModel.html#a8394addc603eaafa83019ce2d18406b1" title="Model::kill" alt="" coords="269,107,350,133"/>
+<area shape="rect" id="node3" href="$classGameOverModel.html#ae35b062d76b100f5646a1a68f696f34a" title="GameOverModel::gameOver" alt="" coords="455,5,643,32"/>
+<area shape="rect" id="node4" href="$classBlockModel.html#aef547dbab9302cd2263f847386044bc5" title="BlockModel::gameOver" alt="" coords="691,5,849,32"/>
+</map>

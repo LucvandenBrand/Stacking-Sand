@@ -1,0 +1,4 @@
+<map id="TetrisModel::reset" name="TetrisModel::reset">
+<area shape="rect" id="node2" href="$classGameOverModel.html#a8bb33eb63f79b3f729c9479f109850fc" title="GameOverModel::reset" alt="" coords="180,13,337,39"/>
+<area shape="rect" id="node3" href="$classGameOverInputParser.html#afaef411b5b3382381e4698c9bbac4e7b" title="GameOverInputParser\l::parse" alt="" coords="385,5,537,47"/>
+</map>

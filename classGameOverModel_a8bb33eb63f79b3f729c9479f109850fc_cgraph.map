@@ -1,0 +1,8 @@
+<map id="GameOverModel::reset" name="GameOverModel::reset">
+<area shape="rect" id="node2" href="$classTetrisModel.html#aedd30dbf21c6d24a3e861caf4b33e6f8" title="TetrisModel::reset" alt="" coords="211,5,337,32"/>
+<area shape="rect" id="node3" href="$classBlockModel.html#a67f5cc853ab4ace6e8ade706bd2f400e" title="BlockModel::reset" alt="" coords="211,56,337,83"/>
+<area shape="rect" id="node4" href="$classBlockModel.html#af908d87b67d152ceb5a65696a02cea54" title="BlockModel::currentBlock" alt="" coords="385,5,556,32"/>
+<area shape="rect" id="node5" href="$classGrid.html#a48a0cbb4dee8eb8e1c56f4d85d1f971b" title="Grid::width" alt="" coords="428,56,513,83"/>
+<area shape="rect" id="node6" href="$classBlockModel.html#aa74c33064430c5f566d009c6bab1c848" title="BlockModel::grid" alt="" coords="411,107,530,133"/>
+<area shape="rect" id="node7" href="$classTetrisModel.html#af5e86770c46ef2669e26babca6b08e8c" title="TetrisModel::grid" alt="" coords="604,107,723,133"/>
+</map>

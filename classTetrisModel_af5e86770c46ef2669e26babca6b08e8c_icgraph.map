@@ -1,0 +1,10 @@
+<map id="TetrisModel::grid" name="TetrisModel::grid">
+<area shape="rect" id="node2" href="$classTetrisRenderer.html#a37f71d197e635739aab54abb576f1876" title="TetrisRenderer::render" alt="" coords="172,5,324,32"/>
+<area shape="rect" id="node3" href="$classBlockModel.html#aa74c33064430c5f566d009c6bab1c848" title="BlockModel::grid" alt="" coords="189,56,307,83"/>
+<area shape="rect" id="node4" href="$classBlockRenderer.html#af959dba7928a2b271c1fb6771653269c" title="BlockRenderer::render" alt="" coords="372,31,524,57"/>
+<area shape="rect" id="node5" href="$classBlockModel.html#a67f5cc853ab4ace6e8ade706bd2f400e" title="BlockModel::reset" alt="" coords="385,81,511,108"/>
+<area shape="rect" id="node6" href="$classBlockModel.html#a74ed46be84a8763f44f921b4a6343b0f" title="BlockModel::BlockModel" alt="" coords="572,31,739,57"/>
+<area shape="rect" id="node7" href="$classGameOverModel.html#a8bb33eb63f79b3f729c9479f109850fc" title="GameOverModel::reset" alt="" coords="577,81,734,108"/>
+<area shape="rect" id="node9" href="$classBlockModel.html#a8a06f9b921847069818e06a97d585266" title="BlockModel::step" alt="" coords="594,132,717,159"/>
+<area shape="rect" id="node8" href="$classGameOverInputParser.html#afaef411b5b3382381e4698c9bbac4e7b" title="GameOverInputParser\l::parse" alt="" coords="787,74,939,115"/>
+</map>

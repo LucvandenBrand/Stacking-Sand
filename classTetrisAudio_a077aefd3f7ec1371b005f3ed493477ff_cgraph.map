@@ -1,0 +1,4 @@
+<map id="TetrisAudio::TetrisAudio" name="TetrisAudio::TetrisAudio">
+<area shape="rect" id="node2" href="$classTetrisModel.html#aeb902ac5d978cc9249e98640b014054a" title="TetrisModel::score" alt="" coords="222,5,353,32"/>
+<area shape="rect" id="node3" href="$classAudioFactory.html#aa0a8e27e7b5bb5e5d4d629d47f9068b6" title="AudioFactory::sound" alt="" coords="216,56,359,83"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="GameAudio" name="GameAudio">
+<area shape="rect" id="node2" href="$classBlockAudio.html" title="{BlockAudio\n||+ BlockAudio()\l+ update()\l}" alt="" coords="5,131,113,223"/>
+<area shape="rect" id="node3" href="$classLevelAudio.html" title="{LevelAudio\n||+ LevelAudio()\l+ update()\l}" alt="" coords="138,131,245,223"/>
+<area shape="rect" id="node4" href="$classPauseMenuAudio.html" title="{PauseMenuAudio\n||+ PauseMenuAudio()\l+ update()\l}" alt="" coords="269,131,413,223"/>
+<area shape="rect" id="node5" href="$classTetrisAudio.html" title="{TetrisAudio\n||+ TetrisAudio()\l+ update()\l}" alt="" coords="437,131,545,223"/>
+</map>

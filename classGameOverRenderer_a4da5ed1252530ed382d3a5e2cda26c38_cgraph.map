@@ -1,0 +1,8 @@
+<map id="GameOverRenderer::render" name="GameOverRenderer::render">
+<area shape="rect" id="node2" href="$classGameOverModel.html#ae35b062d76b100f5646a1a68f696f34a" title="GameOverModel::gameOver" alt="" coords="265,5,453,32"/>
+<area shape="rect" id="node4" href="$classGameOverModel.html#a0465152699df5912a99c15f24c2f354d" title="GameOverModel::gameOverTransition" alt="" coords="236,56,481,83"/>
+<area shape="rect" id="node5" href="$classScreenNormalizer.html#a0a54874b29eb58cf1be8251ca2525c60" title="ScreenNormalizer::deNormalize" alt="" coords="255,107,462,133"/>
+<area shape="rect" id="node6" href="$classScreenNormalizer.html#a880cf16e9dab0a4b41e338b9f76aa6b4" title="ScreenNormalizer::normalize\lHeight" alt="" coords="263,158,454,199"/>
+<area shape="rect" id="node7" href="$classScreenNormalizer.html#a1b5825ddbf41f0bff4dfb06e988430b7" title="ScreenNormalizer::normalize\lWidth" alt="" coords="263,223,454,265"/>
+<area shape="rect" id="node3" href="$classBlockModel.html#aef547dbab9302cd2263f847386044bc5" title="BlockModel::gameOver" alt="" coords="529,5,688,32"/>
+</map>

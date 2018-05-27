@@ -1,0 +1,5 @@
+<map id="ScreenNormalizer::deNormalize" name="ScreenNormalizer::deNormalize">
+<area shape="rect" id="node2" href="$classBlockRenderer.html#af959dba7928a2b271c1fb6771653269c" title="BlockRenderer::render" alt="" coords="275,5,427,32"/>
+<area shape="rect" id="node3" href="$classGameOverRenderer.html#a4da5ed1252530ed382d3a5e2cda26c38" title="GameOverRenderer::render" alt="" coords="260,56,443,83"/>
+<area shape="rect" id="node4" href="$classLevelRenderer.html#af34399598a6aca3acbaebc681bb688ca" title="LevelRenderer::render" alt="" coords="276,107,427,133"/>
+</map>

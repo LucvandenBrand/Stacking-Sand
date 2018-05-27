@@ -1,0 +1,6 @@
+<map id="BlockModel::reset" name="BlockModel::reset">
+<area shape="rect" id="node2" href="$classBlockModel.html#af908d87b67d152ceb5a65696a02cea54" title="BlockModel::currentBlock" alt="" coords="180,5,351,32"/>
+<area shape="rect" id="node3" href="$classGrid.html#a48a0cbb4dee8eb8e1c56f4d85d1f971b" title="Grid::width" alt="" coords="223,56,308,83"/>
+<area shape="rect" id="node4" href="$classBlockModel.html#aa74c33064430c5f566d009c6bab1c848" title="BlockModel::grid" alt="" coords="206,107,325,133"/>
+<area shape="rect" id="node5" href="$classTetrisModel.html#af5e86770c46ef2669e26babca6b08e8c" title="TetrisModel::grid" alt="" coords="399,107,517,133"/>
+</map>

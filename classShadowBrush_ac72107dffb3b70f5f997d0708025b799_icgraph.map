@@ -1,0 +1,5 @@
+<map id="ShadowBrush::drawRectangle" name="ShadowBrush::drawRectangle">
+<area shape="rect" id="node2" href="$classTetrisRenderer.html#a37f71d197e635739aab54abb576f1876" title="TetrisRenderer::render" alt="" coords="467,5,619,32"/>
+<area shape="rect" id="node3" href="$classGridRenderer.html#a0febcbbb5a20019d0afdca8c98f1a485" title="GridRenderer::renderGrid" alt="" coords="252,56,419,83"/>
+<area shape="rect" id="node4" href="$classBlockRenderer.html#af959dba7928a2b271c1fb6771653269c" title="BlockRenderer::render" alt="" coords="467,56,619,83"/>
+</map>

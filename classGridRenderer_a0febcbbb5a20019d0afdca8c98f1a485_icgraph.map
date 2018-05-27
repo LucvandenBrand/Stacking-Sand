@@ -1,0 +1,4 @@
+<map id="GridRenderer::renderGrid" name="GridRenderer::renderGrid">
+<area shape="rect" id="node2" href="$classBlockRenderer.html#af959dba7928a2b271c1fb6771653269c" title="BlockRenderer::render" alt="" coords="220,5,372,32"/>
+<area shape="rect" id="node3" href="$classTetrisRenderer.html#a37f71d197e635739aab54abb576f1876" title="TetrisRenderer::render" alt="" coords="220,56,372,83"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="BlockInputParser::parse" name="BlockInputParser::parse">
+<area shape="rect" id="node2" href="$classBlockModel.html#a9804f024e10e66af77ebb6935f064d83" title="BlockModel::rotate" alt="" coords="224,5,355,32"/>
+<area shape="rect" id="node3" href="$classBlockModel.html#a8abe5dd720b5625155a72416562950a1" title="BlockModel::speedup" alt="" coords="216,56,363,83"/>
+<area shape="rect" id="node4" href="$classBlockModel.html#ac337155dcfa5a7805efed55228631167" title="BlockModel::move" alt="" coords="224,107,355,133"/>
+<area shape="rect" id="node5" href="$classModel.html#a8394addc603eaafa83019ce2d18406b1" title="Model::kill" alt="" coords="249,157,330,184"/>
+</map>

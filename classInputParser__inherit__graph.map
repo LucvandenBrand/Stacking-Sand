@@ -1,0 +1,7 @@
+<map id="InputParser" name="InputParser">
+<area shape="rect" id="node2" href="$classBlockInputParser.html" title="{BlockInputParser\n||+ BlockInputParser()\l+ parse()\l}" alt="" coords="5,131,148,223"/>
+<area shape="rect" id="node3" href="$classGameOverInputParser.html" title="{GameOverInputParser\n||+ GameOverInputParser()\l+ parse()\l}" alt="" coords="172,131,344,223"/>
+<area shape="rect" id="node4" href="$classKillInputParser.html" title="{KillInputParser\n||+ KillInputParser()\l+ parse()\l}" alt="" coords="368,131,495,223"/>
+<area shape="rect" id="node5" href="$classPauseMenuInputParser.html" title="{PauseMenuInputParser\n||+ PauseMenuInputParser()\l+ parse()\l}" alt="" coords="519,131,698,223"/>
+<area shape="rect" id="node6" href="$classTetrisInputParser.html" title="{TetrisInputParser\n||+ TetrisInputParser()\l+ parse()\l}" alt="" coords="723,131,865,223"/>
+</map>

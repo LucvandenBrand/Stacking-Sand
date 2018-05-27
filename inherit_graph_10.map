@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classModel.html" title="Model" alt="" coords="15,107,72,133"/>
+<area shape="rect" id="node2" href="$classBlockModel.html" title="BlockModel" alt="" coords="147,5,238,32"/>
+<area shape="rect" id="node3" href="$classGameOverModel.html" title="GameOverModel" alt="" coords="133,208,253,235"/>
+<area shape="rect" id="node4" href="$classLevelModel.html" title="LevelModel" alt="" coords="149,56,237,83"/>
+<area shape="rect" id="node5" href="$classPauseMenuModel.html" title="PauseMenuModel" alt="" coords="129,157,256,184"/>
+<area shape="rect" id="node6" href="$classTetrisModel.html" title="TetrisModel" alt="" coords="147,107,238,133"/>
+<area shape="rect" id="node7" href="$classPauseble.html" title="Pauseble" alt="" coords="5,56,81,83"/>
+</map>

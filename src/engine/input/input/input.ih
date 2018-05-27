@@ -1,3 +1,0 @@
-#include "input.h"
-#include "../buttonstate/buttonstate.ih"
-#include <SDL2/SDL.h>

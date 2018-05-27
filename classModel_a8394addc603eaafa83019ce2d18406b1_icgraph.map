@@ -1,0 +1,7 @@
+<map id="Model::kill" name="Model::kill">
+<area shape="rect" id="node2" href="$classBlockInputParser.html#a1ae18d287b5460ccae28290f3a8a072b" title="BlockInputParser::parse" alt="" coords="135,5,297,32"/>
+<area shape="rect" id="node3" href="$classGameOverInputParser.html#afaef411b5b3382381e4698c9bbac4e7b" title="GameOverInputParser\l::parse" alt="" coords="140,57,292,98"/>
+<area shape="rect" id="node4" href="$classKillInputParser.html#aa32412d6f3236c797d98a8ec28606fd0" title="KillInputParser::parse" alt="" coords="143,123,289,149"/>
+<area shape="rect" id="node5" href="$classPauseMenuInputParser.html#a2a68ecf1eee0e2c24ce0968299639e4e" title="PauseMenuInputParser\l::parse" alt="" coords="137,174,295,215"/>
+<area shape="rect" id="node6" href="$classTetrisInputParser.html#abe4d2d11dfe73ad231086d9abde86ab0" title="TetrisInputParser::\lparse" alt="" coords="151,239,281,281"/>
+</map>

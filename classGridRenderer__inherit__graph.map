@@ -1,0 +1,5 @@
+<map id="GridRenderer" name="GridRenderer">
+<area shape="rect" id="node3" href="$classBlockRenderer.html" title="{BlockRenderer\n||+ BlockRenderer()\l+ render()\l}" alt="" coords="5,307,133,399"/>
+<area shape="rect" id="node4" href="$classTetrisRenderer.html" title="{TetrisRenderer\n||+ TetrisRenderer()\l+ ~TetrisRenderer()\l+ render()\l}" alt="" coords="157,300,293,407"/>
+<area shape="rect" id="node2" href="$classGameRenderer.html" title="{GameRenderer\n||+ render()\l}" alt="" coords="91,5,202,83"/>
+</map>

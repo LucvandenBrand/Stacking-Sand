@@ -1,0 +1,12 @@
+<map id="BlockModel::step" name="BlockModel::step">
+<area shape="rect" id="node2" href="$classPauseble.html#a835af175a9252782c6ec90972e83db6e" title="Pauseble::paused" alt="" coords="195,5,322,32"/>
+<area shape="rect" id="node3" href="$classBlockModel.html#a67f5cc853ab4ace6e8ade706bd2f400e" title="BlockModel::reset" alt="" coords="195,107,322,133"/>
+<area shape="rect" id="node4" href="$classBlockModel.html#af908d87b67d152ceb5a65696a02cea54" title="BlockModel::currentBlock" alt="" coords="389,56,560,83"/>
+<area shape="rect" id="node8" href="$classTetrisModel.html#a54a2b9548317589e7237768e21ab8a24" title="TetrisModel::timeToWait" alt="" coords="176,157,341,184"/>
+<area shape="rect" id="node9" href="$classTetrisModel.html#ada645766baccde5cbe9635474a55c7ce" title="TetrisModel::stamp" alt="" coords="191,208,326,235"/>
+<area shape="rect" id="node5" href="$classGrid.html#a48a0cbb4dee8eb8e1c56f4d85d1f971b" title="Grid::width" alt="" coords="432,157,517,184"/>
+<area shape="rect" id="node6" href="$classBlockModel.html#aa74c33064430c5f566d009c6bab1c848" title="BlockModel::grid" alt="" coords="415,107,534,133"/>
+<area shape="rect" id="node7" href="$classTetrisModel.html#af5e86770c46ef2669e26babca6b08e8c" title="TetrisModel::grid" alt="" coords="608,107,727,133"/>
+<area shape="rect" id="node10" href="$classGrid.html#a35b4576216863c321adb15e38ed2804b" title="Grid::height" alt="" coords="430,208,519,235"/>
+<area shape="rect" id="node11" href="$classGrid.html#a947680e656b1eeb07e1c140437cfd3fb" title="Grid::cell" alt="" coords="437,259,512,285"/>
+</map>

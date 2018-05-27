@@ -1,0 +1,5 @@
+<map id="Pauseble" name="Pauseble">
+<area shape="rect" id="node2" href="$classBlockModel.html" title="{BlockModel\n||+ BlockModel()\l+ move()\l+ rotate()\l+ speedup()\l+ position()\l+ currentBlock()\l+ nextBlock()\l+ gameOver()\l+ placed()\l+ step()\l+ reset()\l+ grid()\l}" alt="" coords="5,226,120,465"/>
+<area shape="rect" id="node3" href="$classLevelModel.html" title="{LevelModel\n||+ LevelModel()\l+ step()\l+ level()\l}" alt="" coords="145,292,253,399"/>
+<area shape="rect" id="node4" href="$classTetrisModel.html" title="{TetrisModel\n|+ AIR\l+ SAND\l+ STONE\l+ DIAMOND\l+ PLANT\l+ COAL\l+ LAVA\l+ GLASS\l+ COAL_FIRE\l+ ICE\l+ NUM_CELLS\l+ NUM_LEVELS\l|+ TetrisModel()\l+ ~TetrisModel()\l+ score()\l+ highScore()\l+ value()\l+ updateHighScore()\l+ level()\l+ timeToWait()\l+ step()\l+ grid()\l+ reset()\l+ stamp()\l}" alt="" coords="277,145,419,545"/>
+</map>

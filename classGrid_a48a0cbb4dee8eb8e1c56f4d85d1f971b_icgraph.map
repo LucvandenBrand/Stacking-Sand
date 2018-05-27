@@ -1,0 +1,13 @@
+<map id="Grid::width" name="Grid::width">
+<area shape="rect" id="node2" href="$classGrid.html#ae824c60ddeaa43654af30d61f1c06240" title="Grid::Grid" alt="" coords="183,5,261,32"/>
+<area shape="rect" id="node3" href="$classBlockRenderer.html#af959dba7928a2b271c1fb6771653269c" title="BlockRenderer::render" alt="" coords="361,81,513,108"/>
+<area shape="rect" id="node4" href="$classTetrisRenderer.html#a37f71d197e635739aab54abb576f1876" title="TetrisRenderer::render" alt="" coords="361,157,513,184"/>
+<area shape="rect" id="node5" href="$classBlockModel.html#a67f5cc853ab4ace6e8ade706bd2f400e" title="BlockModel::reset" alt="" coords="159,208,285,235"/>
+<area shape="rect" id="node10" href="$classGridRenderer.html#a0febcbbb5a20019d0afdca8c98f1a485" title="GridRenderer::renderGrid" alt="" coords="139,107,305,133"/>
+<area shape="rect" id="node11" href="$classTetrisModel.html#a3ca9bd1a26a36b367ba2021f754dace7" title="TetrisModel::step" alt="" coords="161,259,283,285"/>
+<area shape="rect" id="node12" href="$classTetrisModel.html#ada645766baccde5cbe9635474a55c7ce" title="TetrisModel::stamp" alt="" coords="155,309,289,336"/>
+<area shape="rect" id="node6" href="$classBlockModel.html#a74ed46be84a8763f44f921b4a6343b0f" title="BlockModel::BlockModel" alt="" coords="353,208,520,235"/>
+<area shape="rect" id="node7" href="$classGameOverModel.html#a8bb33eb63f79b3f729c9479f109850fc" title="GameOverModel::reset" alt="" coords="358,259,515,285"/>
+<area shape="rect" id="node9" href="$classBlockModel.html#a8a06f9b921847069818e06a97d585266" title="BlockModel::step" alt="" coords="375,309,498,336"/>
+<area shape="rect" id="node8" href="$classGameOverInputParser.html#afaef411b5b3382381e4698c9bbac4e7b" title="GameOverInputParser\l::parse" alt="" coords="568,251,720,293"/>
+</map>

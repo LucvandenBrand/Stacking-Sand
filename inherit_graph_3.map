@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classGameRenderer.html" title="GameRenderer" alt="" coords="5,81,116,108"/>
+<area shape="rect" id="node2" href="$classGameOverRenderer.html" title="GameOverRenderer" alt="" coords="167,5,305,32"/>
+<area shape="rect" id="node3" href="$classGridRenderer.html" title="GridRenderer" alt="" coords="187,56,285,83"/>
+<area shape="rect" id="node6" href="$classLevelRenderer.html" title="LevelRenderer" alt="" coords="183,107,289,133"/>
+<area shape="rect" id="node7" href="$classPauseMenuRenderer.html" title="PauseMenuRenderer" alt="" coords="164,157,308,184"/>
+<area shape="rect" id="node4" href="$classBlockRenderer.html" title="BlockRenderer" alt="" coords="356,31,464,57"/>
+<area shape="rect" id="node5" href="$classTetrisRenderer.html" title="TetrisRenderer" alt="" coords="356,81,464,108"/>
+</map>

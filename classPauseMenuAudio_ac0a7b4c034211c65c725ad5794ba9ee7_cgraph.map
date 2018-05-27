@@ -1,0 +1,4 @@
+<map id="PauseMenuAudio::PauseMenuAudio" name="PauseMenuAudio::PauseMenuAudio">
+<area shape="rect" id="node2" href="$classAudioFactory.html#acc5f2af0d163be9c98631ded22a9bb11" title="AudioFactory::music" alt="" coords="255,5,397,32"/>
+<area shape="rect" id="node3" href="$classAudioFactory.html#aa0a8e27e7b5bb5e5d4d629d47f9068b6" title="AudioFactory::sound" alt="" coords="255,56,397,83"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="GameLoop::loop" name="GameLoop::loop">
+<area shape="rect" id="node2" href="$classWindow.html#aa4eac1720fdf40186bb2fce061c95c78" title="Window::getWindow" alt="" coords="173,5,315,32"/>
+<area shape="rect" id="node3" href="$classWindow.html#ad5a68f06a9693beaec0e8f7d9acc367f" title="Window::sdlRenderer" alt="" coords="171,56,317,83"/>
+</map>

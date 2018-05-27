@@ -1,0 +1,9 @@
+<map id="Grid::cell" name="Grid::cell">
+<area shape="rect" id="node2" href="$classGridRenderer.html#a0febcbbb5a20019d0afdca8c98f1a485" title="GridRenderer::renderGrid" alt="" coords="128,43,295,69"/>
+<area shape="rect" id="node5" href="$classTetrisModel.html#a3ca9bd1a26a36b367ba2021f754dace7" title="TetrisModel::step" alt="" coords="357,119,480,145"/>
+<area shape="rect" id="node6" href="$classGrid.html#a6766c64ee144373f5cec3a61db452a0c" title="Grid::swapCells" alt="" coords="154,144,269,171"/>
+<area shape="rect" id="node7" href="$classTetrisModel.html#ada645766baccde5cbe9635474a55c7ce" title="TetrisModel::stamp" alt="" coords="144,195,279,221"/>
+<area shape="rect" id="node3" href="$classBlockRenderer.html#af959dba7928a2b271c1fb6771653269c" title="BlockRenderer::render" alt="" coords="343,5,495,32"/>
+<area shape="rect" id="node4" href="$classTetrisRenderer.html#a37f71d197e635739aab54abb576f1876" title="TetrisRenderer::render" alt="" coords="343,56,495,83"/>
+<area shape="rect" id="node8" href="$classBlockModel.html#a8a06f9b921847069818e06a97d585266" title="BlockModel::step" alt="" coords="357,195,480,221"/>
+</map>

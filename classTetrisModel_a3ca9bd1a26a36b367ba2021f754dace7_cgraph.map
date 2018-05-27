@@ -1,0 +1,8 @@
+<map id="TetrisModel::step" name="TetrisModel::step">
+<area shape="rect" id="node2" href="$classPauseble.html#a835af175a9252782c6ec90972e83db6e" title="Pauseble::paused" alt="" coords="212,5,339,32"/>
+<area shape="rect" id="node3" href="$classGrid.html#a35b4576216863c321adb15e38ed2804b" title="Grid::height" alt="" coords="231,56,320,83"/>
+<area shape="rect" id="node4" href="$classGrid.html#a48a0cbb4dee8eb8e1c56f4d85d1f971b" title="Grid::width" alt="" coords="233,107,318,133"/>
+<area shape="rect" id="node5" href="$classGrid.html#a947680e656b1eeb07e1c140437cfd3fb" title="Grid::cell" alt="" coords="423,183,497,209"/>
+<area shape="rect" id="node6" href="$classGrid.html#a6766c64ee144373f5cec3a61db452a0c" title="Grid::swapCells" alt="" coords="218,208,333,235"/>
+<area shape="rect" id="node7" href="$classTetrisModel.html#a92a7b2727d0e8712ead588b35338cabd" title="TetrisModel::updateHighScore" alt="" coords="176,259,375,285"/>
+</map>

@@ -1,6 +1,0 @@
-#include "blockrenderer.h"
-#include "../gridrenderer/gridrenderer.ih"
-#include "../../logic/blockmodel/blockmodel.ih"
-#include "../shadowbrush/shadowbrush.ih"
-#include "../../../engine/graphics/screennormalizer/screennormalizer.h"
-#include <iostream>

@@ -1,0 +1,4 @@
+<map id="Pauseble::paused" name="Pauseble::paused">
+<area shape="rect" id="node2" href="$classBlockModel.html#a8a06f9b921847069818e06a97d585266" title="BlockModel::step" alt="" coords="180,5,303,32"/>
+<area shape="rect" id="node3" href="$classTetrisModel.html#a3ca9bd1a26a36b367ba2021f754dace7" title="TetrisModel::step" alt="" coords="180,56,303,83"/>
+</map>

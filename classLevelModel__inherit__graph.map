@@ -1,0 +1,4 @@
+<map id="LevelModel" name="LevelModel">
+<area shape="rect" id="node2" href="$classModel.html" title="{Model\n||+ step()\l+ alive()\l+ kill()\l}" alt="" coords="5,5,75,112"/>
+<area shape="rect" id="node3" href="$classPauseble.html" title="{Pauseble\n||+ paused()\l+ paused()\l}" alt="" coords="99,13,183,105"/>
+</map>

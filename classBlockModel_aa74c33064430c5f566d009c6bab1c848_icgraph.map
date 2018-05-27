@@ -1,0 +1,8 @@
+<map id="BlockModel::grid" name="BlockModel::grid">
+<area shape="rect" id="node2" href="$classBlockRenderer.html#af959dba7928a2b271c1fb6771653269c" title="BlockRenderer::render" alt="" coords="172,5,324,32"/>
+<area shape="rect" id="node3" href="$classBlockModel.html#a67f5cc853ab4ace6e8ade706bd2f400e" title="BlockModel::reset" alt="" coords="185,56,311,83"/>
+<area shape="rect" id="node4" href="$classBlockModel.html#a74ed46be84a8763f44f921b4a6343b0f" title="BlockModel::BlockModel" alt="" coords="372,5,539,32"/>
+<area shape="rect" id="node5" href="$classGameOverModel.html#a8bb33eb63f79b3f729c9479f109850fc" title="GameOverModel::reset" alt="" coords="377,56,534,83"/>
+<area shape="rect" id="node7" href="$classBlockModel.html#a8a06f9b921847069818e06a97d585266" title="BlockModel::step" alt="" coords="394,107,517,133"/>
+<area shape="rect" id="node6" href="$classGameOverInputParser.html#afaef411b5b3382381e4698c9bbac4e7b" title="GameOverInputParser\l::parse" alt="" coords="587,49,739,90"/>
+</map>

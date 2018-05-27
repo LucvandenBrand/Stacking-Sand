@@ -1,0 +1,10 @@
+<map id="PauseMenuAudio::update" name="PauseMenuAudio::update">
+<area shape="rect" id="node2" href="$classMusic.html#acebaca4df12835a117e5a4cfa5a1621f" title="Music::playing" alt="" coords="263,5,369,32"/>
+<area shape="rect" id="node3" href="$classMusic.html#aa279467e462c03e9b8b1099e5cf50d28" title="Music::play" alt="" coords="271,56,361,83"/>
+<area shape="rect" id="node4" href="$classPauseMenuModel.html#a782b2f4f78ab15cb521c634340068308" title="PauseMenuModel::firstStart" alt="" coords="224,107,408,133"/>
+<area shape="rect" id="node5" href="$classMusic.html#a7fa314bc17cd96502f26c76c1315b274" title="Music::halt" alt="" coords="273,157,359,184"/>
+<area shape="rect" id="node6" href="$classPauseMenuModel.html#a95d680e91f951dac1ceb51d3ecb6a691" title="PauseMenuModel::paused" alt="" coords="228,208,404,235"/>
+<area shape="rect" id="node7" href="$classMusic.html#a10e5537400b6f018a8c86085751a90cb" title="Music::pause" alt="" coords="266,259,366,285"/>
+<area shape="rect" id="node8" href="$classMusic.html#a2408bf019e742d575c43ab236c4e1784" title="Music::paused" alt="" coords="263,309,369,336"/>
+<area shape="rect" id="node9" href="$classMusic.html#a747b98f1b47b7eb370e0285e53d50ae8" title="Music::resume" alt="" coords="262,360,370,387"/>
+</map>

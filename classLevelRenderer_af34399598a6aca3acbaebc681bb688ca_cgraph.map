@@ -1,0 +1,4 @@
+<map id="LevelRenderer::render" name="LevelRenderer::render">
+<area shape="rect" id="node2" href="$classLevelModel.html#a0775359725eaa215ebd9237a8bf31014" title="LevelModel::level" alt="" coords="246,5,369,32"/>
+<area shape="rect" id="node3" href="$classScreenNormalizer.html#a0a54874b29eb58cf1be8251ca2525c60" title="ScreenNormalizer::deNormalize" alt="" coords="204,56,411,83"/>
+</map>

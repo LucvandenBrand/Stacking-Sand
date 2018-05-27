@@ -1,5 +1,0 @@
-#include "gameoverrenderer.h"
-#include "../../../engine/graphics/gamerenderer/gamerenderer.ih"
-#include "../../logic/gameovermodel/gameovermodel.h"
-#include "../../../engine/graphics/screennormalizer/screennormalizer.ih"
-#include "../../../engine/graphics/texturefactory/texturefactory.ih"

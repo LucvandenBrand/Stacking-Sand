@@ -1,8 +1,0 @@
-#include "pausemenumodel.h"
-#include "../../../engine/logic/model/model.ih"
-#include "../pauseble/pauseble.h"
-#include <vector>
-#include <initializer_list>
-#include "../gameovermodel/gameovermodel.ih"
-
-using namespace std;
